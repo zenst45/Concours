@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme d'Entraînement</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><!-- Dans la section <head> de base.html -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body, {
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\(', right: '\\)', display: false},
+            {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+    });">
+    </script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>📚 Plateforme d'Entraînement</h1>
+    </header>
+
+    <!-- Messages flash -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flash-messages">
+        {% for category, message in messages %}
+        <div class="flash-message {{ category }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2024 Plateforme d'Entraînement</p>
+    </footer>
+</div>
+
+<!-- Modal pour les détails -->
+<div class="modal" id="theme-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modal-theme-title">Détails</h2>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="modal-theme-content">
+            <!-- Contenu chargé dynamiquement -->
+        </div>
+    </div>
+</div>
+
+<script>
+    function renderMathElements(element = null) {
+        if (typeof renderMathInElement !== 'undefined') {
+            const target = element || document.body;
+            renderMathInElement(target, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError: false,
+                strict: false
+            });
+        }
+    }
+
+    // Re-render les maths après chargement dynamique de contenu
+    function rerenderMath() {
+        if (typeof renderMathInElement !== 'undefined') {
+            renderMathElements();
+        }
+    }
+
+    // Fonctions utilitaires pour les modales
+    function closeModal() {
+        document.getElementById('theme-modal').style.display = 'none';
+    }
+
+    // Fermer la modal en cliquant en dehors
+    window.onclick = function(event) {
+        const modal = document.getElementById('theme-modal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    // Fonction pour obtenir le nom du thème
+    function getThemeName(themeId) {
+        const themeNames = {
+            "derivatives": "Dérivées",
+            "sequences": "Suites",
+            "limits": "Limites",
+            "logarithm_exponential": "Logarithme et Exponentielle",
+            "domain_definition": "Domaine de définition",
+            "primitives_ode": "Primitives et Équations Différentielles",
+            "combinatorics_probability": "Dénombrement et Probabilités",
+            "geometry": "Géométrie dans l'Espace",
+            "trigonometry": "Trigonométrie",
+            "integral_calculus": "Calcul Intégral"
+        };
+        return themeNames[themeId] || themeId;
+    }
+
+    // Fonction pour formater la date
+    function formatDate(dateString) {
+        if (!dateString) return 'Jamais';
+        const date = new Date(dateString);
+        return date.toLocaleDateString('fr-FR', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+        });
+    }
+</script>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>

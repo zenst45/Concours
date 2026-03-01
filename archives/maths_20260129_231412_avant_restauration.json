@@ -1,0 +1,4930 @@
+[
+  {
+    "id": 1,
+    "question": "Soit $(u_n)$ une suite géométrique de raison $2$ telle que $u_2 = 1$. Alors",
+    "choices": {
+      "a": "$u_7 = 32$",
+      "b": "$u_7 = 64$",
+      "c": "$u_7 = 128$",
+      "d": "$u_7 = 16$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Soient $A$ et $B$ deux événements d'un univers $\\Omega$ de probabilité non nulle. Alors $P_A(B)$ est égale à",
+    "choices": {
+      "a": "$\\frac{P(A\\cap B)}{P(B)}$",
+      "b": "$\\frac{P(A\\cap B)}{P(A)}$",
+      "c": "$P(A\\cap B)$ si $A$ et $B$ sont indépendants",
+      "d": "$P(A)$ si $A$ et $B$ sont indépendants",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "$\\lim_{x \\to +\\infty} \\frac{3x^2 + x - 2}{x^2 - e^x + 1}$ est égale à",
+    "choices": {
+      "a": "$0$",
+      "b": "$+\\infty$",
+      "c": "$3$",
+      "d": "$-2$",
+      "e": "$1$"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Parmi les fonctions suivantes, laquelle est une solution de l'équation différentielle $2y' - y = x - 1$ :",
+    "choices": {
+      "a": "$x \\to e^{2x} - x - 1$",
+      "b": "$x \\to x - 1$",
+      "c": "$x \\to 1 - x$",
+      "d": "$x \\to e^{2x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Soit $f : x \\to \\sqrt{x^2 - x - 2}$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$\\mathbb{R}$",
+      "b": "$[-1, 2]$",
+      "c": "$]-\\infty, -1] \\cup [2, +\\infty[$",
+      "d": "$\\emptyset$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Soit $f : x \\to \\ln^9(x)$. Alors pour tout $x \\in \\mathbb{R}_+^*$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$9 \\ln^8(x)$",
+      "b": "$\\frac{1}{x^9}$",
+      "c": "$\\frac{9}{x^8}$",
+      "d": "$9 \\ln(x)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "derivatives"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "Soit $F$ une primitive d'une fonction $f$ continue sur $[-1, 1]$. Alors",
+    "choices": {
+      "a": "$f' = F$",
+      "b": "$F' = f$",
+      "c": "$F(-1) = f(-1)$ et $F(1) = f(1)$",
+      "d": "$F(-1) = F(1) = 0$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "Dans un jeu de $32$ cartes, on tire une main de $6$ cartes (on rappelle que dans une main, l'ordre des cartes ne compte pas). Alors le nombre de mains possibles est",
+    "choices": {
+      "a": "$6^{32}$",
+      "b": "$32^6$",
+      "c": "$\\binom{32}{6}$",
+      "d": "$\\frac{32!}{6!}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "Soit $(u_n)$ une suite réelle. Alors",
+    "choices": {
+      "a": "si $(u_n)$ est décroissante et minorée, $(u_n)$ converge",
+      "b": "si $(u_n)$ est bornée, $(u_n)$ converge",
+      "c": "si $(u_n)$ est croissante et majorée, $(u_n)$ converge",
+      "d": "si $(u_n)$ est croissante et non majorée, $(u_n)$ diverge",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "acd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Dans un repère orthonormé de l'espace, on considère la droite $d$ passant par $A(2, -1, 1)$ et de vecteur directeur $(1, 2, -5)$. Alors",
+    "choices": {
+      "a": "$B(0, -2, 1) \\in d$",
+      "b": "$B(0, 1, -2) \\in d$",
+      "c": "$B(3, 1, -4) \\in d$",
+      "d": "$B(1, -3, -6) \\in d$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "Une primitive de la fonction $x \\to \\ln(x)$ sur $\\mathbb{R}_+^*$ est",
+    "choices": {
+      "a": "$x \\to x \\ln(x) - x$",
+      "b": "$x \\to \\frac{1}{x}$",
+      "c": "$x \\to e^x$",
+      "d": "$x \\to \\ln(x)$",
+      "e": "$x \\to \\frac{1}{\\ln(x)}$"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      1
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Soit $f : x \\to \\sqrt{x^2 + x - 20} \\cdot \\ln(1-x^2)$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$]-1; 1]$",
+      "b": "$]-\\infty, -5] \\cup [4, +\\infty[$",
+      "c": "$\\emptyset$",
+      "d": "$]-5, 4[$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 13,
+    "question": "$\\lim_{x \\to -\\infty} \\frac{x^2 + x - 7}{1 - x}$ est égale à",
+    "choices": {
+      "a": "$-\\infty$",
+      "b": "$1$",
+      "c": "$-1$",
+      "d": "$+\\infty$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "Dans un repère orthonormé de l'espace, on considère les points $A(1, -1, 2)$ et $B(2, 1, -1)$. Alors une équation cartésienne du plan orthogonal à la droite $(AB)$ passant par $C(3, 3, -4)$ est",
+    "choices": {
+      "a": "$x + 2y - 3z + 21 = 0$",
+      "b": "$x + 2y - 3z + 15 = 0$",
+      "c": "$x + 2y - 3z - 15 = 0$",
+      "d": "$x + 2y - 3z - 1 = 0$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "Parmi les fonctions suivantes, laquelle est une solution de l'équation différentielle $3y' - y = 2 - x$ :",
+    "choices": {
+      "a": "$x \\to e^{x/3} + x + 1$",
+      "b": "$x \\to 2 - x$",
+      "c": "$x \\to -1 - x$",
+      "d": "$x \\to e^{3x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 16,
+    "question": "Soit $f : x \\to \\frac{e^{x^2}}{x}$. Alors pour tout $x \\in \\mathbb{R}_+^*$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$\\frac{(2x - 1)e^{x^2}}{x^2}$",
+      "b": "$e^{x^2}$",
+      "c": "$\\frac{(x - 1)e^{x^2}}{x^2}$",
+      "d": "$\\frac{(2x^2 - 1)e^{x^2}}{x^2}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 17,
+    "question": "Le nombre de façons de prélever simultanément $2$ cartes parmi $4$ est",
+    "choices": {
+      "a": "$8$",
+      "b": "$6$",
+      "c": "$12$",
+      "d": "$16$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 18,
+    "question": "Dans un repère orthonormé de l'espace, on considère le point $A(2, -1, 1)$ et le vecteur $\\vec{u}(1, 2, -5)$. Alors une représentation paramétrique de la droite $d$ passant par $A$ et de vecteur directeur $\\vec{u}$ est",
+    "choices": {
+      "a": "$\\begin{cases} x = 2 + k \\\\ y = -1 + 2k \\\\ z = 1 - 5k \\end{cases}, k \\in \\mathbb{R}$",
+      "b": "$\\begin{cases} x = 1 + 2k \\\\ y = 2 - k \\\\ z = -5 + k \\end{cases}, k \\in \\mathbb{R}$",
+      "c": "$\\begin{cases} x = -2 + k \\\\ y = 1 + 2k \\\\ z = -1 - 5k \\end{cases}, k \\in \\mathbb{R}$",
+      "d": "$\\begin{cases} x = 2 - k \\\\ y = -1 - 2k \\\\ z = 1 + 5k \\end{cases}, k \\in \\mathbb{R}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 19,
+    "question": "Soient $(u_n)$ et $(v_n)$ deux suites réelles quelconques. Alors",
+    "choices": {
+      "a": "$[(u_n)$ converge et $(v_n)$ converge$] \\Rightarrow (u_n + v_n)$ converge.",
+      "b": "$[(u_n)$ diverge et $(v_n)$ diverge$] \\Rightarrow (u_n + v_n)$ diverge.",
+      "c": "$[(u_n)$ converge et $(v_n)$ diverge$] \\Rightarrow (u_n + v_n)$ diverge.",
+      "d": "$[(u_n)$ diverge et $(v_n)$ converge$] \\Rightarrow (u_n + v_n)$ converge.",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ac",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 20,
+    "question": "$\\lim_{x \\to +\\infty} \\frac{2x^2 + x + 1}{1 - x + 5x^2}$ est égale à",
+    "choices": {
+      "a": "$0$",
+      "b": "$+\\infty$",
+      "c": "$2$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 21,
+    "question": "Soit $f : x \\to (e^x + x)^5$. Alors, pour tout $x \\in \\mathbb{R}$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$5 (e^x + x)^4$",
+      "b": "$5 (e^x + 1)^4$",
+      "c": "$5 (e^x + x)^4 (e^x + 1)$",
+      "d": "$5 (\\ln(x) + 1)^4$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 22,
+    "question": "Une primitive de $x \\to \\frac{1}{\\ln(x)}$ sur $]1, +\\infty[$ est",
+    "choices": {
+      "a": "$x \\to \\ln(\\ln(x))$",
+      "b": "$x \\to \\frac{1}{2} \\ln^2(x)$",
+      "c": "$x \\to \\frac{x}{\\ln(x)}$",
+      "d": "$x \\to \\frac{\\ln(x)}{x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 23,
+    "question": "Soit $f : x \\to \\ln(x^2 + x - 2)$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$[-1, 2]$",
+      "b": "$\\mathbb{R}_+^*$",
+      "c": "$]-\\infty, -1] \\cup [2, +\\infty[$",
+      "d": "$\\emptyset$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 24,
+    "question": "Le nombre de façons de ranger $3$ objets distincts dans $5$ tiroirs sachant qu'un tiroir ne peut contenir qu'un seul objet est",
+    "choices": {
+      "a": "$15$",
+      "b": "$60$",
+      "c": "$120$",
+      "d": "$125$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 25,
+    "question": "Soit $(u_n)$ une suite géométrique de raison $q \\neq 1$. Alors $u_1 + u_2 + ... + u_n$ est égale à",
+    "choices": {
+      "a": "$u_1 \\frac{1 - q^{n-1}}{1 - q}$",
+      "b": "$u_1 \\frac{1 - q^{n-2}}{1 - q}$",
+      "c": "$u_1 \\frac{1 - q^{n-3}}{1 - q}$",
+      "d": "$u_1 \\frac{1 - q^{n}}{1 - q}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 26,
+    "question": "Dans un repère orthonormé de l'espace, on considère les points $A(1, -1, 2)$ et $B(2, 1, -1)$. Alors une équation paramétrique de la droite $(AB)$ est",
+    "choices": {
+      "a": "$\\begin{cases} x = 1 + 2t \\\\ y = -1 + t \\\\ z = 2 - t \\end{cases}, t \\in \\mathbb{R}$",
+      "b": "$\\begin{cases} x = 1 + t \\\\ y = -1 + 2t \\\\ z = 2 - 3t \\end{cases}, t \\in \\mathbb{R}$",
+      "c": "$\\begin{cases} x = 1 + t \\\\ y = 2 - t \\\\ z = -3 + 2t \\end{cases}, t \\in \\mathbb{R}$",
+      "d": "$\\begin{cases} x = 3 + t \\\\ y = -t \\\\ z = 1 + 2t \\end{cases}, t \\in \\mathbb{R}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 27,
+    "question": "Soient $A$ et $B$ deux événements indépendants quelconques. Alors",
+    "choices": {
+      "a": "$P(A \\cup B) = P(A) + P(B)$",
+      "b": "$P(A \\cup B) = P(A)P(B)$",
+      "c": "$P(A \\cap B) = P(A) + P(B)$",
+      "d": "$P(A \\cap B) = P(A)P(B)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 28,
+    "question": "Soit $f : x \\to \\sin(x) \\cos(x)$. Alors une primitive de $f$ sur $\\mathbb{R}$ est",
+    "choices": {
+      "a": "$x \\to \\frac{1}{2} \\cos^2(x)$",
+      "b": "$x \\to \\frac{1}{2} \\sin^2(x)$",
+      "c": "$x \\to -\\cos(\\sin(x))$",
+      "d": "$x \\to -\\frac{1}{2} \\sin^2(x)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode",
+      "trigonometry"
+    ]
+  },
+  {
+    "id": 29,
+    "question": "$\\lim_{x \\to -\\infty} 2x e^{-x}$ est égale à",
+    "choices": {
+      "a": "$-\\infty$",
+      "b": "$+\\infty$",
+      "c": "$0$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ]
+  },
+  {
+    "id": 30,
+    "question": "Soient $A$ et $B$ deux événements incompatibles quelconques. Alors",
+    "choices": {
+      "a": "$P(A \\cup B) = P(A)P(B)$",
+      "b": "$P(A \\cup B) = P(A) + P(B)$",
+      "c": "$P(A \\cap B) = P(A) + P(B)$",
+      "d": "$P(A \\cap B) = P(A)P(B)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 31,
+    "question": "Soit $(u_n)$ définie pour tout $n \\in \\mathbb{N}$ par $u_n = \\sum_{k=0}^{n} \\left(\\frac{1}{2}\\right)^k$. Alors la limite de $(u_n)$ lorsque $n$ tend vers l'infini est",
+    "choices": {
+      "a": "$0$",
+      "b": "$1$",
+      "c": "$2$",
+      "d": "$+\\infty$",
+      "e": "$\\frac{1}{2}$"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 32,
+    "question": "Soit $f : x \\to \\sqrt{\\ln(x)}$. Alors, pour tout $x \\in ]1, +\\infty[$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$\\frac{1}{2\\sqrt{\\frac{1}{x}}}$",
+      "b": "$\\frac{1}{2\\sqrt{\\ln(x)}}$",
+      "c": "$\\frac{1}{2x\\sqrt{\\ln(x)}}$",
+      "d": "$-\\frac{1}{2\\sqrt{\\ln(x)}}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 33,
+    "question": "Soit $f : x \\to \\frac{\\ln(1 - x)}{\\ln(2 - x)}$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$]1, +\\infty[$",
+      "b": "$]2, +\\infty[$",
+      "c": "$]-\\infty, 2[$",
+      "d": "$]-\\infty, 1[$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 34,
+    "question": "Soit $(u_n)$ une suite réelle convergeant vers $-1$. Alors",
+    "choices": {
+      "a": "$u_n - 1 \\to 0$ quand $n \\to +\\infty$",
+      "b": "$\\left|\\frac{u_n}{n}\\right| \\to 0$ quand $n \\to +\\infty$",
+      "c": "$|u_n| \\to 1$ quand $n \\to +\\infty$",
+      "d": "$(u_n)$ est bornée.",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "cd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 35,
+    "question": "Soit $X$ une variable aléatoire suivant une loi binomiale de paramètres $(n, p)$. Alors",
+    "choices": {
+      "a": "$E(X) = np$",
+      "b": "$E(X) = \\frac{n}{p}$",
+      "c": "$V(X) = n(1 - p)$",
+      "d": "$V(X) = np(1 - p)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ad",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 36,
+    "question": "Parmi les fonctions suivantes, laquelle est une solution de l'équation différentielle $y' - y = x - 3$ :",
+    "choices": {
+      "a": "$x \\to e^x + x - 3$",
+      "b": "$x \\to x - 3$",
+      "c": "$x \\to 2 - x$",
+      "d": "$x \\to e^x$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 37,
+    "question": "Soit $(u_n)$ définie par $u_0 = 1$ et pour tout $n \\in \\mathbb{N}$, $u_{n+1} = 2u_n + 3$. Alors la suite $(v_n)$ définie pour tout $n \\in \\mathbb{N}$ par $v_n = u_n - \\ell$ est géométrique de raison $2$ si",
+    "choices": {
+      "a": "$\\ell = 1$",
+      "b": "$\\ell = -3$",
+      "c": "$\\ell = 2$",
+      "d": "$\\ell = 3$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 38,
+    "question": "Soit $f$ la fonction définie sur $\\mathbb{R}$ par $f(x) = -4x^3 + 6x^2 + 8$. La primitive de $f$ sur $\\mathbb{R}$ qui vaut $2$ en $0$ est",
+    "choices": {
+      "a": "$-16x^4 + 18x^3 + 8x + 1$",
+      "b": "$-x^4 + 2x^3 + 8x + 10$",
+      "c": "$-x^4 + 2x^3 + 8x + 2$",
+      "d": "$-x^4 + 2x^3 + 8x$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 39,
+    "question": "Dans un repère orthonormé de l'espace, on considère la droite $d$ de vecteur directeur $\\vec{u}(1, -1, 3)$ passant par $A(2, 1, 0)$ et la droite $d'$ de vecteur directeur $\\vec{v}(-2, -2, -1)$ passant par $B(1, -2, 2)$. Alors $d$ et $d'$ sont sécantes de point d'intersection",
+    "choices": {
+      "a": "$M(1, -1, 2)$",
+      "b": "$M(1, 1, -2)$",
+      "c": "$M(3, 0, 3)$",
+      "d": "$M(2, 1, -3)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 40,
+    "question": "Soit $f : x \\to \\sqrt{1 - \\ln(x)}$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$\\mathbb{R}_+^*$",
+      "b": "$]e, +\\infty[$",
+      "c": "$]1, +\\infty[$",
+      "d": "$]-\\infty, e]$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 41,
+    "question": "Soit $f : x \\to \\frac{x^2 - 3x - 2}{x^3 - 3x + 2}$. Alors pour tout $x \\in ]2, +\\infty[$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$1$",
+      "b": "$\\frac{-6x^2 + 6x - 9}{(x^2 - 3x + 2)^2}$",
+      "c": "$\\frac{-6x^2 - 3x + 5}{(x^2 - 3x + 2)^2}$",
+      "d": "$\\frac{4(2x - 3)}{(x^2 - 3x + 2)^2}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "derivatives"
+    ]
+  },
+  {
+    "id": 42,
+    "question": "Une primitive de $t \\to \\frac{3t}{\\sqrt{t^2 + 1}}$ sur $\\mathbb{R}$ est",
+    "choices": {
+      "a": "$t \\to 3\\sqrt{t^2 + 1}$",
+      "b": "$t \\to \\frac{3}{2}\\sqrt{t^2 + 1}$",
+      "c": "$t \\to 3t\\sqrt{t^2 + 1}$",
+      "d": "$t \\to -3\\sqrt{t^2 + 1}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 43,
+    "question": "Soit $(u_n)$ la suite définie par la donnée de $u_0$ et, pour tout $n \\in \\mathbb{N}^*$, $u_n = 3u_{n-1} + 1$. Alors",
+    "choices": {
+      "a": "la suite $(v_n)$ définie pour tout $n \\in \\mathbb{N}$ par $v_n = u_n + 1$ est géométrique",
+      "b": "la suite $(v_n)$ définie pour tout $n \\in \\mathbb{N}$ par $v_n = u_n - 1$ est géométrique",
+      "c": "pour tout $n \\in \\mathbb{N}$, $u_n = 3^n u_0$",
+      "d": "la suite $(v_n)$ définie pour tout $n \\in \\mathbb{N}$ par $v_n = u_n - \\frac{1}{2}$ est géométrique",
+      "e": "la suite $(v_n)$ définie pour tout $n \\in \\mathbb{N}$ par $v_n = u_n + \\frac{1}{2}$ est géométrique"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 44,
+    "question": "$\\lim_{x \\to +\\infty} \\frac{x - \\sqrt{x}}{3 - \\ln(x)}$ est égale à",
+    "choices": {
+      "a": "$0$",
+      "b": "$+\\infty$",
+      "c": "$-\\infty$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      2
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ]
+  },
+  {
+    "id": 45,
+    "question": "Soient $A$ et $B$ deux événements quelconques de probabilités non nulles. Alors",
+    "choices": {
+      "a": "$P_A(B) = P_B(A)$",
+      "b": "$P_A(B) = P_B(A) \\frac{P(A)}{P(B)}$",
+      "c": "$P(A\\cap B) = P_B(A)P(B)$",
+      "d": "$P_A(B) = \\frac{P(A)P(B)}{P(A)}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "bc",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 46,
+    "question": "Soit $f : x \\to \\frac{\\ln(x)}{\\sqrt{x - 2}}$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$\\mathbb{R}_+^*$",
+      "b": "$]2, +\\infty[$",
+      "c": "$\\mathbb{R}$",
+      "d": "$\\emptyset$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 47,
+    "question": "Une primitive de $x \\to e^{x^2}$ sur $\\mathbb{R}$ est",
+    "choices": {
+      "a": "$x \\to e^{x^2}$",
+      "b": "$x \\to 2 e^{x^2}$",
+      "c": "$x \\to 2x e^{x^2}$",
+      "d": "$x \\to e^{\\frac{x^5}{3}}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 48,
+    "question": "Soit $f : x \\to x \\ln(x) + x$. Alors, pour tout $x \\in \\mathbb{R}_+^*$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$\\ln(x)$",
+      "b": "$-\\ln(x)$",
+      "c": "$\\ln(x) + 2$",
+      "d": "$\\frac{1}{x} + 1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 49,
+    "question": "Une équation cartésienne du plan $P$ contenant $A(1, 2, -1)$ et de vecteur normal $(-1, 1, 2)$ est",
+    "choices": {
+      "a": "$-x + y + 2z - 1 = 0$",
+      "b": "$x - y - 2z + 1 = 0$",
+      "c": "$3y - z = 0$",
+      "d": "$-x + y + 2z + 1 = 0$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 50,
+    "question": "Soit $(u_n)$ une suite arithmétique telle que $u_0 = 1$ et $u_2 = 9$. Alors la raison de $(u_n)$ est",
+    "choices": {
+      "a": "$9$",
+      "b": "$3$",
+      "c": "$4$",
+      "d": "$6$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 51,
+    "question": "On tire avec remise $5$ cartes d'un jeu de $32$ cartes. Soit $X$ le nombre de rois obtenus. Alors la loi de $X$ est",
+    "choices": {
+      "a": "une loi binomiale de paramètres $(5, \\frac{1}{4})$",
+      "b": "une loi binomiale de paramètres $(5, \\frac{1}{8})$",
+      "c": "une loi binomiale de paramètres $(5, \\frac{1}{2})$",
+      "d": "une loi binomiale de paramètres $(5, \\frac{1}{16})$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 52,
+    "question": "Les solutions de l'équation différentielle $y' + y = 0$ sur $\\mathbb{R}$ sont les fonctions",
+    "choices": {
+      "a": "$x \\to k e^{-x}$ où $k \\in \\mathbb{R}$",
+      "b": "$x \\to k e^x$ où $k \\in \\mathbb{R}$",
+      "c": "$x \\to k x$ où $k \\in \\mathbb{R}$",
+      "d": "$x \\to k + x$ où $k \\in \\mathbb{R}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 53,
+    "question": "Soit $D$ le domaine de définition de la fonction $f : x \\to \\frac{1}{x \\ln(x) \\ln(\\ln(x))}$. Une primitive de $f$ sur $D$ est",
+    "choices": {
+      "a": "$x \\to \\ln(x \\ln(x))$",
+      "b": "$x \\to \\ln(\\ln(\\ln(x)))$",
+      "c": "$x \\to \\frac{\\ln(x)}{x}$",
+      "d": "$x \\to \\frac{\\ln(\\ln(x))}{x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 54,
+    "question": "Soit $f : x \\to \\ln\\left(\\frac{1 - x}{2 - x}\\right)$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$]1, +\\infty[$",
+      "b": "$]2, +\\infty[$",
+      "c": "$]1, 2[$",
+      "d": "$\\mathbb{R}_+^*$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 55,
+    "question": "Soit $(u_n)$ une suite arithmétique telle que $u_5 = -13$ et $u_9 = -25$. Alors $u_3$ est égal à",
+    "choices": {
+      "a": "$-12$",
+      "b": "$-\\frac{22}{3}$",
+      "c": "$-14$",
+      "d": "$-7$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 56,
+    "question": "Soit $f : x \\to \\frac{1}{(x^2 + 2)^4}$. Alors, pour tout $x \\in \\mathbb{R}$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$-\\frac{4}{(x^2 + 2)^5}$",
+      "b": "$-\\frac{8x}{(x^2 + 2)^3}$",
+      "c": "$-\\frac{4x}{(x^2 + 2)^5}$",
+      "d": "$-\\frac{8x}{(x^2 + 2)^5}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "derivatives"
+    ]
+  },
+  {
+    "id": 57,
+    "question": "Soient $A$, $B$ et $C$ trois événements quelconques. Alors",
+    "choices": {
+      "a": "$P(A\\cup B\\cup C) = P(A)+P(B)+P(C)-P(A\\cap B)-P(A\\cap C)-P(B\\cap C)-P(A\\cap B\\cap C)$",
+      "b": "$P(A\\cup B\\cup C) = P(A)+P(B)+P(C)-P(A\\cap B)-P(A\\cap C)-P(B\\cap C)+P(A\\cap B\\cap C)$",
+      "c": "$P(A\\cup B\\cup C) = P(A)+P(B)+P(C)-P(A\\cap B)-P(A\\cap C)-P(B\\cap C)$",
+      "d": "$P(A\\cup B\\cup C) = P(A)+P(B)+P(C)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 58,
+    "question": "Soit $f : x \\to \\ln\\left(\\frac{x^2 - 3x + 2}{x + 1}\\right)$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$]-1, 1[ \\cup ]2, +\\infty[$",
+      "b": "$\\mathbb{R} \\setminus \\{-1\\}$",
+      "c": "$]-\\infty, 1[ \\cup ]2, +\\infty[$",
+      "d": "$\\mathbb{R}_+^*$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 59,
+    "question": "$\\lim_{x \\to 1} \\frac{x^2 -x + 7}{3 - 2x + 5x^3}$ est égale à",
+    "choices": {
+      "a": "$0$",
+      "b": "$\\frac{1}{5}$",
+      "c": "$+\\infty$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 60,
+    "question": "Soit $f : x \\to e^{\\cos(\\cos(x))}$. Alors $f'(x)$ est égale à",
+    "choices": {
+      "a": "$2 \\cos(x) e^{\\cos(\\cos(x))}$",
+      "b": "$-2 \\cos(x) \\sin(x) e^{\\cos(\\cos(x))}$",
+      "c": "$\\cos(\\cos(x)) e^{\\cos(\\cos(x))}$",
+      "d": "$-\\sin(\\cos(x)) \\sin(x) e^{\\cos(\\cos(x))}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives",
+      "trigonometry"
+    ]
+  },
+  {
+    "id": 61,
+    "question": "Soient $(u_n)$ et $(v_n)$ deux suites réelles telles que pour tout $n \\in \\mathbb{N}$, $u_n \\leq v_n$.",
+    "choices": {
+      "a": "Si $(v_n)$ est croissante, $(u_n)$ est majorée",
+      "b": "Si $(v_n)$ est décroissante, $(u_n)$ est minorée",
+      "c": "Si $(v_n)$ converge, $(u_n)$ converge",
+      "d": "Si $(v_n)$ est bornée, $(u_n)$ est bornée",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 62,
+    "question": "Dans un repère orthonormé de l'espace, soit $d$ la droite de représentation paramétrique $\\begin{cases} x = 2 - 3t \\\\ y = 1 - t \\\\ z = 1 + 2t \\end{cases}, t \\in \\mathbb{R}$. Alors un vecteur directeur de $d$ est",
+    "choices": {
+      "a": "$(2, 1, 1)$",
+      "b": "$(-2, -1, -1)$",
+      "c": "$(3, 1, -2)$",
+      "d": "$(-3, -1, 2)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 63,
+    "question": "Le domaine de définition de $x \\to \\ln(x^2 + x + 2)$ est",
+    "choices": {
+      "a": "$\\mathbb{R}$",
+      "b": "$]0, +\\infty[$",
+      "c": "$]-\\infty, -1[ \\cup ]2, +\\infty[$",
+      "d": "$]-1, 2[$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 64,
+    "question": "Soit $(u_n)$ une suite arithmétique de raison $3$ telle que $u_0 = 2$. Alors $u_4 + ... + u_7$ est égal à",
+    "choices": {
+      "a": "$111$",
+      "b": "$74$",
+      "c": "$98$",
+      "d": "$100$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 65,
+    "question": "$\\lim_{x \\to +\\infty} \\left(\\sqrt{x^2 + 2x} - \\sqrt{x^2 + 3}\\right)$ est égale à",
+    "choices": {
+      "a": "$0$",
+      "b": "$+\\infty$",
+      "c": "$-\\infty$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 66,
+    "question": "On tire dans un jeu de $32$ cartes une main de $5$ cartes (on rappelle que dans une main, l'ordre des cartes ne compte pas). Alors le nombre de mains contenant exactement $1$ as est",
+    "choices": {
+      "a": "$\\binom{4}{1} + \\binom{28}{4}$",
+      "b": "$\\frac{\\binom{4}{1} \\binom{28}{4}}{\\binom{32}{5}}$",
+      "c": "$\\binom{4}{1} \\binom{28}{4}$",
+      "d": "$\\frac{\\binom{4}{1} + \\binom{28}{4}}{\\binom{32}{5}}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 67,
+    "question": "Dans un repère orthonormé de l'espace, on considère les points $A(1, -1, 2)$ et $B(2, 1, -1)$. Alors",
+    "choices": {
+      "a": "$C(3, 2, -1) \\in (AB)$",
+      "b": "$C(3, 3, -4) \\in (AB)$",
+      "c": "$C(3, -4, 3) \\in (AB)$",
+      "d": "$C(3, 0, 1) \\in (AB)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 68,
+    "question": "a. Toute suite arithmétique (non constante) diverge. b. Toute suite géométrique converge. c. Toute suite géométrique de raison $q$ converge si $q > 1$. d. Toute suite géométrique de raison $q$ converge si $0 \\leq q \\leq 1$.",
+    "choices": {
+      "a": "Toute suite arithmétique (non constante) diverge.",
+      "b": "Toute suite géométrique converge.",
+      "c": "Toute suite géométrique de raison $q$ converge si $q > 1$.",
+      "d": "Toute suite géométrique de raison $q$ converge si $0 \\leq q \\leq 1$.",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 69,
+    "question": "Soit $f : x \\to \\ln(e^x + 1)$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$\\mathbb{R}$",
+      "b": "$\\mathbb{R}_+^*$",
+      "c": "$\\emptyset$",
+      "d": "$\\mathbb{R}_+$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 70,
+    "question": "Soit $f : x \\to x \\sin(2x)$. Alors pour tout $x \\in \\mathbb{R}$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$\\sin(2x) - 2x \\cos(2x)$",
+      "b": "$\\sin(2x) + x \\cos(2x)$",
+      "c": "$\\sin(2x) - x \\cos(2x)$",
+      "d": "$\\sin(2x) + 2x^2 \\cos(2x)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives",
+      "trigonometry"
+    ]
+  },
+  {
+    "id": 71,
+    "question": "Soit $(u_n)$ la suite définie par $u_0 = 2$ et pour tout $n \\in \\mathbb{N}^*$, $u_n = 2 u_{n-1} + 1$. Alors",
+    "choices": {
+      "a": "pour tout $n \\in \\mathbb{N}$, $u_n = 2^n u_0$",
+      "b": "pour tout $n \\in \\mathbb{N}$, $u_n = 2^{n-1} u_0$",
+      "c": "la suite $(v_n)$ définie pour tout $n \\in \\mathbb{N}$ par $v_n = u_n + 1$ est géométrique",
+      "d": "la suite $(v_n)$ définie pour tout $n \\in \\mathbb{N}$ par $v_n = u_n - 1$ est géométrique",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 72,
+    "question": "$\\lim_{x \\to 0^+} (\\ln(x) - 3x^2 + 5)$ est égale à",
+    "choices": {
+      "a": "$-\\infty$",
+      "b": "$+\\infty$",
+      "c": "$0$",
+      "d": "$3$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ]
+  },
+  {
+    "id": 73,
+    "question": "Soit $f : x \\to x^2 + e^{-x} - \\ln(x)$. Alors, pour tout $x \\in \\mathbb{R}_+^*$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$2 + e^{-x} - \\frac{1}{x}$",
+      "b": "$2 - e^{-x} - \\frac{1}{x}$",
+      "c": "$2x - e^{-x} + \\frac{1}{x}$",
+      "d": "$2x - e^{-x} + \\frac{1}{x^2}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 74,
+    "question": "Soit $E = \\{a, b, c, d, e, f\\}$. Alors le nombre de sous-ensembles de $E$ contenant $3$ éléments est",
+    "choices": {
+      "a": "$6^3$",
+      "b": "$3^6$",
+      "c": "$18$",
+      "d": "$\\binom{6}{3}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 75,
+    "question": "Une primitive de $u \\to \\frac{1}{(u+1)^2}$ sur $]-1, +\\infty[$ est",
+    "choices": {
+      "a": "$\\ln(u+1)$",
+      "b": "$\\ln^2(u+1)$",
+      "c": "$\\frac{1}{u+1}$",
+      "d": "$-\\frac{1}{u+1}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 76,
+    "question": "Soit $(u_n)$ une suite réelle.",
+    "choices": {
+      "a": "Si $(u_n)$ est convergente alors $(u_n)$ ne prend qu'un nombre fini de valeurs",
+      "b": "Si $(u_n)$ ne prend qu'un nombre fini de valeurs, alors elle est convergente",
+      "c": "Si pour tout $n \\in \\mathbb{N}$, $0 \\leq u_n \\leq 1$, alors $(u_n)$ converge",
+      "d": "Si pour tout $n \\in \\mathbb{N}$, $u_n - 1 \\leq e^{-n}$ alors $(u_n)$ converge vers $1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 77,
+    "question": "$\\lim_{x \\to +\\infty} \\frac{x^2 - x + 1}{1 - x}$ est égale à",
+    "choices": {
+      "a": "$+\\infty$",
+      "b": "$0$",
+      "c": "$-\\infty$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 78,
+    "question": "Soit $f : x \\to \\ln(\\ln(x))$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$\\mathbb{R}_+^*$",
+      "b": "$\\emptyset$",
+      "c": "$]e, +\\infty[$",
+      "d": "$]1, +\\infty[$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 79,
+    "question": "Dans un repère orthonormé de l'espace, une équation cartésienne du plan $P$ passant par $A(1, -1, 2)$ et perpendiculaire à la droite $d$ de représentation paramétrique $\\begin{cases} x = 1 - t \\\\ y = 2t \\\\ z = 3 + t \\end{cases}, t \\in \\mathbb{R}$ est",
+    "choices": {
+      "a": "$x - 3z + 2 = 0$",
+      "b": "$-x + 2y + z + 1 = 0$",
+      "c": "$x - y + 2z + 1 = 0$",
+      "d": "$x - 2y - z + 2 = 0$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 80,
+    "question": "Une primitive de $x \\to \\frac{e^x}{x}$ sur $\\mathbb{R}$ est",
+    "choices": {
+      "a": "$\\ln(e^x)$",
+      "b": "$e^x \\ln(x)$",
+      "c": "$e^{\\ln(x)}$",
+      "d": "$\\ln\\left(\\frac{x}{e^x}\\right)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 81,
+    "question": "Soit $f : x \\to e^{\\sqrt{x^2 - 3x + 2}}$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$\\mathbb{R}$",
+      "b": "$[1, 2]$",
+      "c": "$]-\\infty, 1] \\cup [2, +\\infty[$",
+      "d": "$\\emptyset$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      2
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 82,
+    "question": "Soit $(u_n)$ la suite définie par $u_{50} = 7$ et, pour tout $n \\in \\mathbb{N}$, $u_{n+1} = u_n + 2$. Alors $u_{100}$ vaut",
+    "choices": {
+      "a": "$207$",
+      "b": "$107$",
+      "c": "$307$",
+      "d": "$57$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 83,
+    "question": "Soit $f$ la fonction définie pour tout $x \\in \\mathbb{R}$ par $f(x) = \\frac{e^x}{1 + e^{-x}}$. Alors pour tout $x \\in \\mathbb{R}$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$\\frac{2e^{2x} + e^x}{(1 + e^{x})^2}$",
+      "b": "$\\frac{1}{(1 + e^{x})^2}$",
+      "c": "$\\frac{e^x}{(1 + e^{x})^2}$",
+      "d": "$-\\frac{e^{2x}}{(1 + e^{x})^2}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 84,
+    "question": "Soit $f : x \\to \\frac{1}{x}$. Alors",
+    "choices": {
+      "a": "la fonction $x \\to \\ln(ex)$ est une primitive de la fonction $f$ sur $\\mathbb{R}_+^*$",
+      "b": "la fonction $x \\to e + \\ln(x)$ est une primitive de $f$ sur $\\mathbb{R}_+^*$",
+      "c": "la fonction $x \\to e - \\ln\\left(\\frac{1}{x}\\right)$ est une primitive de $f$ sur $\\mathbb{R}_+^*$",
+      "d": "la fonction $x \\to \\ln(x)$ est une primitive de $f$ sur $\\mathbb{R}_+^*$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 85,
+    "question": "On suppose que si on choisit au hasard un individu dans la population française, la probabilité que cette personne soit gauchère est $0,10$. On observe sur une journée un groupe de $256$ candidats du concours Advance. On note $N$ la variable aléatoire égale au nombre de gauchers dans cet échantillon. Alors",
+    "choices": {
+      "a": "$P(N = 200) = \\binom{256}{200} (0,10)^{256} (1 - 0,10)^{56}$",
+      "b": "$P(N = 200) = \\binom{200}{256} (0,10)^{256} (1 - 0,10)^{56}$",
+      "c": "$P(N = 200) = \\binom{200}{256} (0,10)^{200} (1 - 0,10)^{56}$",
+      "d": "$P(N = 200) = \\binom{256}{200} (0,10)^{200} (1 - 0,10)^{56}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 86,
+    "question": "Soit $f : x \\to \\ln\\left(\\frac{x^2 - 3x + 2}{x + 1}\\right) \\sqrt{e^x - 1}$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$\\mathbb{R}_+$",
+      "b": "$\\mathbb{R}_+^*$",
+      "c": "$[0, 1[ \\cup ]2, +\\infty[$",
+      "d": "$]-\\infty, 1[ \\cup ]2, +\\infty[$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 87,
+    "question": "Soit $(u_n)$ une suite arithmétique. Alors $u_5 + ... + u_n$ est égale à",
+    "choices": {
+      "a": "$(n - 4)\\frac{u_5 + u_n}{2}$",
+      "b": "$(n - 5)\\frac{u_5 + u_n}{2}$",
+      "c": "$(n - 6)\\frac{u_5 + u_n}{2}$",
+      "d": "$\\frac{u_5 + u_n}{2}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 88,
+    "question": "Dans un repère orthonormé de l'espace, on considère les points $A(1, -1, 2)$ et $B(2, 1, -1)$. Alors une équation cartésienne du plan orthogonal à la droite $(AB)$ passant par $C(3, 3, -4)$ est",
+    "choices": {
+      "a": "$x + 2y - 3z + 21 = 0$",
+      "b": "$x + 2y - 3z + 15 = 0$",
+      "c": "$x + 2y - 3z - 15 = 0$",
+      "d": "$x + 2y - 3z - 1 = 0$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 89,
+    "question": "Quand $x$ tend vers $0$, $x \\cos\\left(\\frac{1}{x}\\right)$",
+    "choices": {
+      "a": "n'a pas de limite",
+      "b": "tend vers $0$",
+      "c": "tend vers $1$",
+      "d": "tend vers $+\\infty$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      2
+    ],
+    "themes": [
+      "trigonometry",
+      "logarithm_exponential",
+      "limits"
+    ]
+  },
+  {
+    "id": 90,
+    "question": "Soit $f : x \\to (e^x)^2$. Alors, pour tout $x \\in \\mathbb{R}$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$2x e^{x^2}$",
+      "b": "$e^{2x}$",
+      "c": "$2 e^x$",
+      "d": "$2 e^{2x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 91,
+    "question": "Une primitive de $x \\to \\tan(x)$ sur $]0, \\frac{\\pi}{2}[$ est",
+    "choices": {
+      "a": "$x \\to -\\ln(\\cos(x))$",
+      "b": "$x \\to 1 + \\tan^2(x)$",
+      "c": "$x \\to \\frac{1}{\\cos^2(x)}$",
+      "d": "$x \\to \\ln(\\sin(x))$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode",
+      "trigonometry"
+    ]
+  },
+  {
+    "id": 92,
+    "question": "Soit $f : x \\to \\sqrt{x^2 - x - 2}$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$[-1, 2]$",
+      "b": "$[-2, 1]$",
+      "c": "$]-\\infty, -1] \\cup [2, +\\infty[$",
+      "d": "$]-\\infty, -2] \\cup [1, +\\infty[$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 93,
+    "question": "Le nombre de façons de tirer simultanément $3$ cartes parmi $5$ est",
+    "choices": {
+      "a": "$60$",
+      "b": "$6$",
+      "c": "$10$",
+      "d": "$24$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 94,
+    "question": "Soit $(u_n)$ une suite géométrique à termes positifs telle que $u_0 = 1$ et $u_2 = 16$. Alors",
+    "choices": {
+      "a": "la raison de $(u_n)$ est $16$",
+      "b": "la raison de $(u_n)$ est $4$",
+      "c": "la raison de $(u_n)$ est $8$",
+      "d": "aucune suite géométrique ne vérifie ces conditions",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 95,
+    "question": "Dans un repère orthonormé de l'espace, on considère les points $A(1, -1, 2)$, $B(2, 0, 1)$ et $C(0, 1, 1)$. Alors une équation cartésienne du plan $(ABC)$ est",
+    "choices": {
+      "a": "$x - y + 3z - 1 = 0$",
+      "b": "$x - 2y + z - 7 = 0$",
+      "c": "$x - 3y - z + 2 = 0$",
+      "d": "$x + 2y + 3z - 5 = 0$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 96,
+    "question": "Soit $f : x \\to \\sqrt{1 - e^x}$. Alors, pour tout $x \\in \\mathbb{R}_-^*$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$\\frac{1}{2\\sqrt{1 - e^x}}$",
+      "b": "$\\frac{1 - e^x}{2\\sqrt{1 - e^x}}$",
+      "c": "$\\frac{e^x}{2\\sqrt{1 - e^x}}$",
+      "d": "$\\frac{e^x}{1 - e^x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 97,
+    "question": "Soit $F$ une primitive d'une fonction dérivable $f$ sur un intervalle $I$ de $\\mathbb{R}$. Alors une primitive de $f'$ est",
+    "choices": {
+      "a": "$f + 42$",
+      "b": "$\\frac{1}{2}f^2$",
+      "c": "$fF$",
+      "d": "$F$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 98,
+    "question": "Soit $f : x \\to \\sqrt{\\frac{x-1}{x-2}}$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$[1, 2]$",
+      "b": "$\\mathbb{R}$",
+      "c": "$[1, 2[$",
+      "d": "$]-\\infty, 1] \\cup ]2, +\\infty[$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 99,
+    "question": "Soit $(u_n)$ une suite réelle convergeant vers $\\ell \\in \\mathbb{R}$. Alors",
+    "choices": {
+      "a": "$(u_n - \\ell)$ converge vers $0$",
+      "b": "$(|u_n - \\ell|)$ converge vers $0$",
+      "c": "$(|u_n| - |\\ell|)$ converge vers $0$",
+      "d": "$(u_n)$ est bornée",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "abcd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 100,
+    "question": "$\\lim_{x \\to +\\infty} \\frac{6x^3 - x + 2}{3x^2 + \\ln(x) - 1}$ est égale à",
+    "choices": {
+      "a": "$2$",
+      "b": "$+\\infty$",
+      "c": "$0$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 101,
+    "question": "Soit $f : x \\to x^2 \\ln(x)$. Alors, pour tout $x \\in \\mathbb{R}_+^*$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$\\frac{2}{x}$",
+      "b": "$2x + \\frac{1}{x}$",
+      "c": "$2x \\ln(x) + x$",
+      "d": "$2 + \\frac{1}{x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 102,
+    "question": "Soit $X$ une variable aléatoire discrète quelconque. Alors",
+    "choices": {
+      "a": "$E(X - E(X)) = V(X)$",
+      "b": "$E(X - E(X)) = 0$",
+      "c": "$E(X - E(X)) = \\sqrt{V(X)}$",
+      "d": "$E((X - E(X))^2) = V(X)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "bd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 103,
+    "question": "Soit $(u_n)$ une suite arithmétique de raison $2$ et de premier terme $u_2 = 1$. Alors",
+    "choices": {
+      "a": "$u_7 = 15$",
+      "b": "$u_7 = 13$",
+      "c": "$u_7 = 11$",
+      "d": "$u_7 = 17$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 104,
+    "question": "Dans un univers $\\Omega$, on dit que $(A_1, ..., A_n)$ est un système complet d'événements si",
+    "choices": {
+      "a": "$A_1 \\cup ... \\cup A_n = \\Omega$ et pour tout $i \\neq j$, $A_i \\cap A_j = \\emptyset$",
+      "b": "$A_1 \\cap ... \\cap A_n \\neq \\{0\\}$ et pour tout $i \\neq j$, $A_i \\cup A_j \\neq \\emptyset$",
+      "c": "$A_1 \\cup ... \\cup A_n = \\Omega$ et pour tout $i \\neq j$, $A_i \\cap A_j \\neq \\{0\\}$",
+      "d": "$A_1 \\cup ... \\cup A_n = \\Omega$ et pour tout $i \\neq j$, $A_i \\cap A_j = \\emptyset$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 105,
+    "question": "Une primitive de la fonction $x \\to \\frac{x}{(x^2 + 1)^2}$ sur $\\mathbb{R}$ est",
+    "choices": {
+      "a": "$x \\to \\frac{1}{x^2 + 1}$",
+      "b": "$x \\to \\frac{2}{x^2 + 1}$",
+      "c": "$x \\to \\frac{1}{2(x^2 + 1)}$",
+      "d": "$x \\to -\\frac{1}{x^2 + 1}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 106,
+    "question": "Soit $(u_n)$ une suite géométrique de raison $q$ avec $u_0 = 1$. Alors",
+    "choices": {
+      "a": "$(u_n)$ diverge vers $+\\infty$ si $q > 1$",
+      "b": "$(u_n)$ diverge vers $+\\infty$ si $0 < q < 1$",
+      "c": "$(u_n)$ converge vers $0$ si $0 < q < 1$",
+      "d": "$(u_n)$ converge vers $0$ si $q > 1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ac",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 107,
+    "question": "Soit $f : x \\to \\sqrt{e^{-x}}$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$\\mathbb{R}$",
+      "b": "$\\mathbb{R}_+$",
+      "c": "$\\mathbb{R}_+^*$",
+      "d": "$\\emptyset$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 108,
+    "question": "Soit $f : x \\to x^2 e^x$. Alors, pour tout $x \\in \\mathbb{R}$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$2x e^x$",
+      "b": "$(2 + x)x e^x$",
+      "c": "$2x + e^x$",
+      "d": "$2 e^x$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 109,
+    "question": "On lance un dé. On note $A$ et $B$ les événements suivants : $A$ : « on obtient un numéro pair » et $B$ : « on obtient un multiple de $4$ ». Alors",
+    "choices": {
+      "a": "$A$ et $B$ sont incompatibles",
+      "b": "$A$ et $B$ ne sont pas incompatibles",
+      "c": "$A$ et $B$ sont indépendants",
+      "d": "$A$ et $B$ ne sont pas indépendants",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "bc",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 110,
+    "question": "$\\lim_{x \\to -\\infty} \\frac{x}{1 + e^{-x}}$ est égale à",
+    "choices": {
+      "a": "$-\\infty$",
+      "b": "$+\\infty$",
+      "c": "$0$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ]
+  },
+  {
+    "id": 111,
+    "question": "Dans un repère orthonormé de l'espace, soient $P_1$ et $P_2$ deux plans d'équations respectives $x - y + 2z - 3 = 0$ et $x + 2y - z = 0$. Alors une représentation paramétrique de la droite $d$, intersection des plans $P_1$ et $P_2$, est",
+    "choices": {
+      "a": "$\\begin{cases} x = 1 - t \\\\ y = -1 + t \\\\ z = 2 + t \\end{cases}, t \\in \\mathbb{R}$",
+      "b": "$\\begin{cases} x = 1 - t \\\\ y = 1 + t \\\\ z = 2 + t \\end{cases}, t \\in \\mathbb{R}$",
+      "c": "$\\begin{cases} x = 2 - t \\\\ y = -1 + t \\\\ z = -t \\end{cases}, t \\in \\mathbb{R}$",
+      "d": "$\\begin{cases} x = 1 - t \\\\ y = -2 + t \\\\ z = -1 + 2t \\end{cases}, t \\in \\mathbb{R}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 112,
+    "question": "Soit $(u_n)$ la suite définie par $u_{10} = 42$ et, pour tout $n \\in \\mathbb{N}$, $u_{n+1} = 42 u_n$. Alors $u_{1000}$ vaut",
+    "choices": {
+      "a": "$42^{991}$",
+      "b": "$42^{1010}$",
+      "c": "$42^{1011}$",
+      "d": "$10 \\times 42^{990}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 113,
+    "question": "Quand $x$ tend vers $+\\infty$, $\\frac{\\sin(x)}{x^2}$",
+    "choices": {
+      "a": "tend vers $1$",
+      "b": "n'a pas de limite",
+      "c": "tend vers $+\\infty$",
+      "d": "tend vers $0$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 114,
+    "question": "Une primitive de $x \\to \\frac{1}{x \\ln(x)}$ sur $]1, +\\infty[$ est",
+    "choices": {
+      "a": "$x \\to \\ln(\\ln(x))$",
+      "b": "$x \\to \\ln(x \\ln(x))$",
+      "c": "$x \\to \\frac{1}{4}\\ln(x^2\\ln^2(x))$",
+      "d": "$x \\to \\ln\\left(\\frac{x}{\\ln(x)}\\right)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      1
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 115,
+    "question": "Soit $(u_n)$ la suite réelle définie par $u_0 = 1$ et, pour tout $n \\in \\mathbb{N}$, $u_{n+1} = u_n + n$. Alors",
+    "choices": {
+      "a": "$(u_n)$ est géométrique",
+      "b": "$(u_n)$ est arithmétique",
+      "c": "$\\lim u_n = +\\infty$ quand $n$ tend vers $+\\infty$",
+      "d": "$(u_n)$ est croissante",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "cd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 116,
+    "question": "Soit $f : x \\to \\ln(|x^2 - 1|)$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$]-1, 1[$",
+      "b": "$\\mathbb{R}$",
+      "c": "$]-\\infty, -1[ \\cup ]1, +\\infty[$",
+      "d": "$\\emptyset$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      3
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Très difficile"
+  },
+  {
+    "id": 117,
+    "question": "Soit $f : x \\to e^{-2x}$. Alors, pour tout $x \\in \\mathbb{R}$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$e^{-x^2}$",
+      "b": "$-2x e^{-2x}$",
+      "c": "$e^{-2x}$",
+      "d": "$-2 e^{x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 118,
+    "question": "Soient $A$ un événement et $(B_1, B_2, B_3)$ un système complet d'événements d'un univers $\\Omega$. Alors",
+    "choices": {
+      "a": "$P(A) = P(A\\cap B_1)P(B_1) + P(A\\cap B_2)P(B_2) + P(A\\cap B_3)P(B_3)$",
+      "b": "$P(A) = P_{B_1}(A)P(B_1) + P_{B_2}(A)P(B_2) + P_{B_3}(A)P(B_3)$",
+      "c": "$P(A) = P(A\\cup B_1)P(B_1) + P(A\\cup B_2)P(B_2) + P(A\\cup B_3)P(B_3)$",
+      "d": "$P(A) = P(A\\cup B_1) + P(A\\cup B_2) + P(A\\cup B_3)$",
+      "e": "$P(A) = P(A\\cap B_1) + P(A\\cap B_2) + P(A\\cap B_3)$"
+    },
+    "answer": "be",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 119,
+    "question": "$\\lim_{x \\to +\\infty} (\\sqrt{x^2 - x + 2} - 2x)$ est égale à",
+    "choices": {
+      "a": "$0$",
+      "b": "$+\\infty$",
+      "c": "$-\\infty$",
+      "d": "$-1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 120,
+    "question": "a. Toute suite réelle croissante et minorée tend vers $+\\infty$ b. Toute suite réelle croissante et bornée converge c. Toute suite réelle décroissante et non minorée tend vers $-\\infty$ d. Toute suite réelle croissante et non majorée tend vers $+\\infty$",
+    "choices": {
+      "a": "Toute suite réelle croissante et minorée tend vers $+\\infty$",
+      "b": "Toute suite réelle croissante et bornée converge",
+      "c": "Toute suite réelle décroissante et non minorée tend vers $-\\infty$",
+      "d": "Toute suite réelle croissante et non majorée tend vers $+\\infty$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "bd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 121,
+    "question": "Soit $(u_n)$ une suite géométrique de raison $3$ telle que $u_2 = 2$. Alors $u_7$ est égal à",
+    "choices": {
+      "a": "$1458$",
+      "b": "$486$",
+      "c": "$162$",
+      "d": "$4374$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 122,
+    "question": "Soient $A$ et $B$ deux événements d'un univers $\\Omega$ avec $P(A) \\neq 0$. Alors $P_B(A)$ est égale à",
+    "choices": {
+      "a": "$\\frac{P(A\\cap B)}{P(A)}$",
+      "b": "$\\frac{P(A\\cap B)}{P(B)}$",
+      "c": "$P(A)$ si $A$ et $B$ sont indépendants",
+      "d": "$P(A\\cap B)$ si $A$ et $B$ sont indépendants",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 123,
+    "question": "$\\lim_{x \\to +\\infty} \\frac{5x^2 - 2x + 1}{2x^2 + e^x - 3}$ est égale à",
+    "choices": {
+      "a": "$\\frac{5}{2}$",
+      "b": "$0$",
+      "c": "$+\\infty$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 124,
+    "question": "Parmi les fonctions suivantes, laquelle est solution de l'équation différentielle $y' + 3y = 2x - 1$ :",
+    "choices": {
+      "a": "$x \\to e^{-3x} + \\frac{2}{3}x - \\frac{1}{9}$",
+      "b": "$x \\to 2x - 1$",
+      "c": "$x \\to \\frac{2}{3}x - \\frac{1}{3}$",
+      "d": "$x \\to e^{3x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 125,
+    "question": "Soit $f : x \\to \\sqrt{x^2 - 4x + 3}$. Alors le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$\\mathbb{R}$",
+      "b": "$[1, 3]$",
+      "c": "$]-\\infty, 1] \\cup [3, +\\infty[$",
+      "d": "$\\emptyset$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 126,
+    "question": "Soit $f : x \\to \\ln^5(x)$. Alors pour tout $x \\in \\mathbb{R}_+^*$, $f'(x)$ est égale à",
+    "choices": {
+      "a": "$5 \\ln^4(x)$",
+      "b": "$\\frac{5}{x}$",
+      "c": "$\\frac{5 \\ln^4(x)}{x}$",
+      "d": "$\\frac{\\ln^5(x)}{x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "derivatives"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 127,
+    "question": "Soit $F$ une primitive d'une fonction $f$ continue sur $[0, 2]$. Alors",
+    "choices": {
+      "a": "$F' = f$",
+      "b": "$f' = F$",
+      "c": "$F(0) = f(0)$ et $F(2) = f(2)$",
+      "d": "$F(0) = F(2) = 0$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 128,
+    "question": "Dans un jeu de $52$ cartes, on tire une main de $5$ cartes (sans ordre). Le nombre de mains possibles est",
+    "choices": {
+      "a": "$5^{52}$",
+      "b": "$52^5$",
+      "c": "$\\binom{52}{5}$",
+      "d": "$\\frac{52!}{5!}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 129,
+    "question": "Soit $(u_n)$ une suite réelle. Alors",
+    "choices": {
+      "a": "si $(u_n)$ est décroissante et minorée, elle converge",
+      "b": "si $(u_n)$ est bornée, elle converge",
+      "c": "si $(u_n)$ est croissante et majorée, elle converge",
+      "d": "si $(u_n)$ est croissante et non majorée, elle diverge vers $+\\infty$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "acd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 130,
+    "question": "Dans un repère orthonormé, la droite $d$ passant par $A(1, 2, -1)$ et de vecteur directeur $(2, -1, 3)$ :",
+    "choices": {
+      "a": "$B(3, 1, 2) \\in d$",
+      "b": "$B(5, 0, 5) \\in d$",
+      "c": "$B(-1, 3, -4) \\in d$",
+      "d": "$B(1, 2, -1) \\in d$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 131,
+    "question": "Une primitive de $x \\to \\ln(2x)$ sur $\\mathbb{R}_+^*$ est",
+    "choices": {
+      "a": "$x \\to x \\ln(2x) - x$",
+      "b": "$x \\to \\frac{1}{x}$",
+      "c": "$x \\to \\frac{\\ln(2x)}{x}$",
+      "d": "$x \\to 2 \\ln(x)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 132,
+    "question": "Soit $f : x \\to \\sqrt{x^2 - 9} \\cdot \\ln(4 - x^2)$. Le domaine de définition de $f$ est",
+    "choices": {
+      "a": "$]-2, 2[$",
+      "b": "$[-3, 3]$",
+      "c": "$]-3, -2[ \\cup ]2, 3[$",
+      "d": "$\\emptyset$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 133,
+    "question": "$\\lim_{x \\to -\\infty} \\frac{x^2 - 3x + 5}{2 - x}$ est égale à",
+    "choices": {
+      "a": "$+\\infty$",
+      "b": "$-\\infty$",
+      "c": "$0$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 134,
+    "question": "Dans un repère orthonormé, les points $A(2, 1, 0)$ et $B(1, 3, -2)$. Une équation du plan orthogonal à $(AB)$ passant par $C(4, -1, 1)$ est",
+    "choices": {
+      "a": "$x + 2y - 2z - 8 = 0$",
+      "b": "$x - 2y + 2z + 2 = 0$",
+      "c": "$-x + 2y - 2z + 6 = 0$",
+      "d": "$x + 2y - 2z + 4 = 0$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 135,
+    "question": "Parmi les fonctions suivantes, laquelle est solution de $4y' - y = x + 2$ :",
+    "choices": {
+      "a": "$x \\to e^{x/4} - x - 6$",
+      "b": "$x \\to x + 2$",
+      "c": "$x \\to -x - 2$",
+      "d": "$x \\to e^{4x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 136,
+    "question": "Soit $f : x \\to \\frac{e^{x^3}}{x^2}$. Alors $f'(x)$ pour $x > 0$ est",
+    "choices": {
+      "a": "$\\frac{(3x^3 - 2)e^{x^3}}{x^3}$",
+      "b": "$e^{x^3}$",
+      "c": "$\\frac{(3x^4 - 2)e^{x^3}}{x^3}$",
+      "d": "$\\frac{(3x^2 - 2)e^{x^3}}{x^3}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 137,
+    "question": "Le nombre de façons de choisir $3$ cartes parmi $6$ est",
+    "choices": {
+      "a": "$18$",
+      "b": "$20$",
+      "c": "$120$",
+      "d": "$720$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 138,
+    "question": "Représentation paramétrique de la droite passant par $A(3, -2, 1)$ de vecteur $\\vec{u}(2, 1, -3)$ :",
+    "choices": {
+      "a": "$\\begin{cases} x = 3 + 2t \\\\ y = -2 + t \\\\ z = 1 - 3t \\end{cases}$",
+      "b": "$\\begin{cases} x = 2 + 3t \\\\ y = 1 - 2t \\\\ z = -3 + t \\end{cases}$",
+      "c": "$\\begin{cases} x = 3 - 2t \\\\ y = -2 - t \\\\ z = 1 + 3t \\end{cases}$",
+      "d": "$\\begin{cases} x = 1 + 2t \\\\ y = 1 + t \\\\ z = -3 - 3t \\end{cases}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "geometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 139,
+    "question": "Soient $(u_n)$ et $(v_n)$ deux suites réelles. Alors",
+    "choices": {
+      "a": "si $(u_n)$ converge et $(v_n)$ converge, alors $(u_n - v_n)$ converge",
+      "b": "si $(u_n)$ diverge et $(v_n)$ diverge, alors $(u_n - v_n)$ diverge",
+      "c": "si $(u_n)$ converge et $(v_n)$ diverge, alors $(u_n + v_n)$ diverge",
+      "d": "si $(u_n)$ diverge et $(v_n)$ converge, alors $(u_n + v_n)$ converge",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ac",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 140,
+    "question": "$\\lim_{x \\to +\\infty} \\frac{3x^2 + 4x - 1}{2x^2 - x + 7}$ est",
+    "choices": {
+      "a": "$\\frac{3}{2}$",
+      "b": "$0$",
+      "c": "$+\\infty$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 141,
+    "question": "Soit $f : x \\to (e^x + x^2)^3$. Alors $f'(x) =$",
+    "choices": {
+      "a": "$3(e^x + x^2)^2$",
+      "b": "$3(e^x + 2x)^2$",
+      "c": "$3(e^x + x^2)^2 (e^x + 2x)$",
+      "d": "$3(e^x + 2x)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 142,
+    "question": "Une primitive de $x \\to \\frac{1}{x \\ln^2(x)}$ sur $]1, +\\infty[$ est",
+    "choices": {
+      "a": "$x \\to -\\frac{1}{\\ln(x)}$",
+      "b": "$x \\to \\ln(\\ln(x))$",
+      "c": "$x \\to \\frac{1}{\\ln(x)}$",
+      "d": "$x \\to \\ln^2(x)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 143,
+    "question": "Soit $f : x \\to \\ln(x^2 - 5x + 6)$. Domaine de définition :",
+    "choices": {
+      "a": "$]2, 3[$",
+      "b": "$]-\\infty, 2[ \\cup ]3, +\\infty[$",
+      "c": "$\\mathbb{R}$",
+      "d": "$[2, 3]$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 144,
+    "question": "Nombre de façons de ranger $4$ objets distincts dans $6$ tiroirs (un tiroir par objet max) :",
+    "choices": {
+      "a": "$24$",
+      "b": "$360$",
+      "c": "$720$",
+      "d": "$1296$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 145,
+    "question": "Soit $(u_n)$ géométrique de raison $q \\neq 1$. Alors $u_2 + u_3 + ... + u_n =$",
+    "choices": {
+      "a": "$u_2 \\frac{1 - q^{n-1}}{1 - q}$",
+      "b": "$u_2 \\frac{1 - q^{n-2}}{1 - q}$",
+      "c": "$u_2 \\frac{1 - q^n}{1 - q}$",
+      "d": "$u_1 \\frac{1 - q^n}{1 - q}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 146,
+    "question": "Équation paramétrique de la droite $(AB)$ avec $A(2, 0, 1)$ et $B(3, 2, -1)$ :",
+    "choices": {
+      "a": "$\\begin{cases} x = 2 + t \\\\ y = 2t \\\\ z = 1 - 2t \\end{cases}$",
+      "b": "$\\begin{cases} x = 3 + t \\\\ y = 2 + 2t \\\\ z = -1 - 2t \\end{cases}$",
+      "c": "$\\begin{cases} x = 2 - t \\\\ y = -2t \\\\ z = 1 + 2t \\end{cases}$",
+      "d": "$\\begin{cases} x = 1 + t \\\\ y = 1 + 2t \\\\ z = 2 - t \\end{cases}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      2,
+      3
+    ],
+    "themes": [
+      "geometry"
+    ],
+    "difficulty": "Facile",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 147,
+    "question": "Soient $A$ et $B$ indépendants. Alors",
+    "choices": {
+      "a": "$P(A\\cup B) = P(A) + P(B)$",
+      "b": "$P(A\\cap B) = P(A)P(B)$",
+      "c": "$P(A\\cap B) = P(A) + P(B)$",
+      "d": "$P(A\\cup B) = P(A)P(B)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 148,
+    "question": "Primitive de $x \\to \\sin(3x)\\cos(3x)$ sur $\\mathbb{R}$ :",
+    "choices": {
+      "a": "$x \\to \\frac{1}{6} \\sin^2(3x)$",
+      "b": "$x \\to \\frac{1}{2} \\cos^2(3x)$",
+      "c": "$x \\to -\\frac{1}{6} \\cos(6x)$",
+      "d": "$x \\to \\frac{1}{6} \\cos^2(3x)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      2,
+      2
+    ],
+    "themes": [
+      "integral_calculus",
+      "primitives_ode",
+      "trigonometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 149,
+    "question": "$\\lim_{x \\to -\\infty} 3x e^{-2x}$ :",
+    "choices": {
+      "a": "$-\\infty$",
+      "b": "$+\\infty$",
+      "c": "$0$",
+      "d": "$3$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 150,
+    "question": "Soient $A$ et $B$ incompatibles. Alors",
+    "choices": {
+      "a": "$P(A\\cup B) = P(A) + P(B)$",
+      "b": "$P(A\\cap B) = P(A)P(B)$",
+      "c": "$P(A\\cap B) = 0$",
+      "d": "$P(A\\cup B) = P(A)P(B)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ac",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 151,
+    "question": "Soit $u_n = \\sum_{k=0}^{n} \\left(\\frac{1}{3}\\right)^k$. Limite de $(u_n)$ :",
+    "choices": {
+      "a": "$\\frac{3}{2}$",
+      "b": "$2$",
+      "c": "$1$",
+      "d": "$+\\infty$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 152,
+    "question": "Soit $f : x \\to \\sqrt{\\ln(2x)}$. Alors $f'(x)$ pour $x > \\frac{1}{2}$ :",
+    "choices": {
+      "a": "$\\frac{1}{2x\\sqrt{\\ln(2x)}}$",
+      "b": "$\\frac{1}{\\sqrt{\\ln(2x)}}$",
+      "c": "$\\frac{1}{2\\sqrt{\\ln(2x)}}$",
+      "d": "$\\frac{1}{x\\sqrt{\\ln(2x)}}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 153,
+    "question": "Domaine de $f : x \\to \\ln\\left(\\frac{3-x}{4-x}\\right)$ :",
+    "choices": {
+      "a": "$]3, 4[$",
+      "b": "$]-\\infty, 3[$",
+      "c": "$]4, +\\infty[$",
+      "d": "$]-\\infty, 3[ \\cup ]4, +\\infty[$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 154,
+    "question": "Soit $(u_n)$ converge vers $2$. Alors",
+    "choices": {
+      "a": "$u_n + 1 \\to 3$",
+      "b": "$|u_n| \\to 2$",
+      "c": "$\\frac{u_n}{n} \\to 0$",
+      "d": "$(u_n)$ est bornée",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "abcd",
+    "points": [
+      0,
+      2
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 155,
+    "question": "Soit $X \\sim B(n, p)$. Alors",
+    "choices": {
+      "a": "$E(X) = np$",
+      "b": "$V(X) = np(1-p)$",
+      "c": "$E(X) = \\frac{n}{p}$",
+      "d": "$V(X) = n(1-p)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ab",
+    "points": [
+      0,
+      2
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 156,
+    "question": "Solution de $y' + 2y = x - 1$ :",
+    "choices": {
+      "a": "$x \\to e^{-2x} + \\frac{x}{2} - 1$",
+      "b": "$x \\to x - 1$",
+      "c": "$x \\to e^{-2x} + \\frac{x}{2} - \\frac{3}{4}$",
+      "d": "$x \\to e^{2x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 157,
+    "question": "Soit $u_0 = 2$ et $u_{n+1} = 3u_n - 4$. Alors $v_n = u_n - \\ell$ est géométrique si $\\ell =$",
+    "choices": {
+      "a": "$1$",
+      "b": "$2$",
+      "c": "$3$",
+      "d": "$4$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      2
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 158,
+    "question": "Primitive de $f(x) = 6x^2 - 4x + 1$ valant $0$ en $1$ :",
+    "choices": {
+      "a": "$2x^3 - 2x^2 + x - 1$",
+      "b": "$2x^3 - 2x^2 + x$",
+      "c": "$2x^3 - 2x^2 + x + 1$",
+      "d": "$2x^3 - 2x^2 + x - 2$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 159,
+    "question": "Droite $d$: vecteur $(1, 2, -1)$ par $A(1,0,1)$. Droite $d'$: vecteur $(2, -1, 3)$ par $B(0,1,2)$. Point d'intersection :",
+    "choices": {
+      "a": "$(2, 2, 0)$",
+      "b": "$(1, 2, 0)$",
+      "c": "$(0, -1, 3)$",
+      "d": "$(3, 2, -1)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 160,
+    "question": "Domaine de $f : x \\to \\sqrt{2 - \\ln(x)}$ :",
+    "choices": {
+      "a": "$]0, e^2]$",
+      "b": "$[e^2, +\\infty[$",
+      "c": "$]0, +\\infty[$",
+      "d": "$]-\\infty, e^2]$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 161,
+    "question": "Soit $f : x \\to \\frac{x^2 + x - 1}{x^3 - x + 2}$. Alors $f'(x) =$",
+    "choices": {
+      "a": "$\\frac{-x^4 - 2x^3 + 3x^2 + 4x - 1}{(x^3 - x + 2)^2}$",
+      "b": "$\\frac{2x + 1}{3x^2 - 1}$",
+      "c": "$1$",
+      "d": "$\\frac{-x^4 - 2x^3 + 3x^2 + 4x - 1}{x^3 - x + 2}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "derivatives"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 162,
+    "question": "Primitive de $t \\to \\frac{2t}{\\sqrt{t^2 + 4}}$ :",
+    "choices": {
+      "a": "$2\\sqrt{t^2 + 4}$",
+      "b": "$\\sqrt{t^2 + 4}$",
+      "c": "$\\frac{1}{2}\\sqrt{t^2 + 4}$",
+      "d": "$t\\sqrt{t^2 + 4}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 163,
+    "question": "Soit $u_0 = 1$ et $u_{n+1} = 2u_n + 3$. Alors",
+    "choices": {
+      "a": "$v_n = u_n + 3$ est géométrique",
+      "b": "$v_n = u_n - 3$ est géométrique",
+      "c": "$u_n = 2^n - 3$",
+      "d": "$v_n = u_n + 1$ est géométrique",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 164,
+    "question": "$\\lim_{x \\to +\\infty} \\frac{x - \\sqrt{x}}{\\ln(x)}$ :",
+    "choices": {
+      "a": "$0$",
+      "b": "$+\\infty$",
+      "c": "$1$",
+      "d": "$-\\infty$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 165,
+    "question": "Soient $A$, $B$ avec $P(A), P(B) \\neq 0$. Alors",
+    "choices": {
+      "a": "$P(A\\cap B) = P_A(B) P(B)$",
+      "b": "$P(A\\cap B) = P_B(A) P(A)$",
+      "c": "$P_A(B) = P_B(A) \\frac{P(A)}{P(B)}$",
+      "d": "$P_A(B) = \\frac{P(A)P(B)}{P(A)}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ac",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 166,
+    "question": "Domaine de $f : x \\to \\frac{\\ln(x)}{\\sqrt{x - 3}}$ :",
+    "choices": {
+      "a": "$]3, +\\infty[$",
+      "b": "$]0, +\\infty[$",
+      "c": "$\\mathbb{R}$",
+      "d": "$]0, 3[ \\cup ]3, +\\infty[$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 167,
+    "question": "Primitive de $x \\to e^{x^3}$ :",
+    "choices": {
+      "a": "$e^{x^3}$",
+      "b": "$3x^2 e^{x^3}$",
+      "c": "$\\frac{1}{3} e^{x^3}$",
+      "d": "Aucune primitive simple",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 168,
+    "question": "Soit $f : x \\to x^2 \\ln(x) + 2x$. Alors $f'(x) =$",
+    "choices": {
+      "a": "$2x \\ln(x) + x + 2$",
+      "b": "$2x \\ln(x) + 3x$",
+      "c": "$2x \\ln(x) + \\frac{x^2}{x} + 2$",
+      "d": "$2x \\ln(x) + 3$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 169,
+    "question": "Plan passant par $A(2, -1, 3)$ et de vecteur normal $(1, -2, 1)$ :",
+    "choices": {
+      "a": "$x - 2y + z - 7 = 0$",
+      "b": "$x - 2y + z + 7 = 0$",
+      "c": "$x - 2y + z - 1 = 0$",
+      "d": "$x - 2y + z + 1 = 0$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 170,
+    "question": "Suite arithmétique $u_0 = 3$, $u_2 = 11$. Raison :",
+    "choices": {
+      "a": "$4$",
+      "b": "$8$",
+      "c": "$5$",
+      "d": "$6$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 171,
+    "question": "On tire $6$ cartes avec remise d'un jeu de $32$. $X$ = nombre de dames. Loi de $X$ :",
+    "choices": {
+      "a": "$B(6, \\frac{1}{8})$",
+      "b": "$B(6, \\frac{1}{4})$",
+      "c": "$B(6, \\frac{1}{32})$",
+      "d": "$B(6, \\frac{1}{6})$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 172,
+    "question": "Solutions de $y'' - 4y = 0$ :",
+    "choices": {
+      "a": "$x \\to A e^{2x} + B e^{-2x}$",
+      "b": "$x \\to A e^{4x} + B e^{-4x}$",
+      "c": "$x \\to A e^{2x}$",
+      "d": "$x \\to A e^{4x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 173,
+    "question": "Primitive de $x \\to \\frac{1}{x \\ln(x) \\ln(\\ln(x))}$ :",
+    "choices": {
+      "a": "$\\ln(\\ln(\\ln(x)))$",
+      "b": "$\\ln(\\ln(x))$",
+      "c": "$\\frac{1}{\\ln(x)}$",
+      "d": "$\\frac{\\ln(x)}{\\ln(\\ln(x))}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 174,
+    "question": "Domaine de $f : x \\to \\ln\\left(\\frac{x-1}{x+1}\\right)$ :",
+    "choices": {
+      "a": "$]-\\infty, -1[ \\cup ]1, +\\infty[$",
+      "b": "$]-1, 1[$",
+      "c": "$]1, +\\infty[$",
+      "d": "$\\mathbb{R}\\setminus\\{-1,1\\}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 175,
+    "question": "Suite arithmétique $u_4 = 10$, $u_8 = 22$. Alors $u_2 =$",
+    "choices": {
+      "a": "$4$",
+      "b": "$5$",
+      "c": "$6$",
+      "d": "$7$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 176,
+    "question": "Soit $f : x \\to \\frac{1}{(x^2 + 1)^3}$. Alors $f'(x) =$",
+    "choices": {
+      "a": "$-\\frac{6x}{(x^2 + 1)^4}$",
+      "b": "$-\\frac{3x}{(x^2 + 1)^4}$",
+      "c": "$-\\frac{6x}{(x^2 + 1)^3}$",
+      "d": "$-\\frac{3}{(x^2 + 1)^4}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "derivatives"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 177,
+    "question": "Soient $A$, $B$, $C$ trois événements. Alors $P(A\\cup B\\cup C) =$",
+    "choices": {
+      "a": "$P(A)+P(B)+P(C)-P(A\\cap B)-P(A\\cap C)-P(B\\cap C)+P(A\\cap B\\cap C)$",
+      "b": "$P(A)+P(B)+P(C)-P(A\\cap B)-P(A\\cap C)-P(B\\cap C)$",
+      "c": "$P(A)+P(B)+P(C)$",
+      "d": "$P(A)P(B)P(C)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 178,
+    "question": "Domaine de $f : x \\to \\ln\\left(\\frac{x^2 - 1}{x + 2}\\right)$ :",
+    "choices": {
+      "a": "$]-2, -1[ \\cup ]1, +\\infty[$",
+      "b": "$]-\\infty, -2[ \\cup ]-1, 1[$",
+      "c": "$]-\\infty, -2[ \\cup ]2, +\\infty[$",
+      "d": "$\\mathbb{R}\\setminus\\{-2, -1, 1\\}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 179,
+    "question": "$\\lim_{x \\to 1} \\frac{x^2 + 2x - 3}{x^3 - 1}$ :",
+    "choices": {
+      "a": "$0$",
+      "b": "$1$",
+      "c": "$+\\infty$",
+      "d": "$\\frac{4}{3}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "limits"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 180,
+    "question": "Soit $f : x \\to e^{\\sin(x^2)}$. Alors $f'(x) =$",
+    "choices": {
+      "a": "$2x \\cos(x^2) e^{\\sin(x^2)}$",
+      "b": "$\\cos(x^2) e^{\\sin(x^2)}$",
+      "c": "$2x e^{\\sin(x^2)}$",
+      "d": "$\\cos(x^2) e^{\\cos(x^2)}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      2
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives",
+      "trigonometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 181,
+    "question": "Soient $u_n \\leq v_n$ pour tout $n$. Alors",
+    "choices": {
+      "a": "si $v_n$ converge, $u_n$ converge",
+      "b": "si $v_n$ bornée, $u_n$ bornée",
+      "c": "si $u_n$ diverge, $v_n$ diverge",
+      "d": "si $u_n$ converge, $v_n$ converge",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 182,
+    "question": "Droite $d$ : $\\begin{cases} x = 1 + 2t \\\\ y = -t \\\\ z = 3 + t \\end{cases}$. Vecteur directeur :",
+    "choices": {
+      "a": "$(2, -1, 1)$",
+      "b": "$(1, 0, 3)$",
+      "c": "$(2, 1, 1)$",
+      "d": "$(1, -1, 3)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      1
+    ],
+    "themes": [
+      "geometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 183,
+    "question": "Domaine de $f : x \\to \\ln(x^2 + 3x + 3)$ :",
+    "choices": {
+      "a": "$\\mathbb{R}$",
+      "b": "$]-\\infty, -2[ \\cup ]-1, +\\infty[$",
+      "c": "$]-2, -1[$",
+      "d": "$]0, +\\infty[$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 184,
+    "question": "Suite arithmétique raison $4$, $u_0 = 1$. Alors $u_5 + u_6 + u_7 =$",
+    "choices": {
+      "a": "$72$",
+      "b": "$75$",
+      "c": "$78$",
+      "d": "$81$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 185,
+    "question": "$\\lim_{x \\to +\\infty} (\\sqrt{x^2 + 5x} - \\sqrt{x^2 - 3})$ :",
+    "choices": {
+      "a": "$\\frac{5}{2}$",
+      "b": "$0$",
+      "c": "$+\\infty$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 186,
+    "question": "Main de $5$ cartes parmi $32$, nombre de mains avec exactement $2$ rois :",
+    "choices": {
+      "a": "$\\binom{4}{2} \\binom{28}{3}$",
+      "b": "$\\frac{\\binom{4}{2} \\binom{28}{3}}{\\binom{32}{5}}$",
+      "c": "$\\binom{4}{2} + \\binom{28}{3}$",
+      "d": "$\\frac{\\binom{32}{5}}{\\binom{4}{2}}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 187,
+    "question": "Points $A(1,2,3)$, $B(2,4,1)$. Lequel appartient à $(AB)$ ?",
+    "choices": {
+      "a": "$(3,6,-1)$",
+      "b": "$(0,0,5)$",
+      "c": "$(4,8,-3)$",
+      "d": "$(1,2,3)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 188,
+    "question": "Affirmations sur les suites :",
+    "choices": {
+      "a": "Toute suite arithmétique non constante diverge",
+      "b": "Toute suite géométrique de raison $>1$ diverge",
+      "c": "Toute suite géométrique de raison $\\in ]-1,1[$ converge",
+      "d": "Toute suite bornée converge",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 189,
+    "question": "Domaine de $f : x \\to \\ln(e^x + 2)$ :",
+    "choices": {
+      "a": "$\\mathbb{R}$",
+      "b": "$\\mathbb{R}_+$",
+      "c": "$]-2, +\\infty[$",
+      "d": "$]0, +\\infty[$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 190,
+    "question": "Soit $f : x \\to x \\cos(3x)$. Alors $f'(x) =$",
+    "choices": {
+      "a": "$\\cos(3x) - 3x \\sin(3x)$",
+      "b": "$\\cos(3x) + 3x \\sin(3x)$",
+      "c": "$\\cos(3x) - x \\sin(3x)$",
+      "d": "$\\cos(3x) + x \\sin(3x)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      1
+    ],
+    "themes": [
+      "derivatives",
+      "trigonometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 191,
+    "question": "Suite $u_0 = 1$, $u_{n+1} = 5u_n - 2$. Alors",
+    "choices": {
+      "a": "$v_n = u_n - \\frac{1}{2}$ est géométrique",
+      "b": "$v_n = u_n + \\frac{1}{2}$ est géométrique",
+      "c": "$u_n = 5^n - 2$",
+      "d": "$v_n = u_n - 2$ est géométrique",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 192,
+    "question": "$\\lim_{x \\to 0^+} (\\ln(x) - 2x)$ :",
+    "choices": {
+      "a": "$-\\infty$",
+      "b": "$+\\infty$",
+      "c": "$0$",
+      "d": "$2$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 193,
+    "question": "Soit $f : x \\to e^x + \\ln(x) - x^2$. Alors $f'(x) =$",
+    "choices": {
+      "a": "$e^x + \\frac{1}{x} - 2x$",
+      "b": "$e^x + \\frac{1}{x} - x^2$",
+      "c": "$e^x + x - 2x$",
+      "d": "$e^x + \\frac{1}{x^2} - 2x$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 194,
+    "question": "Nombre de sous-ensembles à $4$ éléments d'un ensemble à $7$ éléments :",
+    "choices": {
+      "a": "$\\binom{7}{4}$",
+      "b": "$4^7$",
+      "c": "$7^4$",
+      "d": "$28$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 195,
+    "question": "Primitive de $u \\to \\frac{1}{(u-2)^3}$ sur $]2, +\\infty[$ :",
+    "choices": {
+      "a": "$-\\frac{1}{2(u-2)^2}$",
+      "b": "$\\frac{1}{(u-2)^2}$",
+      "c": "$\\ln(u-2)$",
+      "d": "$\\frac{1}{u-2}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 196,
+    "question": "Si pour tout $n$, $|u_n - 2| \\leq \\frac{1}{n}$, alors",
+    "choices": {
+      "a": "$(u_n)$ converge vers $2$",
+      "b": "$(u_n)$ est bornée",
+      "c": "$(u_n)$ est décroissante",
+      "d": "$(u_n)$ est géométrique",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ab",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 197,
+    "question": "$\\lim_{x \\to +\\infty} \\frac{x^2 + 1}{1 - 2x}$ :",
+    "choices": {
+      "a": "$-\\infty$",
+      "b": "$+\\infty$",
+      "c": "$0$",
+      "d": "$-\\frac{1}{2}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 198,
+    "question": "Domaine de $f : x \\to \\ln(\\ln(x+1))$ :",
+    "choices": {
+      "a": "$]0, +\\infty[$",
+      "b": "$]-1, +\\infty[$",
+      "c": "$]e-1, +\\infty[$",
+      "d": "$]0, +\\infty[$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      2
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 199,
+    "question": "Plan perpendiculaire à $d$: $\\begin{cases} x = t \\\\ y = 1 - t \\\\ z = 2t \\end{cases}$ passant par $A(1,1,1)$ :",
+    "choices": {
+      "a": "$x - y + 2z - 2 = 0$",
+      "b": "$x + y + 2z - 4 = 0$",
+      "c": "$x - y + 2z - 4 = 0$",
+      "d": "$x + y + 2z - 2 = 0$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      1
+    ],
+    "themes": [
+      "geometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 200,
+    "question": "Primitive de $x \\to \\frac{e^{2x}}{x}$ :",
+    "choices": {
+      "a": "$\\ln(x) e^{2x}$",
+      "b": "$e^{2x} \\ln(x)$",
+      "c": "Aucune primitive simple",
+      "d": "$2 e^{2x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 201,
+    "question": "Domaine de $f : x \\to e^{\\sqrt{x^2 - 4}}$ :",
+    "choices": {
+      "a": "$]-\\infty, -2] \\cup [2, +\\infty[$",
+      "b": "$\\mathbb{R}$",
+      "c": "$[0, +\\infty[$",
+      "d": "$]-2, 2[$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 202,
+    "question": "Suite arithmétique $u_{20} = 10$, raison $3$. Alors $u_{100} =$",
+    "choices": {
+      "a": "$250$",
+      "b": "$240$",
+      "c": "$260$",
+      "d": "$270$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 203,
+    "question": "Soit $f(x) = \\frac{e^x}{1 + e^x}$. Alors $f'(x) =$",
+    "choices": {
+      "a": "$\\frac{e^x}{(1 + e^x)^2}$",
+      "b": "$\\frac{1}{1 + e^x}$",
+      "c": "$\\frac{e^x}{1 + e^x}$",
+      "d": "$\\frac{1}{(1 + e^x)^2}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 204,
+    "question": "Primitive de $\\frac{1}{x}$ sur $\\mathbb{R}_+^*$ :",
+    "choices": {
+      "a": "$\\ln|x|$",
+      "b": "$\\ln(x)$",
+      "c": "$\\frac{1}{x^2}$",
+      "d": "$x \\ln(x)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 205,
+    "question": "Probabilité d'avoir $20$ gauchers dans un échantillon de $100$ si $p=0.1$ :",
+    "choices": {
+      "a": "$\\binom{100}{20} (0.1)^{20} (0.9)^{80}$",
+      "b": "$\\binom{20}{100} (0.1)^{20} (0.9)^{80}$",
+      "c": "$\\binom{100}{20} (0.1)^{80} (0.9)^{20}$",
+      "d": "$\\binom{100}{20} (0.1)^{20}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 206,
+    "question": "Domaine de $f : x \\to \\ln(x^2 - 1) \\sqrt{e^x - e}$ :",
+    "choices": {
+      "a": "$]1, +\\infty[$",
+      "b": "$]-\\infty, -1[ \\cup ]1, +\\infty[$",
+      "c": "$[1, +\\infty[$",
+      "d": "$]0, +\\infty[$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 207,
+    "question": "Suite arithmétique. Alors $u_{10} + ... + u_{20} =$",
+    "choices": {
+      "a": "$11\\frac{u_{10} + u_{20}}{2}$",
+      "b": "$10\\frac{u_{10} + u_{20}}{2}$",
+      "c": "$11\\frac{u_1 + u_{20}}{2}$",
+      "d": "$20\\frac{u_1 + u_{20}}{2}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 208,
+    "question": "Plan orthogonal à $(AB)$ avec $A(1,2,3)$, $B(4,5,6)$ passant par $C(7,8,9)$ :",
+    "choices": {
+      "a": "$3x + 3y + 3z - 72 = 0$",
+      "b": "$x + y + z - 24 = 0$",
+      "c": "$3x + 3y + 3z - 24 = 0$",
+      "d": "$x + y + z - 72 = 0$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "geometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 209,
+    "question": "$\\lim_{x \\to 0} x \\sin\\left(\\frac{1}{x}\\right)$ :",
+    "choices": {
+      "a": "$0$",
+      "b": "$1$",
+      "c": "$+\\infty$",
+      "d": "n'existe pas",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      1
+    ],
+    "themes": [
+      "limits",
+      "trigonometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 210,
+    "question": "Soit $f : x \\to (e^x)^3$. Alors $f'(x) =$",
+    "choices": {
+      "a": "$3 e^{3x}$",
+      "b": "$e^{3x}$",
+      "c": "$3 e^x$",
+      "d": "$3 e^{x^3}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 211,
+    "question": "Primitive de $\\tan(2x)$ sur $]-\\frac{\\pi}{4}, \\frac{\\pi}{4}[$ :",
+    "choices": {
+      "a": "$-\\frac{1}{2} \\ln|\\cos(2x)|$",
+      "b": "$\\frac{1}{2} \\ln|\\cos(2x)|$",
+      "c": "$\\ln|\\cos(2x)|$",
+      "d": "$2 \\ln|\\cos(2x)|$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      1
+    ],
+    "themes": [
+      "integral_calculus",
+      "trigonometry",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 212,
+    "question": "Domaine de $f : x \\to \\sqrt{x^2 - 5x + 6}$ :",
+    "choices": {
+      "a": "$]-\\infty, 2] \\cup [3, +\\infty[$",
+      "b": "$[2, 3]$",
+      "c": "$\\mathbb{R}$",
+      "d": "$\\emptyset$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      1
+    ],
+    "themes": [
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 213,
+    "question": "Nombre de façons de choisir $2$ cartes parmi $8$ :",
+    "choices": {
+      "a": "$28$",
+      "b": "$16$",
+      "c": "$64$",
+      "d": "$56$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 214,
+    "question": "Suite géométrique $u_0 = 2$, $u_2 = 18$. Raison :",
+    "choices": {
+      "a": "$3$ ou $-3$",
+      "b": "$9$",
+      "c": "$3$",
+      "d": "$6$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 215,
+    "question": "Plan $(ABC)$ avec $A(0,0,0)$, $B(1,0,0)$, $C(0,1,0)$ :",
+    "choices": {
+      "a": "$z = 0$",
+      "b": "$x + y + z = 0$",
+      "c": "$x = 0$",
+      "d": "$y = 0$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 216,
+    "question": "Soit $f : x \\to \\sqrt{1 - e^{-x}}$. Alors $f'(x) =$",
+    "choices": {
+      "a": "$\\frac{e^{-x}}{2\\sqrt{1 - e^{-x}}}$",
+      "b": "$-\\frac{e^{-x}}{2\\sqrt{1 - e^{-x}}}$",
+      "c": "$\\frac{1}{2\\sqrt{1 - e^{-x}}}$",
+      "d": "$\\frac{e^x}{2\\sqrt{1 - e^{-x}}}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 217,
+    "question": "Si $F$ est primitive de $f$, alors primitive de $f'$ :",
+    "choices": {
+      "a": "$f + C$",
+      "b": "$F + C$",
+      "c": "$f'$",
+      "d": "$F'$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 218,
+    "question": "Domaine de $f : x \\to \\sqrt{\\frac{x+1}{x-1}}$ :",
+    "choices": {
+      "a": "$]-\\infty, -1] \\cup ]1, +\\infty[$",
+      "b": "$[-1, 1]$",
+      "c": "$]1, +\\infty[$",
+      "d": "$\\mathbb{R}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 219,
+    "question": "Si $(u_n)$ converge vers $\\ell$, alors",
+    "choices": {
+      "a": "$(u_n - \\ell)$ converge vers $0$",
+      "b": "$(|u_n|)$ converge vers $|\\ell|$",
+      "c": "$(u_n)$ est bornée",
+      "d": "$(u_n^2)$ converge vers $\\ell^2$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "abcd",
+    "points": [
+      0,
+      2
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 220,
+    "question": "$\\lim_{x \\to +\\infty} \\frac{5x^3 - x + 1}{2x^2 + 3}$ :",
+    "choices": {
+      "a": "$+\\infty$",
+      "b": "$0$",
+      "c": "$\\frac{5}{2}$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 221,
+    "question": "Soit $f : x \\to x^3 \\ln(x)$. Alors $f'(x) =$",
+    "choices": {
+      "a": "$3x^2 \\ln(x) + x^2$",
+      "b": "$3x^2 \\ln(x) + x^3$",
+      "c": "$3x^2 \\ln(x) + 3x^2$",
+      "d": "$x^2 \\ln(x) + x^2$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 222,
+    "question": "Pour toute variable aléatoire $X$ :",
+    "choices": {
+      "a": "$V(X) = E(X^2) - E(X)^2$",
+      "b": "$E(X - E(X)) = 0$",
+      "c": "$V(X) \\geq 0$",
+      "d": "$E(X)^2 \\leq E(X^2)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "abcd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 223,
+    "question": "Suite arithmétique raison $3$, $u_2 = 5$. Alors $u_7 =$",
+    "choices": {
+      "a": "$20$",
+      "b": "$23$",
+      "c": "$26$",
+      "d": "$29$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 224,
+    "question": "Système complet d'événements :",
+    "choices": {
+      "a": "$A_1 \\cup ... \\cup A_n = \\Omega$ et $A_i \\cap A_j = \\emptyset$ pour $i\\neq j$",
+      "b": "$A_1 \\cap ... \\cap A_n = \\emptyset$",
+      "c": "$P(A_1) + ... + P(A_n) = 1$",
+      "d": "$A_i$ indépendants deux à deux",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 225,
+    "question": "Primitive de $x \\to \\frac{x}{x^2 + 4}$ :",
+    "choices": {
+      "a": "$\\frac{1}{2} \\ln(x^2 + 4)$",
+      "b": "$\\ln(x^2 + 4)$",
+      "c": "$\\frac{1}{x^2 + 4}$",
+      "d": "$2 \\ln(x^2 + 4)$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 226,
+    "question": "Suite géométrique $u_0 = 2$, $q > 1$. Alors",
+    "choices": {
+      "a": "$(u_n)$ diverge vers $+\\infty$",
+      "b": "$(u_n)$ converge",
+      "c": "$(u_n)$ est croissante",
+      "d": "$(u_n)$ est minorée",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "acd",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 227,
+    "question": "Domaine de $f : x \\to \\sqrt{e^x - 1}$ :",
+    "choices": {
+      "a": "$[0, +\\infty[$",
+      "b": "$\\mathbb{R}$",
+      "c": "$]0, +\\infty[$",
+      "d": "$]-\\infty, 0]$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 228,
+    "question": "Soit $f : x \\to x e^{x^2}$. Alors $f'(x) =$",
+    "choices": {
+      "a": "$e^{x^2} + 2x^2 e^{x^2}$",
+      "b": "$e^{x^2} (1 + 2x^2)$",
+      "c": "$e^{x^2}$",
+      "d": "$2x e^{x^2}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 229,
+    "question": "Événements $A$ et $B$ avec $P(A) = 0.4$, $P(B) = 0.5$, $P(A\\cap B) = 0.2$. Alors",
+    "choices": {
+      "a": "$A$ et $B$ sont indépendants",
+      "b": "$A$ et $B$ ne sont pas incompatibles",
+      "c": "$P(A\\cup B) = 0.7$",
+      "d": "$P(A|B) = 0.4$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "bc",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 230,
+    "question": "$\\lim_{x \\to -\\infty} \\frac{x}{1 + e^x}$ :",
+    "choices": {
+      "a": "$-\\infty$",
+      "b": "$0$",
+      "c": "$+\\infty$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 231,
+    "question": "Intersection des plans $x + y + z = 3$ et $2x - y + z = 1$ : droite $d$. Représentation paramétrique :",
+    "choices": {
+      "a": "$\\begin{cases} x = t \\\\ y = 2 - \\frac{t}{3} \\\\ z = 1 - \\frac{2t}{3} \\end{cases}$",
+      "b": "$\\begin{cases} x = 1 + 2t \\\\ y = 1 - t \\\\ z = 1 + t \\end{cases}$",
+      "c": "$\\begin{cases} x = t \\\\ y = 2t \\\\ z = 3 - 3t \\end{cases}$",
+      "d": "$\\begin{cases} x = 1 \\\\ y = 1 + t \\\\ z = 1 - t \\end{cases}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 232,
+    "question": "Suite géométrique $u_5 = 3$, raison $2$. Alors $u_{10} =$",
+    "choices": {
+      "a": "$96$",
+      "b": "$48$",
+      "c": "$192$",
+      "d": "$24$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 233,
+    "question": "$\\lim_{x \\to 0} \\frac{\\sin(x)}{x}$ :",
+    "choices": {
+      "a": "$1$",
+      "b": "$0$",
+      "c": "$+\\infty$",
+      "d": "n'existe pas",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "limits",
+      "trigonometry"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 234,
+    "question": "Primitive de $\\frac{1}{x \\ln(x)}$ :",
+    "choices": {
+      "a": "$\\ln|\\ln(x)|$",
+      "b": "$\\ln(x)$",
+      "c": "$\\frac{1}{\\ln(x)}$",
+      "d": "$\\frac{\\ln(x)}{x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 235,
+    "question": "Suite $u_0 = 1$, $u_{n+1} = u_n + 2n$. Alors",
+    "choices": {
+      "a": "$(u_n)$ est croissante",
+      "b": "$u_n = n^2 - n + 1$",
+      "c": "$(u_n)$ diverge",
+      "d": "$(u_n)$ est arithmétique",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ac",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 236,
+    "question": "Domaine de $f : x \\to \\ln(|x^2 - 4|)$ :",
+    "choices": {
+      "a": "$\\mathbb{R} \\setminus \\{-2, 2\\}$",
+      "b": "$]-\\infty, -2[ \\cup ]2, +\\infty[$",
+      "c": "$]-2, 2[$",
+      "d": "$\\mathbb{R}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 237,
+    "question": "Soit $f : x \\to e^{-3x}$. Alors $f'(x) =$",
+    "choices": {
+      "a": "$-3 e^{-3x}$",
+      "b": "$e^{-3x}$",
+      "c": "$3 e^{-3x}$",
+      "d": "$-3 e^{-x}$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      1,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 238,
+    "question": "Formule des probabilités totales avec $B_1$, $B_2$, $B_3$ système complet :",
+    "choices": {
+      "a": "$P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2) + P(A|B_3)P(B_3)$",
+      "b": "$P(A) = P(A\\cap B_1) + P(A\\cap B_2) + P(A\\cap B_3)$",
+      "c": "$P(A) = P(A\\cup B_1)P(B_1) + ...$",
+      "d": "$P(A) = P(A)P(B_1) + ...$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ab",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 239,
+    "question": "$\\lim_{x \\to +\\infty} (\\sqrt{x^2 + x} - x)$ :",
+    "choices": {
+      "a": "$\\frac{1}{2}$",
+      "b": "$0$",
+      "c": "$+\\infty$",
+      "d": "$1$",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  },
+  {
+    "id": 240,
+    "question": "Affirmations sur les suites :",
+    "choices": {
+      "a": "Toute suite croissante non majorée tend vers $+\\infty$",
+      "b": "Toute suite décroissante minorée converge",
+      "c": "Toute suite bornée a une sous-suite convergente",
+      "d": "Toute suite convergente est bornée",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "abcd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ],
+    "difficulty": "Moyenne",
+    "first_seen": "2026-01-27"
+  }
+]

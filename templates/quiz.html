@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="quiz-container">
+    <!-- En-tête avec progression -->
+    <div class="quiz-header">
+        <div class="progress-bar">
+            <div class="progress" style="width: {{ (question_number / total_questions * 100) }}%"></div>
+        </div>
+        <div class="quiz-info">
+            <span>Question {{ question_number }} sur {{ total_questions }}</span>
+            <span>{{ ((question_number - 1) / total_questions * 100) | round }}% complété</span>
+        </div>
+    </div>
+
+    <!-- Carte de question -->
+    <div class="question-card">
+        <!-- Question avec difficulté -->
+        <h2 class="question-text">{{ question.question }}</h2>
+
+        <div class="question-meta">
+            <span class="difficulty-badge difficulty-{{ question.difficulty|lower|replace(' ', '-') }}">
+                Difficulté : {{ question.difficulty }}
+            </span>
+            {% if question.get('points') and question.points[1] > 0 %}
+            <span class="attempts-info">
+                {{ question.points[1] }} tentatives •
+                {{ ((question.points[0]/question.points[1])*100)|round(1) }}% réussite
+            </span>
+            {% endif %}
+        </div>
+
+        <!-- Formulaire de réponse -->
+        <form action="{{ url_for('submit_answer') }}" method="POST">
+            <div class="choices-grid">
+                {% for key, value in question.choices.items() %}
+                <div class="choice-option">
+                    <input type="radio" name="answer" value="{{ key }}" id="choice{{ key }}" required>
+                    <label for="choice{{ key }}" class="choice-label">
+                        <span class="choice-letter">{{ key }}</span>
+                        <span class="choice-text">{{ value }}</span>
+                    </label>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Boutons -->
+            <div class="quiz-actions">
+                {% if question_number > 1 %}
+                <a href="javascript:history.back()" class="action-btn secondary">
+                    ← Question précédente
+                </a>
+                {% endif %}
+
+                <button type="submit" class="submit-btn">
+                    Valider la réponse
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Pied de page -->
+    <div class="quiz-footer">
+        <p>
+            <small>
+                <strong>Conseil :</strong> Prenez votre temps pour analyser la question.
+                La difficulté est calculée automatiquement en fonction du taux de réussite.
+            </small>
+        </p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Sélection automatique du premier choix si disponible
+        const firstChoice = document.querySelector('input[name="answer"]');
+        if (firstChoice) {
+            firstChoice.focus();
+        }
+
+        // Validation du formulaire
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(e) {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (!selectedAnswer) {
+                e.preventDefault();
+                alert('Veuillez sélectionner une réponse avant de valider.');
+                return false;
+            }
+            return true;
+        });
+
+        // Navigation au clavier
+        document.addEventListener('keydown', function(e) {
+            if (e.key >= '1' && e.key <= '4') {
+                const choiceId = 'choice' + e.key;
+                const choiceInput = document.getElementById(choiceId);
+                if (choiceInput) {
+                    choiceInput.checked = true;
+                }
+            }
+
+            if (e.key === 'Enter') {
+                const submitBtn = document.querySelector('.submit-btn');
+                if (submitBtn) {
+                    submitBtn.click();
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

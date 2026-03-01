@@ -1,0 +1,423 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="filter-container">
+    <div class="filter-header">
+        <h1>🎯 Quiz avec Filtrage par Difficulté</h1>
+        <p class="subtitle">Personnalisez votre entraînement selon votre niveau</p>
+    </div>
+
+    <div class="filter-card">
+        <form action="{{ url_for('start_quiz_filtered') }}" method="POST" id="filter-form">
+            <div class="filter-grid">
+                <!-- Type de quiz -->
+                <div class="filter-section">
+                    <h3>📚 Type de Quiz</h3>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="radio" name="quiz_type" value="complet" id="filter-complet" checked>
+                            <label for="filter-complet" class="filter-label">
+                                <span class="filter-icon">🎯</span>
+                                <span class="filter-title">Complet</span>
+                                <span class="filter-desc">Questions mélangées de tous les thèmes</span>
+                            </label>
+                        </div>
+
+                        <div class="filter-option">
+                            <input type="radio" name="quiz_type" value="theme" id="filter-theme">
+                            <label for="filter-theme" class="filter-label">
+                                <span class="filter-icon">📖</span>
+                                <span class="filter-title">Par thème</span>
+                                <span class="filter-desc">Questions sur un thème spécifique</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Sélection du thème (masqué par défaut) -->
+                    <div class="theme-selection" id="theme-selection" style="display: none;">
+                        <h4>Sélectionnez un thème</h4>
+                        <select name="theme_id" class="theme-select">
+                            {% for theme, name in [
+                            (1, "Dérivées"),
+                            (2, "Suites"),
+                            (3, "Limites"),
+                            (4, "Logarithme et exponentielle"),
+                            (5, "Domaine de définition"),
+                            (6, "Primitives et équations différentielles"),
+                            (7, "Dénombrement et probabilités"),
+                            (8, "Géométrie dans l'espace"),
+                            (9, "Fonctions sinus et cosinus / Trigonométrie"),
+                            (10, "Calcul intégral")
+                            ] %}
+                            <option value="{{ theme }}">{{ name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Difficulté -->
+                <div class="filter-section">
+                    <h3>⚡ Niveau de Difficulté</h3>
+                    <div class="difficulty-options">
+                        <div class="difficulty-option">
+                            <input type="radio" name="difficulty" value="all" id="diff-all" checked>
+                            <label for="diff-all" class="difficulty-label all">
+                                <span class="difficulty-icon">🌈</span>
+                                <span class="difficulty-title">Tous niveaux</span>
+                                <span class="difficulty-desc">Mélange de toutes difficultés</span>
+                            </label>
+                        </div>
+
+                        {% for diff in [
+                        ("très_facile", "Très facile", "🌱", "#4CAF50"),
+                        ("facile", "Facile", "🌿", "#8BC34A"),
+                        ("moyen", "Moyen", "🌻", "#FFC107"),
+                        ("difficile", "Difficile", "🔥", "#FF9800"),
+                        ("très_difficile", "Très difficile", "💀", "#F44336")
+                        ] %}
+                        <div class="difficulty-option">
+                            <input type="radio" name="difficulty" value="{{ diff[0] }}" id="diff-{{ diff[0] }}">
+                            <label for="diff-{{ diff[0] }}" class="difficulty-label" style="border-color: {{ diff[3] }};">
+                                <span class="difficulty-icon">{{ diff[2] }}</span>
+                                <span class="difficulty-title">{{ diff[1] }}</span>
+                                <span class="difficulty-desc" id="diff-count-{{ diff[0] }}">Chargement...</span>
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Nombre de questions -->
+                <div class="filter-section">
+                    <h3>📊 Nombre de Questions</h3>
+                    <div class="questions-slider">
+                        <div class="slider-container">
+                            <input type="range" name="questions" id="questions-slider"
+                                   min="5" max="50" value="10" step="5" class="slider">
+                            <div class="slider-values">
+                                <span>5</span>
+                                <span id="selected-questions">10</span>
+                                <span>50</span>
+                            </div>
+                        </div>
+                        <div class="slider-labels">
+                            <span>Court</span>
+                            <span>Long</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recommandation personnalisée -->
+            <div class="recommendation-card" id="recommendation-card">
+                <div class="loading">Analyse de votre niveau...</div>
+            </div>
+
+            <div class="filter-actions">
+                <button type="button" class="cancel-btn" onclick="window.history.back()">
+                    Annuler
+                </button>
+                <button type="submit" class="start-btn">
+                    Commencer le quiz
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Gestion de l'affichage de la sélection de thème
+    document.getElementById('filter-theme').addEventListener('change', function() {
+        document.getElementById('theme-selection').style.display = this.checked ? 'block' : 'none';
+    });
+
+    document.getElementById('filter-complet').addEventListener('change', function() {
+        document.getElementById('theme-selection').style.display = 'none';
+    });
+
+    // Gestion du slider
+    const questionsSlider = document.getElementById('questions-slider');
+    const selectedQuestions = document.getElementById('selected-questions');
+
+    questionsSlider.addEventListener('input', function() {
+        selectedQuestions.textContent = this.value;
+    });
+
+    // Charger les statistiques de difficulté
+    async function loadDifficultyStats() {
+        try {
+            const response = await fetch('/api/difficulty/stats');
+            const data = await response.json();
+
+            // Mettre à jour les comptes par difficulté
+            if (data.difficulties) {
+                for (const [diffId, diffData] of Object.entries(data.difficulties)) {
+                    const countElement = document.getElementById(`diff-count-${diffId}`);
+                    if (countElement) {
+                        countElement.textContent = `${diffData.count} questions (${diffData.accuracy}% réussite)`;
+                    }
+                }
+            }
+
+        } catch (error) {
+            console.error('Erreur:', error);
+        }
+    }
+
+    // Charger la recommandation personnalisée
+    async function loadRecommendation() {
+        try {
+            const response = await fetch('/api/user/recommended-difficulty');
+            const data = await response.json();
+
+            const recommendationCard = document.getElementById('recommendation-card');
+
+            if (data.recommended_difficulty) {
+                recommendationCard.innerHTML = `
+                    <div class="recommendation-header">
+                        <h4>💡 Recommandation personnalisée</h4>
+                        <div class="user-accuracy">Votre précision: ${data.accuracy}%</div>
+                    </div>
+                    <div class="recommendation-content">
+                        <div class="recommended-difficulty">
+                            <span class="diff-badge" style="background: ${getDifficultyColor(data.recommended_difficulty)}">
+                                ${data.recommended_name}
+                            </span>
+                        </div>
+                        <p class="recommendation-text">
+                            Basé sur vos performances, nous vous recommandons ce niveau pour progresser efficacement.
+                        </p>
+                        <button type="button" class="apply-recommendation"
+                                onclick="applyRecommendation('${data.recommended_difficulty}')">
+                            Appliquer cette recommandation
+                        </button>
+                    </div>
+                `;
+            }
+
+        } catch (error) {
+            console.error('Erreur:', error);
+        }
+    }
+
+    function getDifficultyColor(difficultyId) {
+        const colors = {
+            'très_facile': '#4CAF50',
+            'facile': '#8BC34A',
+            'moyen': '#FFC107',
+            'difficile': '#FF9800',
+            'très_difficile': '#F44336'
+        };
+        return colors[difficultyId] || '#666';
+    }
+
+    function applyRecommendation(difficulty) {
+        // Cocher la difficulté recommandée
+        const radio = document.getElementById(`diff-${difficulty}`);
+        if (radio) {
+            radio.checked = true;
+        }
+
+        // Afficher un message
+        const recommendationCard = document.getElementById('recommendation-card');
+        recommendationCard.innerHTML += `
+            <div class="success-message">
+                ✅ Recommandation appliquée !
+            </div>
+        `;
+    }
+
+    // Initialisation
+    document.addEventListener('DOMContentLoaded', function() {
+        loadDifficultyStats();
+        loadRecommendation();
+
+        // Sélection visuelle des difficultés
+        document.querySelectorAll('.difficulty-label').forEach(label => {
+            label.addEventListener('click', function() {
+                // Retirer la sélection de tous
+                document.querySelectorAll('.difficulty-label').forEach(l => {
+                    l.classList.remove('selected');
+                });
+                // Ajouter la sélection au label cliqué
+                this.classList.add('selected');
+            });
+        });
+    });
+</script>
+
+<style>
+    .difficulty-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .difficulty-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        text-align: center;
+    }
+
+    .difficulty-label:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .difficulty-label.selected {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        background: #667eea;
+        color: white;
+        border-color: #667eea !important;
+    }
+
+    .difficulty-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .difficulty-title {
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+    }
+
+    .difficulty-desc {
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 5px;
+    }
+
+    .questions-slider {
+        margin-top: 30px;
+    }
+
+    .slider-container {
+        position: relative;
+        padding: 20px 0;
+    }
+
+    .slider {
+        width: 100%;
+        height: 8px;
+        border-radius: 4px;
+        background: #e0e0e0;
+        outline: none;
+        -webkit-appearance: none;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #667eea;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .slider-values {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        font-weight: 500;
+    }
+
+    #selected-questions {
+        color: #667eea;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .slider-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+        color: #666;
+        font-size: 0.9rem;
+    }
+
+    .recommendation-card {
+        background: #e7f3ff;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 30px 0;
+        border-left: 4px solid #2196F3;
+    }
+
+    .recommendation-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .user-accuracy {
+        background: #2196F3;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-weight: 600;
+    }
+
+    .recommendation-content {
+        text-align: center;
+    }
+
+    .diff-badge {
+        display: inline-block;
+        padding: 8px 15px;
+        border-radius: 20px;
+        color: white;
+        font-weight: 600;
+        margin: 10px 0;
+    }
+
+    .recommendation-text {
+        color: #333;
+        margin: 15px 0;
+        line-height: 1.5;
+    }
+
+    .apply-recommendation {
+        background: #2196F3;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background 0.3s ease;
+    }
+
+    .apply-recommendation:hover {
+        background: #0b7dda;
+    }
+
+    .success-message {
+        margin-top: 15px;
+        padding: 10px;
+        background: #d4edda;
+        color: #155724;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .filter-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        margin-top: 30px;
+    }
+</style>
+{% endblock %}

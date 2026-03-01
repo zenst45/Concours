@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="menu-card">
+    <h2>Choisissez une matière</h2>
+    <p class="subtitle">Entraînez-vous et suivez vos progrès</p>
+
+    <div class="menu-options">
+        <a href="{{ url_for('maths_menu') }}" class="menu-btn maths">
+            <span class="icon">📐</span>
+            <div class="text-content">
+                <div class="text-title">Mathématiques</div>
+                <div class="text-desc">Quiz par thème ou complet</div>
+            </div>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="{{ url_for('stats_dashboard') }}" class="menu-btn stats">
+            <span class="icon">📊</span>
+            <div class="text-content">
+                <div class="text-title">Statistiques</div>
+                <div class="text-desc">Suivez vos progrès et streaks</div>
+            </div>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="{{ url_for('admin_questions') }}" class="menu-btn admin">
+            <span class="icon">⚙️</span>
+            <div class="text-content">
+                <div class="text-title">Administration</div>
+                <div class="text-desc">Gérez les questions et archives</div>
+            </div>
+            <span class="arrow">→</span>
+        </a>
+
+        <div class="menu-btn anglais disabled">
+            <span class="icon">🇬🇧</span>
+            <div class="text-content">
+                <div class="text-title">Anglais</div>
+                <div class="text-desc">Bientôt disponible</div>
+            </div>
+            <span class="coming-soon">Bientôt</span>
+        </div>
+    </div>
+
+    <div class="quick-stats">
+        <h3>📈 Aperçu rapide</h3>
+        <div class="stats-grid" id="quick-stats">
+            <div class="loading">Chargement des statistiques...</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Charger les statistiques rapides au démarrage
+    document.addEventListener('DOMContentLoaded', function() {
+        loadQuickStats();
+    });
+
+    async function loadQuickStats() {
+        try {
+            const response = await fetch('/api/questions/count');
+            const data = await response.json();
+
+            const container = document.getElementById('quick-stats');
+            container.innerHTML = `
+                <div class="stat-item">
+                    <div class="stat-label">Questions disponibles</div>
+                    <div class="stat-value">${data.total}</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Dernière mise à jour</div>
+                    <div class="stat-value">${new Date(data.last_modified).toLocaleDateString('fr-FR')}</div>
+                </div>
+            `;
+
+            // Charger aussi le nombre d'archives
+            const archivesResponse = await fetch('/api/archives/count');
+            const archivesData = await archivesResponse.json();
+
+            container.innerHTML += `
+                <div class="stat-item">
+                    <div class="stat-label">Archives disponibles</div>
+                    <div class="stat-value">${archivesData.total}</div>
+                </div>
+            `;
+
+        } catch (error) {
+            console.error('Erreur:', error);
+            document.getElementById('quick-stats').innerHTML =
+                '<div class="error">Impossible de charger les statistiques</div>';
+        }
+    }
+</script>
+
+<style>
+    .text-content {
+        flex: 1;
+        margin-right: 15px;
+    }
+
+    .text-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .text-desc {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .coming-soon {
+        background: #ffc107;
+        color: #333;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .menu-btn .arrow {
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .menu-btn:hover .arrow {
+        transform: translateX(5px);
+    }
+
+    .quick-stats {
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid #eee;
+    }
+
+    .quick-stats h3 {
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 1.3rem;
+    }
+</style>
+{% endblock %}

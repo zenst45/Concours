@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="menu-card">
+    <h2>Mathématiques - Choix du thème</h2>
+    <p class="subtitle">Entraînement de 10 questions par thème</p>
+
+    <form action="{{ url_for('start_quiz') }}" method="POST" class="theme-form" id="theme-form">
+        <div class="theme-options">
+            <!-- Mode Complet -->
+            <div class="theme-option">
+                <input type="radio" name="quiz_type" value="complet" id="complet" checked>
+                <label for="complet" class="theme-label">
+                    <span class="theme-icon">🎯</span>
+                    <div class="theme-text">
+                        <span class="theme-title">Complet</span>
+                        <span class="theme-desc">10 questions mélangées de tous les thèmes</span>
+                    </div>
+                </label>
+            </div>
+
+            <!-- Thèmes individuels -->
+            {% set themes = [
+            (1, "Dérivées", "📈"),
+            (2, "Suites", "➗"),
+            (3, "Limites", "∞"),
+            (4, "Logarithme et exponentielle", "📊"),
+            (5, "Domaine de définition", "🎯"),
+            (6, "Primitives et équations différentielles", "∫"),
+            (7, "Dénombrement et probabilités", "🎲"),
+            (8, "Géométrie dans l'espace", "📐"),
+            (9, "Trigonométrie", "📐"),
+            (10, "Calcul intégral", "∑")
+            ] %}
+
+            {% for id, name, icon in themes %}
+            <div class="theme-option">
+                <input type="radio" name="quiz_type" value="theme" id="theme{{ id }}" data-theme-id="{{ id }}">
+                <label for="theme{{ id }}" class="theme-label">
+                    <span class="theme-icon">{{ icon }}</span>
+                    <div class="theme-text">
+                        <span class="theme-title">{{ name }}</span>
+                    </div>
+                </label>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Champ caché pour l'ID du thème -->
+        <input type="hidden" name="theme_id" id="theme_id" value="0">
+
+        <div class="form-actions">
+            <button type="submit" class="start-btn">
+                <i class="fas fa-play-circle"></i>
+                Commencer l'entraînement
+                <span class="arrow">→</span>
+            </button>
+
+            <a href="{{ url_for('index') }}" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Retour à l'accueil
+            </a>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Gérer la sélection des thèmes
+        const themeRadios = document.querySelectorAll('input[name="quiz_type"]');
+        const themeIdInput = document.getElementById('theme_id');
+
+        // Initialiser avec le mode complet sélectionné
+        updateThemeId();
+
+        // Écouter les changements
+        themeRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                updateThemeId();
+                updateVisualSelection();
+            });
+        });
+
+        // Écouter les clics sur les labels
+        document.querySelectorAll('.theme-label').forEach(label => {
+            label.addEventListener('click', function() {
+                const radioId = this.getAttribute('for');
+                const radio = document.getElementById(radioId);
+                if (radio) {
+                    radio.checked = true;
+                    updateThemeId();
+                    updateVisualSelection();
+                }
+            });
+        });
+
+        // Initialiser la sélection visuelle
+        updateVisualSelection();
+    });
+
+    function updateThemeId() {
+        const selectedRadio = document.querySelector('input[name="quiz_type"]:checked');
+        const themeIdInput = document.getElementById('theme_id');
+
+        if (selectedRadio.id === 'complet') {
+            themeIdInput.value = '0';
+        } else {
+            // Extraire l'ID du thème de l'attribut data-theme-id
+            const themeId = selectedRadio.getAttribute('data-theme-id');
+            themeIdInput.value = themeId || '0';
+        }
+    }
+
+    function updateVisualSelection() {
+        // Retirer la classe selected de tous
+        document.querySelectorAll('.theme-label').forEach(label => {
+            label.classList.remove('selected');
+        });
+
+        // Appliquer le style au thème sélectionné
+        const selectedRadio = document.querySelector('input[name="quiz_type"]:checked');
+        if (selectedRadio) {
+            const label = document.querySelector(`label[for="${selectedRadio.id}"]`);
+            if (label) {
+                label.classList.add('selected');
+            }
+        }
+    }
+
+    // Validation du formulaire
+    document.getElementById('theme-form').addEventListener('submit', function(e) {
+        const selectedType = document.querySelector('input[name="quiz_type"]:checked').value;
+        const themeId = document.getElementById('theme_id').value;
+
+        if (selectedType === 'theme' && themeId === '0') {
+            e.preventDefault();
+            alert('Veuillez sélectionner un thème spécifique');
+            return false;
+        }
+
+        return true;
+    });
+</script>
+
+<style>
+    .theme-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .theme-title {
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    .theme-desc {
+        font-size: 0.85rem;
+        color: #666;
+        margin-top: 3px;
+    }
+
+    .theme-label.selected {
+        background: #667eea;
+        color: white;
+        border-color: #667eea;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .theme-label.selected .theme-desc {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .form-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+
+    .start-btn, .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 25px;
+        border-radius: 10px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .start-btn {
+        background: #667eea;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .start-btn:hover {
+        background: #5a67d8;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .back-btn {
+        background: #f8f9fa;
+        color: #333;
+        border: 1px solid #ddd;
+    }
+
+    .back-btn:hover {
+        background: #e9ecef;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        .form-actions {
+            flex-direction: column;
+        }
+
+        .start-btn, .back-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>
+{% endblock %}

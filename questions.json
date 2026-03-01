@@ -1,0 +1,1682 @@
+[
+  {
+    "id": 1,
+    "question": "Soit (u_n) une suite géométrique de raison 3 telle que u_2 = 2. Alors u_7 est égal à",
+    "choices": {
+      "a": "1458",
+      "b": "486",
+      "c": "162",
+      "d": "4374",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 2,
+    "question": "Soient A et B deux événements d'un univers Ω avec P(A) ≠ 0. Alors P_B(A) est égale à",
+    "choices": {
+      "a": "P(A∩B) / P(A)",
+      "b": "P(A∩B) / P(B)",
+      "c": "P(A) si A et B sont indépendants",
+      "d": "P(A∩B) si A et B sont indépendants",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 3,
+    "question": "lim ( (5x² - 2x + 1) / (2x² + e^x - 3) ) quand x tend vers +∞ est égale à",
+    "choices": {
+      "a": "5/2",
+      "b": "0",
+      "c": "+∞",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 1],
+    "themes": ["logarithm_exponential", "limits"]
+  },
+  {
+    "id": 4,
+    "question": "Parmi les fonctions suivantes, laquelle est solution de l'équation différentielle y' + 3y = 2x - 1 :",
+    "choices": {
+      "a": "x → e^(-3x) + (2/3)x - 1/9",
+      "b": "x → 2x - 1",
+      "c": "x → (2/3)x - 1/3",
+      "d": "x → e^(3x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "primitives_ode"]
+  },
+  {
+    "id": 5,
+    "question": "Soit f : x → √(x² - 4x + 3). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "R",
+      "b": "[1, 3]",
+      "c": "]-∞, 1] ∪ [3, +∞[",
+      "d": "∅",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [0, 0],
+    "themes": ["domain_definition"]
+  },
+  {
+    "id": 6,
+    "question": "Soit f : x → ln⁵(x). Alors pour tout x ∈ R*+, f'(x) est égale à",
+    "choices": {
+      "a": "5 ln⁴(x)",
+      "b": "5/x",
+      "c": "5 ln⁴(x) / x",
+      "d": "ln⁵(x) / x",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [0, 1],
+    "themes": ["derivatives"]
+  },
+  {
+    "id": 7,
+    "question": "Soit F une primitive d'une fonction f continue sur [0, 2]. Alors",
+    "choices": {
+      "a": "F' = f",
+      "b": "f' = F",
+      "c": "F(0) = f(0) et F(2) = f(2)",
+      "d": "F(0) = F(2) = 0",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["integral_calculus", "primitives_ode"]
+  },
+  {
+    "id": 8,
+    "question": "Dans un jeu de 52 cartes, on tire une main de 5 cartes (sans ordre). Le nombre de mains possibles est",
+    "choices": {
+      "a": "5^52",
+      "b": "52^5",
+      "c": "5 parmi 52",
+      "d": "52! / 5!",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 9,
+    "question": "Soit (u_n) une suite réelle. Alors",
+    "choices": {
+      "a": "si (u_n) est décroissante et minorée, elle converge",
+      "b": "si (u_n) est bornée, elle converge",
+      "c": "si (u_n) est croissante et majorée, elle converge",
+      "d": "si (u_n) est croissante et non majorée, elle diverge vers +∞",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "acd",
+    "points": [0, 0],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 10,
+    "question": "Dans un repère orthonormé, la droite d passant par A(1, 2, -1) et de vecteur directeur (2, -1, 3) :",
+    "choices": {
+      "a": "B(3, 1, 2) ∈ d",
+      "b": "B(5, 0, 5) ∈ d",
+      "c": "B(-1, 3, -4) ∈ d",
+      "d": "B(1, 2, -1) ∈ d",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 0],
+    "themes": ["geometry"]
+  },
+  {
+    "id": 11,
+    "question": "Une primitive de x → ln(2x) sur R+* est",
+    "choices": {
+      "a": "x → x ln(2x) - x",
+      "b": "x → 1/x",
+      "c": "x → ln(2x) / x",
+      "d": "x → 2 ln(x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["integral_calculus", "logarithm_exponential", "primitives_ode"]
+  },
+  {
+    "id": 12,
+    "question": "Soit f : x → √(x² - 9) * ln(4 - x²). Le domaine de définition de f est",
+    "choices": {
+      "a": "]-2, 2[",
+      "b": "[-3, 3]",
+      "c": "]-3, -2[ ∪ ]2, 3[",
+      "d": "∅",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "domain_definition"]
+  },
+  {
+    "id": 13,
+    "question": "lim ( (x² - 3x + 5) / (2 - x) ) quand x tend vers -∞ est égale à",
+    "choices": {
+      "a": "+∞",
+      "b": "-∞",
+      "c": "0",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["limits"]
+  },
+  {
+    "id": 14,
+    "question": "Dans un repère orthonormé, les points A(2, 1, 0) et B(1, 3, -2). Une équation du plan orthogonal à (AB) passant par C(4, -1, 1) est",
+    "choices": {
+      "a": "x + 2y - 2z - 8 = 0",
+      "b": "x - 2y + 2z + 2 = 0",
+      "c": "-x + 2y - 2z + 6 = 0",
+      "d": "x + 2y - 2z + 4 = 0",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [0, 0],
+    "themes": ["geometry"]
+  },
+  {
+    "id": 15,
+    "question": "Parmi les fonctions suivantes, laquelle est solution de 4y' - y = x + 2 :",
+    "choices": {
+      "a": "x → e^(x/4) - x - 6",
+      "b": "x → x + 2",
+      "c": "x → -x - 2",
+      "d": "x → e^(4x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "primitives_ode"]
+  },
+  {
+    "id": 16,
+    "question": "Soit f : x → (e^(x³)) / x². Alors f'(x) pour x > 0 est",
+    "choices": {
+      "a": "(3x³ - 2)e^(x³) / x³",
+      "b": "e^(x³)",
+      "c": "(3x⁴ - 2)e^(x³) / x³",
+      "d": "(3x² - 2)e^(x³) / x³",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "derivatives"]
+  },
+  {
+    "id": 17,
+    "question": "Le nombre de façons de choisir 3 cartes parmi 6 est",
+    "choices": {
+      "a": "18",
+      "b": "20",
+      "c": "120",
+      "d": "720",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 18,
+    "question": "Représentation paramétrique de la droite passant par A(3, -2, 1) de vecteur u(2, 1, -3) :",
+    "choices": {
+      "a": "{ x = 3 + 2t ; y = -2 + t ; z = 1 - 3t }",
+      "b": "{ x = 2 + 3t ; y = 1 - 2t ; z = -3 + t }",
+      "c": "{ x = 3 - 2t ; y = -2 - t ; z = 1 + 3t }",
+      "d": "{ x = 1 + 2t ; y = 1 + t ; z = -3 - 3t }",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 1],
+    "themes": ["geometry"]
+  },
+  {
+    "id": 19,
+    "question": "Soient (u_n) et (v_n) deux suites réelles. Alors",
+    "choices": {
+      "a": "si (u_n) converge et (v_n) converge, alors (u_n - v_n) converge",
+      "b": "si (u_n) diverge et (v_n) diverge, alors (u_n - v_n) diverge",
+      "c": "si (u_n) converge et (v_n) diverge, alors (u_n + v_n) diverge",
+      "d": "si (u_n) diverge et (v_n) converge, alors (u_n + v_n) converge",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ac",
+    "points": [0, 0],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 20,
+    "question": "lim ( (3x² + 4x - 1) / (2x² - x + 7) ) quand x tend vers +∞ est",
+    "choices": {
+      "a": "3/2",
+      "b": "0",
+      "c": "+∞",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["limits"]
+  },
+  {
+    "id": 21,
+    "question": "Soit f : x → (e^x + x²)³. Alors f'(x) =",
+    "choices": {
+      "a": "3(e^x + x²)²",
+      "b": "3(e^x + 2x)²",
+      "c": "3(e^x + x²)² (e^x + 2x)",
+      "d": "3(e^x + 2x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "derivatives"]
+  },
+  {
+    "id": 22,
+    "question": "Une primitive de x → 1/(x ln²(x)) sur ]1, +∞[ est",
+    "choices": {
+      "a": "x → -1/ln(x)",
+      "b": "x → ln(ln(x))",
+      "c": "x → 1/ln(x)",
+      "d": "x → ln²(x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["integral_calculus", "logarithm_exponential", "primitives_ode"]
+  },
+  {
+    "id": 23,
+    "question": "Soit f : x → ln(x² - 5x + 6). Domaine de définition :",
+    "choices": {
+      "a": "]2, 3[",
+      "b": "]-∞, 2[ ∪ ]3, +∞[",
+      "c": "R",
+      "d": "[2, 3]",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "domain_definition"]
+  },
+  {
+    "id": 24,
+    "question": "Nombre de façons de ranger 4 objets distincts dans 6 tiroirs (un tiroir par objet max) :",
+    "choices": {
+      "a": "24",
+      "b": "360",
+      "c": "720",
+      "d": "1296",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 1],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 25,
+    "question": "Soit (u_n) géométrique de raison q ≠ 1. Alors u₂ + u₃ + ... + uₙ =",
+    "choices": {
+      "a": "u₂ (1 - q^(n-1)) / (1 - q)",
+      "b": "u₂ (1 - q^(n-2)) / (1 - q)",
+      "c": "u₂ (1 - qⁿ) / (1 - q)",
+      "d": "u₁ (1 - qⁿ) / (1 - q)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 0],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 26,
+    "question": "Équation paramétrique de la droite (AB) avec A(2, 0, 1) et B(3, 2, -1) :",
+    "choices": {
+      "a": "{ x = 2 + t ; y = 2t ; z = 1 - 2t }",
+      "b": "{ x = 3 + t ; y = 2 + 2t ; z = -1 - 2t }",
+      "c": "{ x = 2 - t ; y = -2t ; z = 1 + 2t }",
+      "d": "{ x = 1 + t ; y = 1 + 2t ; z = 2 - t }",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 1],
+    "themes": ["geometry"]
+  },
+  {
+    "id": 27,
+    "question": "Soient A et B indépendants. Alors",
+    "choices": {
+      "a": "P(A∪B) = P(A) + P(B)",
+      "b": "P(A∩B) = P(A)P(B)",
+      "c": "P(A∩B) = P(A) + P(B)",
+      "d": "P(A∪B) = P(A)P(B)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 28,
+    "question": "Primitive de x → sin(3x)cos(3x) sur R :",
+    "choices": {
+      "a": "x → (1/6) sin²(3x)",
+      "b": "x → (1/2) cos²(3x)",
+      "c": "x → - (1/6) cos(6x)",
+      "d": "x → (1/6) cos²(3x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["integral_calculus", "primitives_ode", "trigonometry"]
+  },
+  {
+    "id": 29,
+    "question": "lim (3x e^(-2x)) quand x tend vers -∞ :",
+    "choices": {
+      "a": "-∞",
+      "b": "+∞",
+      "c": "0",
+      "d": "3",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "limits"]
+  },
+  {
+    "id": 30,
+    "question": "Soient A et B incompatibles. Alors",
+    "choices": {
+      "a": "P(A∪B) = P(A) + P(B)",
+      "b": "P(A∩B) = P(A)P(B)",
+      "c": "P(A∩B) = 0",
+      "d": "P(A∪B) = P(A)P(B)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ac",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 31,
+    "question": "Soit u_n = Σ (k=0 à n) (1/3)^k. Limite de (u_n) :",
+    "choices": {
+      "a": "3/2",
+      "b": "2",
+      "c": "1",
+      "d": "+∞",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 1],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 32,
+    "question": "Soit f : x → √(ln(2x)). Alors f'(x) pour x > 1/2 :",
+    "choices": {
+      "a": "1/(2x√(ln(2x)))",
+      "b": "1/(√(ln(2x)))",
+      "c": "1/(2√(ln(2x)))",
+      "d": "1/(x√(ln(2x)))",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "derivatives"]
+  },
+  {
+    "id": 33,
+    "question": "Domaine de f : x → ln((3-x)/(4-x)) :",
+    "choices": {
+      "a": "]3, 4[",
+      "b": "]-∞, 3[",
+      "c": "]4, +∞[",
+      "d": "]-∞, 3[ ∪ ]4, +∞[",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "domain_definition"]
+  },
+  {
+    "id": 34,
+    "question": "Soit (u_n) converge vers 2. Alors",
+    "choices": {
+      "a": "u_n + 1 → 3",
+      "b": "|u_n| → 2",
+      "c": "u_n / n → 0",
+      "d": "(u_n) est bornée",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "abcd",
+    "points": [0, 1],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 35,
+    "question": "Soit X ~ B(n, p). Alors",
+    "choices": {
+      "a": "E(X) = np",
+      "b": "V(X) = np(1-p)",
+      "c": "E(X) = n/p",
+      "d": "V(X) = n(1-p)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ab",
+    "points": [0, 1],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 36,
+    "question": "Solution de y' + 2y = x - 1 :",
+    "choices": {
+      "a": "x → e^(-2x) + x/2 - 1",
+      "b": "x → x - 1",
+      "c": "x → e^(-2x) + x/2 - 3/4",
+      "d": "x → e^(2x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "primitives_ode"]
+  },
+  {
+    "id": 37,
+    "question": "Soit u_0 = 2 et u_(n+1) = 3u_n - 4. Alors v_n = u_n - ℓ est géométrique si ℓ =",
+    "choices": {
+      "a": "1",
+      "b": "2",
+      "c": "3",
+      "d": "4",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 2],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 38,
+    "question": "Primitive de f(x) = 6x² - 4x + 1 valant 0 en 1 :",
+    "choices": {
+      "a": "2x³ - 2x² + x - 1",
+      "b": "2x³ - 2x² + x",
+      "c": "2x³ - 2x² + x + 1",
+      "d": "2x³ - 2x² + x - 2",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["primitives_ode"]
+  },
+  {
+    "id": 39,
+    "question": "Droite d: vecteur (1, 2, -1) par A(1,0,1). Droite d': vecteur (2, -1, 3) par B(0,1,2). Point d'intersection :",
+    "choices": {
+      "a": "(2, 2, 0)",
+      "b": "(1, 2, 0)",
+      "c": "(0, -1, 3)",
+      "d": "(3, 2, -1)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [0, 0],
+    "themes": ["geometry"]
+  },
+  {
+    "id": 40,
+    "question": "Domaine de f : x → √(2 - ln(x)) :",
+    "choices": {
+      "a": "]0, e²]",
+      "b": "[e², +∞[",
+      "c": "]0, +∞[",
+      "d": "]-∞, e²]",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "domain_definition"]
+  },
+  {
+    "id": 41,
+    "question": "Soit f : x → (x² + x - 1)/(x³ - x + 2). Alors f'(x) =",
+    "choices": {
+      "a": "(-x⁴ - 2x³ + 3x² + 4x - 1)/(x³ - x + 2)²",
+      "b": "(2x + 1)/(3x² - 1)",
+      "c": "1",
+      "d": "( -x⁴ - 2x³ + 3x² + 4x - 1 ) / (x³ - x + 2)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["derivatives"]
+  },
+  {
+    "id": 42,
+    "question": "Primitive de t → 2t/√(t² + 4) :",
+    "choices": {
+      "a": "2√(t² + 4)",
+      "b": "√(t² + 4)",
+      "c": "(1/2)√(t² + 4)",
+      "d": "t√(t² + 4)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["integral_calculus", "primitives_ode"]
+  },
+  {
+    "id": 43,
+    "question": "Soit u_0 = 1 et u_(n+1) = 2u_n + 3. Alors",
+    "choices": {
+      "a": "v_n = u_n + 3 est géométrique",
+      "b": "v_n = u_n - 3 est géométrique",
+      "c": "u_n = 2^n - 3",
+      "d": "v_n = u_n + 1 est géométrique",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 1],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 44,
+    "question": "lim ( (x - √x) / ln(x) ) quand x → +∞ :",
+    "choices": {
+      "a": "0",
+      "b": "+∞",
+      "c": "1",
+      "d": "-∞",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 1],
+    "themes": ["logarithm_exponential", "limits"]
+  },
+  {
+    "id": 45,
+    "question": "Soient A, B avec P(A), P(B) ≠ 0. Alors",
+    "choices": {
+      "a": "P(A∩B) = P_A(B) P(B)",
+      "b": "P(A∩B) = P_B(A) P(A)",
+      "c": "P_A(B) = P_B(A) P(A)/P(B)",
+      "d": "P_A(B) = P(A)P(B)/P(A)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ac",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 46,
+    "question": "Domaine de f : x → ln(x)/√(x - 3) :",
+    "choices": {
+      "a": "]3, +∞[",
+      "b": "]0, +∞[",
+      "c": "R",
+      "d": "]0, 3[ ∪ ]3, +∞[",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "domain_definition"]
+  },
+  {
+    "id": 47,
+    "question": "Primitive de x → e^(x³) :",
+    "choices": {
+      "a": "e^(x³)",
+      "b": "3x² e^(x³)",
+      "c": "(1/3) e^(x³)",
+      "d": "Aucune primitive simple",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [0, 1],
+    "themes": ["integral_calculus", "logarithm_exponential", "primitives_ode"]
+  },
+  {
+    "id": 48,
+    "question": "Soit f : x → x² ln(x) + 2x. Alors f'(x) =",
+    "choices": {
+      "a": "2x ln(x) + x + 2",
+      "b": "2x ln(x) + 3x",
+      "c": "2x ln(x) + x²/x + 2",
+      "d": "2x ln(x) + 3",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 1],
+    "themes": ["logarithm_exponential", "derivatives"]
+  },
+  {
+    "id": 49,
+    "question": "Plan passant par A(2, -1, 3) et de vecteur normal (1, -2, 1) :",
+    "choices": {
+      "a": "x - 2y + z - 7 = 0",
+      "b": "x - 2y + z + 7 = 0",
+      "c": "x - 2y + z - 1 = 0",
+      "d": "x - 2y + z + 1 = 0",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["geometry"]
+  },
+  {
+    "id": 50,
+    "question": "Suite arithmétique u_0 = 3, u_2 = 11. Raison :",
+    "choices": {
+      "a": "4",
+      "b": "8",
+      "c": "5",
+      "d": "6",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 1],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 51,
+    "question": "On tire 6 cartes avec remise d'un jeu de 32. X = nombre de dames. Loi de X :",
+    "choices": {
+      "a": "B(6, 1/8)",
+      "b": "B(6, 1/4)",
+      "c": "B(6, 1/32)",
+      "d": "B(6, 1/6)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 52,
+    "question": "Solutions de y'' - 4y = 0 :",
+    "choices": {
+      "a": "x → A e^(2x) + B e^(-2x)",
+      "b": "x → A e^(4x) + B e^(-4x)",
+      "c": "x → A e^(2x)",
+      "d": "x → A e^(4x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["primitives_ode"]
+  },
+  {
+    "id": 53,
+    "question": "Primitive de x → 1/(x ln(x) ln(ln(x))) :",
+    "choices": {
+      "a": "ln(ln(ln(x)))",
+      "b": "ln(ln(x))",
+      "c": "1/ln(x)",
+      "d": "ln(x)/ln(ln(x))",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 1],
+    "themes": ["integral_calculus", "logarithm_exponential", "primitives_ode"]
+  },
+  {
+    "id": 54,
+    "question": "Domaine de f : x → ln((x-1)/(x+1)) :",
+    "choices": {
+      "a": "]-∞, -1[ ∪ ]1, +∞[",
+      "b": "]-1, 1[",
+      "c": "]1, +∞[",
+      "d": "R\\{-1,1}",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "domain_definition"]
+  },
+  {
+    "id": 55,
+    "question": "Suite arithmétique u_4 = 10, u_8 = 22. Alors u_2 =",
+    "choices": {
+      "a": "4",
+      "b": "5",
+      "c": "6",
+      "d": "7",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 1],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 56,
+    "question": "Soit f : x → 1/(x² + 1)³. Alors f'(x) =",
+    "choices": {
+      "a": "-6x/(x² + 1)⁴",
+      "b": "-3x/(x² + 1)⁴",
+      "c": "-6x/(x² + 1)³",
+      "d": "-3/(x² + 1)⁴",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["derivatives"]
+  },
+  {
+    "id": 57,
+    "question": "Soient A, B, C trois événements. Alors P(A∪B∪C) =",
+    "choices": {
+      "a": "P(A)+P(B)+P(C)-P(A∩B)-P(A∩C)-P(B∩C)+P(A∩B∩C)",
+      "b": "P(A)+P(B)+P(C)-P(A∩B)-P(A∩C)-P(B∩C)",
+      "c": "P(A)+P(B)+P(C)",
+      "d": "P(A)P(B)P(C)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 58,
+    "question": "Domaine de f : x → ln((x² - 1)/(x + 2)) :",
+    "choices": {
+      "a": "]-2, -1[ ∪ ]1, +∞[",
+      "b": "]-∞, -2[ ∪ ]-1, 1[",
+      "c": "]-∞, -2[ ∪ ]2, +∞[",
+      "d": "R\\{-2, -1, 1}",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "domain_definition"]
+  },
+  {
+    "id": 59,
+    "question": "lim ( (x² + 2x - 3) / (x³ - 1) ) quand x → 1 :",
+    "choices": {
+      "a": "0",
+      "b": "1",
+      "c": "+∞",
+      "d": "4/3",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [0, 0],
+    "themes": ["limits"]
+  },
+  {
+    "id": 60,
+    "question": "Soit f : x → e^(sin(x²)). Alors f'(x) =",
+    "choices": {
+      "a": "2x cos(x²) e^(sin(x²))",
+      "b": "cos(x²) e^(sin(x²))",
+      "c": "2x e^(sin(x²))",
+      "d": "cos(x²) e^(cos(x²))",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 1],
+    "themes": ["logarithm_exponential", "derivatives", "trigonometry"]
+  },
+  {
+    "id": 61,
+    "question": "Soient u_n ≤ v_n pour tout n. Alors",
+    "choices": {
+      "a": "si v_n converge, u_n converge",
+      "b": "si v_n bornée, u_n bornée",
+      "c": "si u_n diverge, v_n diverge",
+      "d": "si u_n converge, v_n converge",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 0],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 62,
+    "question": "Droite d : { x = 1 + 2t ; y = -t ; z = 3 + t }. Vecteur directeur :",
+    "choices": {
+      "a": "(2, -1, 1)",
+      "b": "(1, 0, 3)",
+      "c": "(2, 1, 1)",
+      "d": "(1, -1, 3)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["geometry"]
+  },
+  {
+    "id": 63,
+    "question": "Domaine de f : x → ln(x² + 3x + 3) :",
+    "choices": {
+      "a": "R",
+      "b": "]-∞, -2[ ∪ ]-1, +∞[",
+      "c": "]-2, -1[",
+      "d": "]0, +∞[",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "domain_definition"]
+  },
+  {
+    "id": 64,
+    "question": "Suite arithmétique raison 4, u_0 = 1. Alors u_5 + u_6 + u_7 =",
+    "choices": {
+      "a": "72",
+      "b": "75",
+      "c": "78",
+      "d": "81",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [0, 1],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 65,
+    "question": "lim ( √(x² + 5x) - √(x² - 3) ) quand x → +∞ :",
+    "choices": {
+      "a": "5/2",
+      "b": "0",
+      "c": "+∞",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["limits"]
+  },
+  {
+    "id": 66,
+    "question": "Main de 5 cartes parmi 32, nombre de mains avec exactement 2 rois :",
+    "choices": {
+      "a": "(2 parmi 4)*(3 parmi 28)",
+      "b": "(2 parmi 4)*(3 parmi 28)/(5 parmi 32)",
+      "c": "(2 parmi 4)+(3 parmi 28)",
+      "d": "(5 parmi 32)/(2 parmi 4)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 67,
+    "question": "Points A(1,2,3), B(2,4,1). Lequel appartient à (AB) ?",
+    "choices": {
+      "a": "(3,6,-1)",
+      "b": "(0,0,5)",
+      "c": "(4,8,-3)",
+      "d": "(1,2,3)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["geometry"]
+  },
+  {
+    "id": 68,
+    "question": "Affirmations sur les suites :",
+    "choices": {
+      "a": "Toute suite arithmétique non constante diverge",
+      "b": "Toute suite géométrique de raison >1 diverge",
+      "c": "Toute suite géométrique de raison ∈ ]-1,1[ converge",
+      "d": "Toute suite bornée converge",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 1],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 69,
+    "question": "Domaine de f : x → ln(e^x + 2) :",
+    "choices": {
+      "a": "R",
+      "b": "R+",
+      "c": "]-2, +∞[",
+      "d": "]0, +∞[",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "domain_definition"]
+  },
+  {
+    "id": 70,
+    "question": "Soit f : x → x cos(3x). Alors f'(x) =",
+    "choices": {
+      "a": "cos(3x) - 3x sin(3x)",
+      "b": "cos(3x) + 3x sin(3x)",
+      "c": "cos(3x) - x sin(3x)",
+      "d": "cos(3x) + x sin(3x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["derivatives", "trigonometry"]
+  },
+  {
+    "id": 71,
+    "question": "Suite u_0 = 1, u_(n+1) = 5u_n - 2. Alors",
+    "choices": {
+      "a": "v_n = u_n - 1/2 est géométrique",
+      "b": "v_n = u_n + 1/2 est géométrique",
+      "c": "u_n = 5^n - 2",
+      "d": "v_n = u_n - 2 est géométrique",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 72,
+    "question": "lim (ln(x) - 2x) quand x → 0+ :",
+    "choices": {
+      "a": "-∞",
+      "b": "+∞",
+      "c": "0",
+      "d": "2",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "limits"]
+  },
+  {
+    "id": 73,
+    "question": "Soit f : x → e^x + ln(x) - x². Alors f'(x) =",
+    "choices": {
+      "a": "e^x + 1/x - 2x",
+      "b": "e^x + 1/x - x²",
+      "c": "e^x + x - 2x",
+      "d": "e^x + 1/x² - 2x",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "derivatives"]
+  },
+  {
+    "id": 74,
+    "question": "Nombre de sous-ensembles à 4 éléments d'un ensemble à 7 éléments :",
+    "choices": {
+      "a": "7 parmi 4",
+      "b": "4^7",
+      "c": "7^4",
+      "d": "28",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 75,
+    "question": "Primitive de u → 1/(u-2)³ sur ]2, +∞[ :",
+    "choices": {
+      "a": "-1/(2(u-2)²)",
+      "b": "1/(u-2)²",
+      "c": "ln(u-2)",
+      "d": "1/(u-2)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["integral_calculus", "primitives_ode"]
+  },
+  {
+    "id": 76,
+    "question": "Si pour tout n, |u_n - 2| ≤ 1/n, alors",
+    "choices": {
+      "a": "(u_n) converge vers 2",
+      "b": "(u_n) est bornée",
+      "c": "(u_n) est décroissante",
+      "d": "(u_n) est géométrique",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ab",
+    "points": [0, 1],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 77,
+    "question": "lim ( (x² + 1) / (1 - 2x) ) quand x → +∞ :",
+    "choices": {
+      "a": "-∞",
+      "b": "+∞",
+      "c": "0",
+      "d": "-1/2",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["limits"]
+  },
+  {
+    "id": 78,
+    "question": "Domaine de f : x → ln(ln(x+1)) :",
+    "choices": {
+      "a": "]0, +∞[",
+      "b": "]-1, +∞[",
+      "c": "]e-1, +∞[",
+      "d": "]0, +∞[",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 1],
+    "themes": ["logarithm_exponential", "domain_definition"]
+  },
+  {
+    "id": 79,
+    "question": "Plan perpendiculaire à d: { x = t ; y = 1 - t ; z = 2t } passant par A(1,1,1) :",
+    "choices": {
+      "a": "x - y + 2z - 2 = 0",
+      "b": "x + y + 2z - 4 = 0",
+      "c": "x - y + 2z - 4 = 0",
+      "d": "x + y + 2z - 2 = 0",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["geometry"]
+  },
+  {
+    "id": 80,
+    "question": "Primitive de x → e^(2x)/x :",
+    "choices": {
+      "a": "ln(x) e^(2x)",
+      "b": "e^(2x) ln(x)",
+      "c": "Aucune primitive simple",
+      "d": "2 e^(2x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [0, 0],
+    "themes": ["integral_calculus", "logarithm_exponential", "primitives_ode"]
+  },
+  {
+    "id": 81,
+    "question": "Domaine de f : x → e^(√(x² - 4)) :",
+    "choices": {
+      "a": "]-∞, -2] ∪ [2, +∞[",
+      "b": "R",
+      "c": "[0, +∞[",
+      "d": "]-2, 2[",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 1],
+    "themes": ["logarithm_exponential", "domain_definition"]
+  },
+  {
+    "id": 82,
+    "question": "Suite arithmétique u_20 = 10, raison 3. Alors u_100 =",
+    "choices": {
+      "a": "250",
+      "b": "240",
+      "c": "260",
+      "d": "270",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 1],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 83,
+    "question": "Soit f(x) = e^x / (1 + e^x). Alors f'(x) =",
+    "choices": {
+      "a": "e^x / (1 + e^x)²",
+      "b": "1 / (1 + e^x)",
+      "c": "e^x / (1 + e^x)",
+      "d": "1 / (1 + e^x)²",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "derivatives"]
+  },
+  {
+    "id": 84,
+    "question": "Primitive de 1/x sur R+* :",
+    "choices": {
+      "a": "ln|x|",
+      "b": "ln(x)",
+      "c": "1/x²",
+      "d": "x ln(x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 0],
+    "themes": ["integral_calculus", "primitives_ode"]
+  },
+  {
+    "id": 85,
+    "question": "Probabilité d'avoir 20 gauchers dans un échantillon de 100 si p=0.1 :",
+    "choices": {
+      "a": "(100 parmi 20) (0.1)^20 (0.9)^80",
+      "b": "(20 parmi 100) (0.1)^20 (0.9)^80",
+      "c": "(100 parmi 20) (0.1)^80 (0.9)^20",
+      "d": "(100 parmi 20) (0.1)^20",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 86,
+    "question": "Domaine de f : x → ln(x² - 1) √(e^x - e) :",
+    "choices": {
+      "a": "]1, +∞[",
+      "b": "]-∞, -1[ ∪ ]1, +∞[",
+      "c": "[1, +∞[",
+      "d": "]0, +∞[",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "domain_definition"]
+  },
+  {
+    "id": 87,
+    "question": "Suite arithmétique. Alors u_10 + ... + u_20 =",
+    "choices": {
+      "a": "11(u_10 + u_20)/2",
+      "b": "10(u_10 + u_20)/2",
+      "c": "11(u_1 + u_20)/2",
+      "d": "20(u_1 + u_20)/2",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 88,
+    "question": "Plan orthogonal à (AB) avec A(1,2,3), B(4,5,6) passant par C(7,8,9) :",
+    "choices": {
+      "a": "3x + 3y + 3z - 72 = 0",
+      "b": "x + y + z - 24 = 0",
+      "c": "3x + 3y + 3z - 24 = 0",
+      "d": "x + y + z - 72 = 0",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 1],
+    "themes": ["geometry"]
+  },
+  {
+    "id": 89,
+    "question": "lim (x sin(1/x)) quand x → 0 :",
+    "choices": {
+      "a": "0",
+      "b": "1",
+      "c": "+∞",
+      "d": "n'existe pas",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["limits", "trigonometry"]
+  },
+  {
+    "id": 90,
+    "question": "Soit f : x → (e^x)³. Alors f'(x) =",
+    "choices": {
+      "a": "3 e^(3x)",
+      "b": "e^(3x)",
+      "c": "3 e^x",
+      "d": "3 e^(x³)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "derivatives"]
+  },
+  {
+    "id": 91,
+    "question": "Primitive de tan(2x) sur ]-π/4, π/4[ :",
+    "choices": {
+      "a": "-1/2 ln|cos(2x)|",
+      "b": "1/2 ln|cos(2x)|",
+      "c": "ln|cos(2x)|",
+      "d": "2 ln|cos(2x)|",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["integral_calculus", "trigonometry", "primitives_ode"]
+  },
+  {
+    "id": 92,
+    "question": "Domaine de f : x → √(x² - 5x + 6) :",
+    "choices": {
+      "a": "]-∞, 2] ∪ [3, +∞[",
+      "b": "[2, 3]",
+      "c": "R",
+      "d": "∅",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["domain_definition"]
+  },
+  {
+    "id": 93,
+    "question": "Nombre de façons de choisir 2 cartes parmi 8 :",
+    "choices": {
+      "a": "28",
+      "b": "16",
+      "c": "64",
+      "d": "56",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 94,
+    "question": "Suite géométrique u_0 = 2, u_2 = 18. Raison :",
+    "choices": {
+      "a": "3 ou -3",
+      "b": "9",
+      "c": "3",
+      "d": "6",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 95,
+    "question": "Plan (ABC) avec A(0,0,0), B(1,0,0), C(0,1,0) :",
+    "choices": {
+      "a": "z = 0",
+      "b": "x + y + z = 0",
+      "c": "x = 0",
+      "d": "y = 0",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["geometry"]
+  },
+  {
+    "id": 96,
+    "question": "Soit f : x → √(1 - e^(-x)). Alors f'(x) =",
+    "choices": {
+      "a": "e^(-x)/(2√(1 - e^(-x)))",
+      "b": "-e^(-x)/(2√(1 - e^(-x)))",
+      "c": "1/(2√(1 - e^(-x)))",
+      "d": "e^x/(2√(1 - e^(-x)))",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "derivatives"]
+  },
+  {
+    "id": 97,
+    "question": "Si F est primitive de f, alors primitive de f' :",
+    "choices": {
+      "a": "f + C",
+      "b": "F + C",
+      "c": "f'",
+      "d": "F'",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["integral_calculus", "primitives_ode"]
+  },
+  {
+    "id": 98,
+    "question": "Domaine de f : x → √((x+1)/(x-1)) :",
+    "choices": {
+      "a": "]-∞, -1] ∪ ]1, +∞[",
+      "b": "[-1, 1]",
+      "c": "]1, +∞[",
+      "d": "R",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["domain_definition"]
+  },
+  {
+    "id": 99,
+    "question": "Si (u_n) converge vers ℓ, alors",
+    "choices": {
+      "a": "(u_n - ℓ) converge vers 0",
+      "b": "(|u_n|) converge vers |ℓ|",
+      "c": "(u_n) est bornée",
+      "d": "(u_n²) converge vers ℓ²",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "abcd",
+    "points": [0, 1],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 100,
+    "question": "lim ( (5x³ - x + 1) / (2x² + 3) ) quand x → +∞ :",
+    "choices": {
+      "a": "+∞",
+      "b": "0",
+      "c": "5/2",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["limits"]
+  },
+  {
+    "id": 101,
+    "question": "Soit f : x → x³ ln(x). Alors f'(x) =",
+    "choices": {
+      "a": "3x² ln(x) + x²",
+      "b": "3x² ln(x) + x³",
+      "c": "3x² ln(x) + 3x²",
+      "d": "x² ln(x) + x²",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "derivatives"]
+  },
+  {
+    "id": 102,
+    "question": "Pour toute variable aléatoire X :",
+    "choices": {
+      "a": "V(X) = E(X²) - E(X)²",
+      "b": "E(X - E(X)) = 0",
+      "c": "V(X) ≥ 0",
+      "d": "E(X)² ≤ E(X²)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "abcd",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 103,
+    "question": "Suite arithmétique raison 3, u_2 = 5. Alors u_7 =",
+    "choices": {
+      "a": "20",
+      "b": "23",
+      "c": "26",
+      "d": "29",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 104,
+    "question": "Système complet d'événements :",
+    "choices": {
+      "a": "A₁ ∪ ... ∪ A_n = Ω et A_i ∩ A_j = ∅ pour i≠j",
+      "b": "A₁ ∩ ... ∩ A_n = ∅",
+      "c": "P(A₁) + ... + P(A_n) = 1",
+      "d": "A_i indépendants deux à deux",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 105,
+    "question": "Primitive de x → x/(x² + 4) :",
+    "choices": {
+      "a": "1/2 ln(x² + 4)",
+      "b": "ln(x² + 4)",
+      "c": "1/(x² + 4)",
+      "d": "2 ln(x² + 4)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["integral_calculus", "primitives_ode"]
+  },
+  {
+    "id": 106,
+    "question": "Suite géométrique u_0 = 2, q > 1. Alors",
+    "choices": {
+      "a": "(u_n) diverge vers +∞",
+      "b": "(u_n) converge",
+      "c": "(u_n) est croissante",
+      "d": "(u_n) est minorée",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "acd",
+    "points": [0, 1],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 107,
+    "question": "Domaine de f : x → √(e^x - 1) :",
+    "choices": {
+      "a": "[0, +∞[",
+      "b": "R",
+      "c": "]0, +∞[",
+      "d": "]-∞, 0]",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "domain_definition"]
+  },
+  {
+    "id": 108,
+    "question": "Soit f : x → x e^(x²). Alors f'(x) =",
+    "choices": {
+      "a": "e^(x²) + 2x² e^(x²)",
+      "b": "e^(x²) (1 + 2x²)",
+      "c": "e^(x²)",
+      "d": "2x e^(x²)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 1],
+    "themes": ["logarithm_exponential", "derivatives"]
+  },
+  {
+    "id": 109,
+    "question": "Événements A et B avec P(A) = 0.4, P(B) = 0.5, P(A∩B) = 0.2. Alors",
+    "choices": {
+      "a": "A et B sont indépendants",
+      "b": "A et B ne sont pas incompatibles",
+      "c": "P(A∪B) = 0.7",
+      "d": "P(A|B) = 0.4",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "bc",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 110,
+    "question": "lim ( x / (1 + e^x) ) quand x → -∞ :",
+    "choices": {
+      "a": "-∞",
+      "b": "0",
+      "c": "+∞",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "limits"]
+  },
+  {
+    "id": 111,
+    "question": "Intersection des plans x + y + z = 3 et 2x - y + z = 1 : droite d. Représentation paramétrique :",
+    "choices": {
+      "a": "{ x = t ; y = 2 - t/3 ; z = 1 - 2t/3 }",
+      "b": "{ x = 1 + 2t ; y = 1 - t ; z = 1 + t }",
+      "c": "{ x = t ; y = 2t ; z = 3 - 3t }",
+      "d": "{ x = 1 ; y = 1 + t ; z = 1 - t }",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["geometry"]
+  },
+  {
+    "id": 112,
+    "question": "Suite géométrique u_5 = 3, raison 2. Alors u_10 =",
+    "choices": {
+      "a": "96",
+      "b": "48",
+      "c": "192",
+      "d": "24",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 113,
+    "question": "lim (sin(x)/x) quand x → 0 :",
+    "choices": {
+      "a": "1",
+      "b": "0",
+      "c": "+∞",
+      "d": "n'existe pas",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["limits", "trigonometry"]
+  },
+  {
+    "id": 114,
+    "question": "Primitive de 1/(x ln(x)) :",
+    "choices": {
+      "a": "ln|ln(x)|",
+      "b": "ln(x)",
+      "c": "1/ln(x)",
+      "d": "ln(x)/x",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["integral_calculus", "logarithm_exponential", "primitives_ode"]
+  },
+  {
+    "id": 115,
+    "question": "Suite u_0 = 1, u_(n+1) = u_n + 2n. Alors",
+    "choices": {
+      "a": "(u_n) est croissante",
+      "b": "u_n = n² - n + 1",
+      "c": "(u_n) diverge",
+      "d": "(u_n) est arithmétique",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ac",
+    "points": [0, 0],
+    "themes": ["sequences"]
+  },
+  {
+    "id": 116,
+    "question": "Domaine de f : x → ln(|x² - 4|) :",
+    "choices": {
+      "a": "R \\ {-2, 2}",
+      "b": "]-∞, -2[ ∪ ]2, +∞[",
+      "c": "]-2, 2[",
+      "d": "R",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [0, 1],
+    "themes": ["logarithm_exponential", "domain_definition"]
+  },
+  {
+    "id": 117,
+    "question": "Soit f : x → e^(-3x). Alors f'(x) =",
+    "choices": {
+      "a": "-3 e^(-3x)",
+      "b": "e^(-3x)",
+      "c": "3 e^(-3x)",
+      "d": "-3 e^(-x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["logarithm_exponential", "derivatives"]
+  },
+  {
+    "id": 118,
+    "question": "Formule des probabilités totales avec B₁, B₂, B₃ système complet :",
+    "choices": {
+      "a": "P(A) = P(A|B₁)P(B₁) + P(A|B₂)P(B₂) + P(A|B₃)P(B₃)",
+      "b": "P(A) = P(A∩B₁) + P(A∩B₂) + P(A∩B₃)",
+      "c": "P(A) = P(A∪B₁)P(B₁) + ...",
+      "d": "P(A) = P(A)P(B₁) + ...",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ab",
+    "points": [0, 0],
+    "themes": ["combinatorics_probability"]
+  },
+  {
+    "id": 119,
+    "question": "lim ( √(x² + x) - x ) quand x → +∞ :",
+    "choices": {
+      "a": "1/2",
+      "b": "0",
+      "c": "+∞",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [0, 0],
+    "themes": ["limits"]
+  },
+  {
+    "id": 120,
+    "question": "Affirmations sur les suites :",
+    "choices": {
+      "a": "Toute suite croissante non majorée tend vers +∞",
+      "b": "Toute suite décroissante minorée converge",
+      "c": "Toute suite bornée a une sous-suite convergente",
+      "d": "Toute suite convergente est bornée",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "abcd",
+    "points": [0, 0],
+    "themes": ["sequences"]
+  }
+]

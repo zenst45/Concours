@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="archives-container">
+    <div class="archives-header">
+        <h1>📦 Archives des Questions</h1>
+        <p class="subtitle">Gérez vos sauvegardes automatiques</p>
+    </div>
+
+    <div class="archives-stats">
+        <div class="stat-card">
+            <div class="stat-icon">📊</div>
+            <div class="stat-content">
+                <div class="stat-number">{{ stats.total }}</div>
+                <div class="stat-label">Archives totales</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">💾</div>
+            <div class="stat-content">
+                <div class="stat-number">{{ "%.2f"|format(stats.total_size / (1024*1024)) }} MB</div>
+                <div class="stat-label">Espace utilisé</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">📅</div>
+            <div class="stat-content">
+                <div class="stat-number">{{ stats.newest[:10] if stats.newest else '--' }}</div>
+                <div class="stat-label">Dernière archive</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="archives-table">
+        <div class="table-header">
+            <h3>Liste des Archives</h3>
+            <div class="table-actions">
+                <button class="refresh-btn" onclick="location.reload()">🔄 Actualiser</button>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                <tr>
+                    <th>Nom du fichier</th>
+                    <th>Date</th>
+                    <th>Taille</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for archive in archives %}
+                <tr>
+                    <td>
+                        <div class="file-cell">
+                            <span class="file-icon">📄</span>
+                            <span class="file-name">{{ archive.filename }}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="date-cell">
+                            <div class="date">{{ archive.modified[:10] }}</div>
+                            <div class="time">{{ archive.modified[11:16] }}</div>
+                        </div>
+                    </td>
+                    <td>
+                            <span class="size-badge">
+                                {{ "%.1f"|format(archive.size / 1024) }} KB
+                            </span>
+                    </td>
+                    <td>
+                            <span class="description">
+                                {{ archive.metadata.description if archive.metadata else 'Archive automatique' }}
+                            </span>
+                    </td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="{{ url_for('download_archive', filename=archive.filename) }}"
+                               class="action-btn download" title="Télécharger">
+                                ⬇️
+                            </a>
+                            <a href="{{ url_for('restore_archive', archive_name=archive.filename) }}"
+                               class="action-btn restore"
+                               onclick="return confirm('Restaurer cette archive? Cela remplacera le fichier actuel.')"
+                               title="Restaurer">
+                                ↩️
+                            </a>
+                            <button class="action-btn info"
+                                    onclick="showArchiveInfo('{{ archive.filename }}')"
+                                    title="Détails">
+                                ℹ️
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5" class="no-data">
+                        Aucune archive disponible
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="archives-actions">
+        <a href="{{ url_for('admin_questions') }}" class="back-btn">
+            ← Retour à l'administration
+        </a>
+        <button class="cleanup-btn" onclick="cleanupOldArchives()">
+            🗑️ Nettoyer les anciennes archives
+        </button>
+        <!-- NOUVEAU BOUTON -->
+        <form action="{{ url_for('reset_stats') }}" method="POST"
+              onsubmit="return confirmResetStats()"
+              style="display: inline;">
+            <button type="submit" class="reset-stats-btn">
+                🔄 Réinitialiser les statistiques
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Modale pour les détails -->
+<div class="modal" id="info-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Détails de l'Archive</h3>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="modal-info-content">
+            <!-- Contenu chargé dynamiquement -->
+        </div>
+    </div>
+</div>
+
+<!-- Modale de confirmation pour la réinitialisation -->
+<div class="confirmation-modal" id="resetConfirmationModal">
+    <div class="confirmation-content">
+        <div class="warning-icon">⚠️</div>
+        <h3>Confirmation de réinitialisation</h3>
+        <p><strong>Cette action est irréversible !</strong></p>
+        <p>Êtes-vous sûr de vouloir réinitialiser toutes les statistiques ?</p>
+        <div class="what-will-be-reset">
+            <p><strong>Ce qui sera effacé :</strong></p>
+            <ul style="text-align: left; margin: 15px 0;">
+                <li>✅ Tous les points de réussite des questions</li>
+                <li>📊 L'historique des tentatives</li>
+                <li>🔥 Les séries (streaks) des utilisateurs</li>
+                <li>📅 L'activité quotidienne</li>
+                <li>📈 Les statistiques globales</li>
+            </ul>
+            <p><strong>Les questions elles-mêmes seront préservées.</strong></p>
+        </div>
+        <div class="confirmation-actions">
+            <button class="cancel-confirm-btn" onclick="closeConfirmationModal()">
+                Annuler
+            </button>
+            <form action="{{ url_for('reset_stats') }}" method="POST" id="resetForm">
+                <button type="submit" class="confirm-btn">
+                    Confirmer la réinitialisation
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function showArchiveInfo(filename) {
+        try {
+            const response = await fetch(`/api/archive/info/${encodeURIComponent(filename)}`);
+            if (!response.ok) {
+                throw new Error('Erreur de chargement');
+            }
+            const data = await response.json();
+
+            const modal = document.getElementById('info-modal');
+            const content = document.getElementById('modal-info-content');
+
+            let html = `
+                <div class="archive-info">
+                    <div class="info-row">
+                        <span class="info-label">Nom:</span>
+                        <span class="info-value">${data.filename}</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Date:</span>
+                        <span class="info-value">${new Date(data.modified).toLocaleString('fr-FR')}</span>
+                    </div>
+            `;
+
+            if (data.metadata) {
+                html += `
+                    <div class="info-row">
+                        <span class="info-label">Description:</span>
+                        <span class="info-value">${data.metadata.description || 'Non spécifiée'}</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Date de création:</span>
+                        <span class="info-value">${new Date(data.metadata.archive_date).toLocaleString('fr-FR')}</span>
+                    </div>
+                `;
+            }
+
+            html += `
+                    <div class="info-row">
+                        <span class="info-label">Taille:</span>
+                        <span class="info-value">${(data.size / 1024).toFixed(2)} KB</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Questions:</span>
+                        <span class="info-value">${data.questions_count || 'Inconnu'}</span>
+                    </div>
+            `;
+
+            if (data.report) {
+                html += `
+                    <div class="report-section">
+                        <h4>Rapport d'ajout:</h4>
+                        <div class="report-details">
+                            <div>Questions existantes: ${data.report.existing_count}</div>
+                            <div>Nouvelles questions: ${data.report.new_count}</div>
+                            <div>Ajoutées: ${data.report.added_count}</div>
+                            <div>Dupliquées ignorées: ${data.report.duplicate_count}</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            html += `</div>`;
+
+            content.innerHTML = html;
+            modal.style.display = 'block';
+
+        } catch (error) {
+            console.error('Erreur:', error);
+            alert('Impossible de charger les informations');
+        }
+    }
+
+    function closeModal() {
+        document.getElementById('info-modal').style.display = 'none';
+    }
+
+    async function cleanupOldArchives() {
+        if (!confirm('Supprimer les archives de plus de 30 jours?\nCette action est irréversible.')) {
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/archives/cleanup', {
+                method: 'POST'
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert(`${result.deleted} archives ont été supprimées`);
+                location.reload();
+            } else {
+                alert('Erreur lors du nettoyage');
+            }
+
+        } catch (error) {
+            console.error('Erreur:', error);
+            alert('Erreur lors du nettoyage');
+        }
+    }
+
+    // Fonction pour afficher la modale de confirmation de réinitialisation
+    function confirmResetStats() {
+        const modal = document.getElementById('resetConfirmationModal');
+        modal.style.display = 'block';
+        return false; // Empêche la soumission directe du formulaire
+    }
+
+    // Fonction pour fermer la modale
+    function closeConfirmationModal() {
+        const modal = document.getElementById('resetConfirmationModal');
+        modal.style.display = 'none';
+    }
+
+    // Fermer la modale en cliquant à l'extérieur
+    window.onclick = function(event) {
+        const modal = document.getElementById('info-modal');
+        if (event.target === modal) {
+            closeModal();
+        }
+        const resetModal = document.getElementById('resetConfirmationModal');
+        if (event.target === resetModal) {
+            closeConfirmationModal();
+        }
+    };
+
+    // Fermer avec la touche Échap
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+            closeConfirmationModal();
+        }
+    });
+</script>
+{% endblock %}

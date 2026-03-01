@@ -1,0 +1,31 @@
+{
+  "streak": {
+    "current": 1,
+    "best": 1,
+    "last_activity": "2026-01-31",
+    "history": [
+      {
+        "streak": 1,
+        "end_date": "2026-01-29",
+        "start_date": "2026-01-29"
+      }
+    ]
+  },
+  "daily_activity": {
+    "2026-01-29": {
+      "quizzes_completed": 1,
+      "questions_attempted": 10,
+      "correct_answers": 4
+    },
+    "2026-01-31": {
+      "quizzes_completed": 2,
+      "questions_attempted": 20,
+      "correct_answers": 7
+    }
+  },
+  "total_days_active": 2,
+  "first_activity": "2026-01-29",
+  "total_quizzes": 3,
+  "total_questions_attempted": 30,
+  "total_correct_answers": 11
+}

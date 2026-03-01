@@ -1,0 +1,294 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="admin-container">
+    <!-- En-tête -->
+    <div class="admin-header">
+        <h1>⚙️ Administration des Questions</h1>
+        <p class="subtitle">Gérez votre base de données de questions mathématiques</p>
+    </div>
+
+    <!-- Messages flash -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flash-messages">
+        {% for category, message in messages %}
+        <div class="flash-message {{ category }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <!-- Grille d'administration -->
+    <div class="admin-grid">
+        <!-- Carte: Téléverser des questions -->
+        <div class="admin-card">
+            <div class="admin-card-icon">📤</div>
+            <h3>Téléverser des Questions</h3>
+            <p>Ajoutez de nouvelles questions depuis un fichier JSON formaté</p>
+            <a href="{{ url_for('upload_questions') }}" class="admin-btn primary">
+                Téléverser des questions →
+            </a>
+        </div>
+
+        <!-- Carte: Gérer les archives -->
+        <div class="admin-card">
+            <div class="admin-card-icon">🗃️</div>
+            <h3>Gérer les Archives</h3>
+            <p>Consultez et restaurez les versions précédentes de la base</p>
+            <a href="{{ url_for('list_archives') }}" class="admin-btn secondary">
+                Voir les archives →
+            </a>
+        </div>
+
+        <!-- Carte: Statistiques -->
+        <div class="admin-card">
+            <div class="admin-card-icon">📊</div>
+            <h3>Statistiques Détaillées</h3>
+            <p>Analysez l'utilisation et les performances des questions</p>
+            <a href="{{ url_for('questions_stats') }}" class="admin-btn secondary">
+                Voir les statistiques →
+            </a>
+        </div>
+
+        <!-- Carte: Mettre à jour les difficultés (NOUVELLE) -->
+        <div class="admin-card">
+            <div class="admin-card-icon">⚖️</div>
+            <h3>Mettre à jour les Difficultés</h3>
+            <p>Recalcule automatiquement la difficulté de toutes les questions</p>
+            <a href="{{ url_for('update_all_difficulties') }}" class="admin-btn secondary"
+               onclick="return confirm('Recalculer la difficulté de toutes les questions?')">
+                Recalculer les difficultés →
+            </a>
+        </div>
+
+        <!-- Carte: Télécharger la base -->
+        <div class="admin-card">
+            <div class="admin-card-icon">💾</div>
+            <h3>Télécharger la Base</h3>
+            <p>Téléchargez une sauvegarde complète de toutes les questions</p>
+            <a href="{{ url_for('download_questions') }}" class="admin-btn secondary">
+                Télécharger la base →
+            </a>
+        </div>
+
+        <!-- Carte: Informations système -->
+        <div class="admin-card">
+            <div class="admin-card-icon">ℹ️</div>
+            <h3>Informations Système</h3>
+            <p>Statistiques globales et état de l'application</p>
+            <button onclick="loadSystemInfo()" class="admin-btn secondary">
+                Afficher les infos →
+            </button>
+        </div>
+    </div>
+
+    <!-- Statistiques rapides -->
+    <div class="quick-stats">
+        <h2>📈 Statistiques Rapides</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-label">Questions totales</span>
+                <span class="stat-value" id="total-questions">--</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Dernière modification</span>
+                <span class="stat-value" id="last-modified">--</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Archives disponibles</span>
+                <span class="stat-value" id="total-archives">--</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Statut système</span>
+                <span class="stat-value" style="color: #4CAF50;">✓ Actif</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="stats-actions">
+        <a href="{{ url_for('index') }}" class="action-btn secondary">
+            <i class="fas fa-home"></i>
+            Retour à l'accueil
+        </a>
+        <button onclick="refreshStats()" class="action-btn refresh">
+            <i class="fas fa-sync-alt"></i>
+            Actualiser les statistiques
+        </button>
+    </div>
+</div>
+
+<!-- Modale pour les informations système -->
+<div class="modal" id="system-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>📋 Informations Système</h2>
+            <button class="modal-close" onclick="closeSystemModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="system-modal-content">
+            <!-- Contenu chargé dynamiquement -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // Charger les statistiques au démarrage
+    document.addEventListener('DOMContentLoaded', function() {
+        loadQuestionStats();
+        loadArchiveStats();
+    });
+
+    // Charger les statistiques des questions
+    async function loadQuestionStats() {
+        try {
+            const response = await fetch('/api/questions/count');
+            const data = await response.json();
+
+            document.getElementById('total-questions').textContent = data.total;
+            document.getElementById('last-modified').textContent =
+                new Date(data.last_modified).toLocaleString('fr-FR');
+
+        } catch (error) {
+            console.error('Erreur:', error);
+            document.getElementById('total-questions').textContent = 'Erreur';
+            document.getElementById('last-modified').textContent = 'Erreur';
+        }
+    }
+
+    // Charger les statistiques des archives
+    async function loadArchiveStats() {
+        try {
+            const response = await fetch('/api/archives/count');
+            const data = await response.json();
+
+            document.getElementById('total-archives').textContent = data.total;
+
+        } catch (error) {
+            console.error('Erreur:', error);
+            document.getElementById('total-archives').textContent = 'Erreur';
+        }
+    }
+
+    // Charger les informations système
+    async function loadSystemInfo() {
+        try {
+            // Charger les statistiques des questions
+            const questionsResponse = await fetch('/api/questions/count');
+            const questionsData = await questionsResponse.json();
+
+            // Charger les statistiques des archives
+            const archivesResponse = await fetch('/api/archives/count');
+            const archivesData = await archivesResponse.json();
+
+            // Charger les statistiques par thème
+            const themesResponse = await fetch('/api/questions/themes/stats');
+            const themesData = await themesResponse.json();
+
+            const modal = document.getElementById('system-modal');
+            const content = document.getElementById('system-modal-content');
+
+            content.innerHTML = `
+                <div class="modal-stats">
+                    <div class="modal-stat">
+                        <span class="modal-stat-label">Questions</span>
+                        <span class="modal-stat-value">${questionsData.total}</span>
+                    </div>
+                    <div class="modal-stat">
+                        <span class="modal-stat-label">Archives</span>
+                        <span class="modal-stat-value">${archivesData.total}</span>
+                    </div>
+                    <div class="modal-stat">
+                        <span class="modal-stat-label">Dernière modif</span>
+                        <span class="modal-stat-value">${new Date(questionsData.last_modified).toLocaleDateString('fr-FR')}</span>
+                    </div>
+                </div>
+
+                <div class="system-details">
+                    <h3>📊 Statistiques par Thème</h3>
+                    <div class="themes-stats">
+                        ${themesData.map(theme => `
+                            <div class="theme-stat-item">
+                                <div class="theme-stat-header">
+                                    <span class="theme-name">${theme.name}</span>
+                                    <span class="theme-accuracy ${theme.accuracy_class}">${theme.accuracy}%</span>
+                                </div>
+                                <div class="theme-stat-details">
+                                    <span>${theme.total} questions</span>
+                                    <span>${theme.attempts} tentatives</span>
+                                    <span>${theme.percentage}% de la base</span>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div class="system-info">
+                        <h3>⚙️ Configuration</h3>
+                        <ul>
+                            <li><strong>Dossier d'archives :</strong> archives/</li>
+                            <li><strong>Dossier de téléversement :</strong> uploads/</li>
+                            <li><strong>Fichier principal :</strong> maths.json</li>
+                            <li><strong>Version de l'application :</strong> 2.0</li>
+                            <li><strong>Dernière mise à jour :</strong> ${new Date().toLocaleDateString('fr-FR')}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="modal-btn" onclick="closeSystemModal()">
+                        Fermer
+                    </button>
+                </div>
+            `;
+
+            modal.style.display = 'block';
+
+        } catch (error) {
+            console.error('Erreur:', error);
+            alert('Erreur lors du chargement des informations système');
+        }
+    }
+
+    function closeSystemModal() {
+        document.getElementById('system-modal').style.display = 'none';
+    }
+
+    async function refreshStats() {
+        const refreshBtn = document.querySelector('.action-btn.refresh');
+        const icon = refreshBtn.querySelector('i');
+
+        // Ajouter l'état de chargement
+        refreshBtn.classList.add('loading');
+        refreshBtn.disabled = true;
+
+        try {
+            // Recharger les statistiques selon la page
+            if (window.location.pathname.includes('/admin/questions')) {
+                await loadQuestionStats();
+                await loadArchiveStats();
+            } else {
+                await loadGlobalStats();
+                await loadStreakStats();
+            }
+
+            // Petit feedback visuel
+            icon.className = 'fas fa-check';
+            setTimeout(() => {
+                icon.className = 'fas fa-sync-alt';
+            }, 1000);
+
+        } catch (error) {
+            console.error('Erreur:', error);
+            icon.className = 'fas fa-exclamation-triangle';
+            setTimeout(() => {
+                icon.className = 'fas fa-sync-alt';
+            }, 2000);
+        } finally {
+            refreshBtn.classList.remove('loading');
+            refreshBtn.disabled = false;
+        }
+    }
+</script>
+{% endblock %}

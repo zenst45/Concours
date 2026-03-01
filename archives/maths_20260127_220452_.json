@@ -1,0 +1,2349 @@
+[
+  {
+    "id": 1,
+    "question": "Soit (u_n) une suite géométrique de raison 2 telle que u_2 = 1. Alors",
+    "choices": {
+      "a": "u_7 = 32",
+      "b": "u_7 = 64",
+      "c": "u_7 = 128",
+      "d": "u_7 = 16",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Soient A et B deux événements d'un univers Ω de probabilité non nulle. Alors P_A(B) est égale à",
+    "choices": {
+      "a": "P(A∩B) / P(B)",
+      "b": "P(A∩B) / P(A)",
+      "c": "P(A∩B) si A et B sont indépendants",
+      "d": "P(A) si A et B sont indépendants",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "lim ( (3x² + x - 2) / (x² - e^x + 1) ) quand x tend vers +∞ est égale à",
+    "choices": {
+      "a": "0",
+      "b": "+∞",
+      "c": "3",
+      "d": "-2",
+      "e": "1"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Parmi les fonctions suivantes, laquelle est une solution de l'équation différentielle 2y' - y = x - 1 :",
+    "choices": {
+      "a": "x → e^(2x) - x - 1",
+      "b": "x → x - 1",
+      "c": "x → 1 - x",
+      "d": "x → e^(2x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Soit f : x → √(x² - x - 2). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "R",
+      "b": "[-1, 2]",
+      "c": "]-∞, -1] ∪ [2, +∞[",
+      "d": "∅",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Soit f : x → ln⁹(x). Alors pour tout x ∈ R*+, f'(x) est égale à",
+    "choices": {
+      "a": "9 ln⁸(x)",
+      "b": "1/x⁹",
+      "c": "9/x⁸",
+      "d": "9 ln(x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "derivatives"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "Soit F une primitive d'une fonction f continue sur [-1, 1]. Alors",
+    "choices": {
+      "a": "f' = F",
+      "b": "F' = f",
+      "c": "F(-1) = f(-1) et F(1) = f(1)",
+      "d": "F(-1) = F(1) = 0",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "Dans un jeu de 32 cartes, on tire une main de 6 cartes (on rappelle que dans une main, l'ordre des cartes ne compte pas). Alors le nombre de mains possibles est",
+    "choices": {
+      "a": "6^32",
+      "b": "32^6",
+      "c": "6 parmi 32",
+      "d": "(32!)/(6!)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "Soit (u_n) une suite réelle. Alors",
+    "choices": {
+      "a": "si (u_n) est décroissante et minorée, (u_n) converge",
+      "b": "si (u_n) est bornée, (u_n) converge",
+      "c": "si (u_n) est croissante et majorée, (u_n) converge",
+      "d": "si (u_n) est croissante et non majorée, (u_n) diverge",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "acd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Dans un repère orthonormé de l'espace, on considère la droite d passant par A(2, -1, 1) et de vecteur directeur (1, 2, -5). Alors",
+    "choices": {
+      "a": "B(0, -2, 1) ∈ d",
+      "b": "B(0, 1, -2) ∈ d",
+      "c": "B(3, 1, -4) ∈ d",
+      "d": "B(1, -3, -6) ∈ d",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "Une primitive de la fonction x → ln(x) sur R+* est",
+    "choices": {
+      "a": "x → x ln(x) - x",
+      "b": "x → 1/x",
+      "c": "x → e^x",
+      "d": "x → ln(x)",
+      "e": "x → 1/(ln(x))"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Soit f : x → √(x² + x - 20) * ln(1-x²). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "]-1; 1]",
+      "b": "]-∞, -5] ∪ [4, +∞[",
+      "c": "∅",
+      "d": "]-5, 4[",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 13,
+    "question": "lim ( (x² + x - 7) / (1 - x) ) quand x tend vers -∞ est égale à",
+    "choices": {
+      "a": "-∞",
+      "b": "1",
+      "c": "-1",
+      "d": "+∞",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "Dans un repère orthonormé de l'espace, on considère les points A(1, -1, 2) et B(2, 1, -1). Alors une équation cartésienne du plan orthogonal à la droite (AB) passant par C(3, 3, -4) est",
+    "choices": {
+      "a": "x + 2y - 3z + 21 = 0",
+      "b": "x + 2y - 3z + 15 = 0",
+      "c": "x + 2y - 3z - 15 = 0",
+      "d": "x + 2y - 3z - 1 = 0",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "Parmi les fonctions suivantes, laquelle est une solution de l'équation différentielle 3y' - y = 2 - x :",
+    "choices": {
+      "a": "x → e^(x/3) + x + 1",
+      "b": "x → 2 - x",
+      "c": "x → -1 - x",
+      "d": "x → e^(3x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 16,
+    "question": "Soit f : x → (e^x²) / x. Alors pour tout x ∈ R+*, f'(x) est égale à",
+    "choices": {
+      "a": "((2x - 1)e^x²) / x²",
+      "b": "e^x²",
+      "c": "((x - 1)e^x²) / x²",
+      "d": "((2x² - 1)e^x²) / x²",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 17,
+    "question": "Le nombre de façons de prélever simultanément 2 cartes parmi 4 est",
+    "choices": {
+      "a": "8",
+      "b": "6",
+      "c": "12",
+      "d": "16",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 18,
+    "question": "Dans un repère orthonormé de l'espace, on considère le point A(2, -1, 1) et le vecteur u(1, 2, -5). Alors une représentation paramétrique de la droite d passant par A et de vecteur directeur u est",
+    "choices": {
+      "a": "{ x = 2 + k ; y = -1 + 2k ; z = 1 - 5k ; k ∈ R }",
+      "b": "{ x = 1 + 2k ; y = 2 - k ; z = -5 + k ; k ∈ R }",
+      "c": "{ x = -2 + k ; y = 1 + 2k ; z = -1 - 5k ; k ∈ R }",
+      "d": "{ x = 2 - k ; y = -1 - 2k ; z = 1 + 5k ; k ∈ R }",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 19,
+    "question": "Soient (u_n) et (v_n) deux suites réelles quelconques. Alors",
+    "choices": {
+      "a": "[(u_n) converge et (v_n) converge] ⇒ (u_n + v_n) converge.",
+      "b": "[(u_n) diverge et (v_n) diverge] ⇒ (u_n + v_n) diverge.",
+      "c": "[(u_n) converge et (v_n) diverge] ⇒ (u_n + v_n) diverge.",
+      "d": "[(u_n) diverge et (v_n) converge] ⇒ (u_n + v_n) converge.",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ac",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 20,
+    "question": "lim ( (2x² + x + 1) / (1 - x + 5x²) ) quand x tend vers +∞ est égale à",
+    "choices": {
+      "a": "0",
+      "b": "+∞",
+      "c": "2",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 21,
+    "question": "Soit f : x → (e^x + x)⁵. Alors, pour tout x ∈ R, f'(x) est égale à",
+    "choices": {
+      "a": "5 (e^x + x)⁴",
+      "b": "5 (e^x + 1)⁴",
+      "c": "5 (e^x + x)⁴ (e^x + 1)",
+      "d": "5 (ln(x) + 1)⁴",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 22,
+    "question": "Une primitive de x → 1 / (ln(x)) sur ]1, +∞[ est",
+    "choices": {
+      "a": "x → ln (ln(x))",
+      "b": "x → 1/2 (ln²(x))",
+      "c": "x → x / ln(x)",
+      "d": "x → ln(x) / x",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 23,
+    "question": "Soit f : x → ln(x² + x - 2). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "[-1, 2]",
+      "b": "R+*",
+      "c": "]-∞, -1] ∪ [2, +∞[",
+      "d": "∅",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 24,
+    "question": "Le nombre de façons de ranger 3 objets distincts dans 5 tiroirs sachant qu'un tiroir ne peut contenir qu'un seul objet est",
+    "choices": {
+      "a": "15",
+      "b": "60",
+      "c": "120",
+      "d": "125",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 25,
+    "question": "Soit (u_n) une suite géométrique de raison q ≠ 1. Alors u_1 + u_2 + ... + u_n est égale à",
+    "choices": {
+      "a": "u_1 (1 - q^(n-1)) / (1 - q)",
+      "b": "u_1 (1 - q^(n-2)) / (1 - q)",
+      "c": "u_1 (1 - q^(n-3)) / (1 - q)",
+      "d": "u_1 (1 - q^(n)) / (1 - q)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 26,
+    "question": "Dans un repère orthonormé de l'espace, on considère les points A(1, -1, 2) et B(2, 1, -1). Alors une équation paramétrique de la droite (AB) est",
+    "choices": {
+      "a": "{ x = 1 + 2t ; y = -1 + t ; z = 2 - t ; t ∈ R }",
+      "b": "{ x = 1 + t ; y = -1 + 2t ; z = 2 - 3t ; t ∈ R }",
+      "c": "{ x = 1 + t ; y = 2 - t ; z = -3 + 2t ; t ∈ R }",
+      "d": "{ x = 3 + t ; y = -t ; z = 1 + 2t ; t ∈ R }",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 27,
+    "question": "Soient A et B deux événements indépendants quelconques. Alors",
+    "choices": {
+      "a": "P(A ∪ B) = P(A) + P(B)",
+      "b": "P(A ∪ B) = P(A)P(B)",
+      "c": "P(A ∩ B) = P(A) + P(B)",
+      "d": "P(A ∩ B) = P(A)P(B)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 28,
+    "question": "Soit f : x → sin(x) cos(x). Alors une primitive de f sur R est",
+    "choices": {
+      "a": "x → (1/2) cos²(x)",
+      "b": "x → (1/2) sin²(x)",
+      "c": "x → -cos(sin(x))",
+      "d": "x → -(1/2) sin²(x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode",
+      "trigonometry"
+    ]
+  },
+  {
+    "id": 29,
+    "question": "lim 2x e^(-x) quand x tend vers -∞ est égale à",
+    "choices": {
+      "a": "-∞",
+      "b": "+∞",
+      "c": "0",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ]
+  },
+  {
+    "id": 30,
+    "question": "Soient A et B deux événements incompatibles quelconques. Alors",
+    "choices": {
+      "a": "P(A ∪ B) = P(A)P(B)",
+      "b": "P(A ∪ B) = P(A) + P(B)",
+      "c": "P(A ∩ B) = P(A) + P(B)",
+      "d": "P(A ∩ B) = P(A)P(B)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 31,
+    "question": "Soit (u_n) définie pour tout n ∈ N par u_n = Σ (k=0 à n) (1/2)^k. Alors la limite de (u_n) lorsque n tend vers l'infini est",
+    "choices": {
+      "a": "0",
+      "b": "1",
+      "c": "2",
+      "d": "+∞",
+      "e": "1/2"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 32,
+    "question": "Soit f : x → √( ln(x) ). Alors, pour tout x ∈ ]1, +∞[, f'(x) est égale à",
+    "choices": {
+      "a": "1 / (2√(1/x))",
+      "b": "1 / (2√( ln(x) ))",
+      "c": "1 / (2x √( ln(x) ))",
+      "d": "-1 / (2√( ln(x) ))",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 33,
+    "question": "Soit f : x → ln(1 - x) / ln(2 - x). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "]1, +∞[",
+      "b": "]2, +∞[",
+      "c": "]-∞, 2[",
+      "d": "]-∞, 1[",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 34,
+    "question": "Soit (u_n) une suite réelle convergeant vers -1. Alors",
+    "choices": {
+      "a": "u_n - 1 → 0 quand n → +∞",
+      "b": "|u_n / n| → 0 quand n → +∞",
+      "c": "|u_n| → 1 quand n → +∞",
+      "d": "(u_n) est bornée.",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "cd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 35,
+    "question": "Soit X une variable aléatoire suivant une loi binomiale de paramètres (n, p). Alors",
+    "choices": {
+      "a": "E(X) = np",
+      "b": "E(X) = n/p",
+      "c": "V(X) = n(1 - p)",
+      "d": "V(X) = np(1 - p)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ad",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 36,
+    "question": "Parmi les fonctions suivantes, laquelle est une solution de l'équation différentielle y' - y = x - 3 :",
+    "choices": {
+      "a": "x → e^x + x - 3",
+      "b": "x → x - 3",
+      "c": "x → 2 - x",
+      "d": "x → e^x",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 37,
+    "question": "Soit (u_n) définie par u_0 = 1 et pour tout n ∈ N, u_(n+1) = 2u_n + 3. Alors la suite (v_n) définie pour tout n ∈ N par v_n = u_n - ℓ est géométrique de raison 2 si",
+    "choices": {
+      "a": "ℓ = 1",
+      "b": "ℓ = -3",
+      "c": "ℓ = 2",
+      "d": "ℓ = 3",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 38,
+    "question": "Soit f la fonction définie sur R par f(x) = -4x³ + 6x² + 8. La primitive de f sur R qui vaut 2 en 0 est",
+    "choices": {
+      "a": "-16x⁴ + 18x³ + 8x + 1",
+      "b": "-x⁴ + 2x³ + 8x + 10",
+      "c": "-x⁴ + 2x³ + 8x + 2",
+      "d": "-x⁴ + 2x³ + 8x",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 39,
+    "question": "Dans un repère orthonormé de l'espace, on considère la droite d de vecteur directeur u (1, -1, 3) passant par A(2, 1, 0) et la droite d' de vecteur directeur v (-2, -2, -1) passant par B(1, -2, 2). Alors d et d' sont sécantes de point d'intersection",
+    "choices": {
+      "a": "M(1, -1, 2)",
+      "b": "M(1, 1, -2)",
+      "c": "M(3, 0, 3)",
+      "d": "M(2, 1, -3)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 40,
+    "question": "Soit f : x → √(1 - ln(x)). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "R+*",
+      "b": "]e, +∞[",
+      "c": "]1, +∞[",
+      "d": "]-∞, e]",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 41,
+    "question": "Soit f : x → (x² - 3x - 2) / (x³ - 3x + 2). Alors pour tout x ∈ ]2, +∞[, f'(x) est égale à",
+    "choices": {
+      "a": "1",
+      "b": "( -6x² + 6x - 9 ) / (x² - 3x + 2)²",
+      "c": "( -6x² - 3x + 5 ) / (x² - 3x + 2)²",
+      "d": "( 4(2x - 3) ) / (x² - 3x + 2)²",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "derivatives"
+    ]
+  },
+  {
+    "id": 42,
+    "question": "Une primitive de t → 3t / √(t² + 1) sur R est",
+    "choices": {
+      "a": "t → 3√(t² + 1)",
+      "b": "t → (3/2)√(t² + 1)",
+      "c": "t → 3t√(t² + 1)",
+      "d": "t → -3√(t² + 1)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 43,
+    "question": "Soit (u_n) la suite définie par la donnée de u_0 et, pour tout n ∈ N*, u_n = 3u_(n-1) + 1. Alors",
+    "choices": {
+      "a": "la suite (v_n) définie pour tout n ∈ N par v_n = u_n + 1 est géométrique",
+      "b": "la suite (v_n) définie pour tout n ∈ N par v_n = u_n - 1 est géométrique",
+      "c": "pour tout n ∈ N, u_n = 3^n u_0",
+      "d": "la suite (v_n) définie pour tout n ∈ N par v_n = u_n - 1/2 est géométrique",
+      "e": "la suite (v_n) définie pour tout n ∈ N par v_n = u_n + 1/2 est géométrique"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 44,
+    "question": "lim ( (x - √x) / (3 - ln(x)) ) quand x tend vers +∞ est égale à",
+    "choices": {
+      "a": "0",
+      "b": "+∞",
+      "c": "-∞",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ]
+  },
+  {
+    "id": 45,
+    "question": "Soient A et B deux événements quelconques de probabilités non nulles. Alors",
+    "choices": {
+      "a": "P_A(B) = P_B(A)",
+      "b": "P_A(B) = P_B(A)P(A) / P(B)",
+      "c": "P(A∩B) = P_B(A)P(B)",
+      "d": "P_A(B) = P(A)P(B) / P(A)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "bc",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 46,
+    "question": "Soit f : x → ln(x) / √(x - 2). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "R+*",
+      "b": "]2, +∞[",
+      "c": "R",
+      "d": "∅",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 47,
+    "question": "Une primitive de x → e^x² sur R est",
+    "choices": {
+      "a": "x → e^x²",
+      "b": "x → 2 e^x²",
+      "c": "x → 2x e^x²",
+      "d": "x → e^(x⁵ / 3)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 48,
+    "question": "Soit f : x → x ln(x) + x. Alors, pour tout x ∈ R+*, f'(x) est égale à",
+    "choices": {
+      "a": "ln(x)",
+      "b": "-ln(x)",
+      "c": "ln(x) + 2",
+      "d": "1/x + 1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 49,
+    "question": "Une équation cartésienne du plan P contenant A(1, 2, -1) et de vecteur normal (-1, 1, 2) est",
+    "choices": {
+      "a": "-x + y + 2z - 1 = 0",
+      "b": "x - y - 2z + 1 = 0",
+      "c": "3y - z = 0",
+      "d": "-x + y + 2z + 1 = 0",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 50,
+    "question": "Soit (u_n) une suite arithmétique telle que u_0 = 1 et u_2 = 9. Alors la raison de (u_n) est",
+    "choices": {
+      "a": "9",
+      "b": "3",
+      "c": "4",
+      "d": "6",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 51,
+    "question": "On tire avec remise 5 cartes d'un jeu de 32 cartes. Soit X le nombre de rois obtenus. Alors la loi de X est",
+    "choices": {
+      "a": "une loi binomiale de paramètres (5, 1/4)",
+      "b": "une loi binomiale de paramètres (5, 1/8)",
+      "c": "une loi binomiale de paramètres (5, 1/2)",
+      "d": "une loi binomiale de paramètres (5, 1/16)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 52,
+    "question": "Les solutions de l'équation différentielle y' + y = 0 sur R sont les fonctions",
+    "choices": {
+      "a": "x → k e^(-x) où k ∈ R",
+      "b": "x → k e^x où k ∈ R",
+      "c": "x → k x où k ∈ R",
+      "d": "x → k + x où k ∈ R",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 53,
+    "question": "Soit D le domaine de définition de la fonction f : x → 1 / (x ln(x) ln(ln(x)) ). Une primitive de f sur D est",
+    "choices": {
+      "a": "x → ln(x ln(x))",
+      "b": "x → ln(ln(ln(x)))",
+      "c": "x → ln(x) / x",
+      "d": "x → ln(ln(x)) / x",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 54,
+    "question": "Soit f : x → ln( (1 - x) / (2 - x) ). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "]1, +∞[",
+      "b": "]2, +∞[",
+      "c": "]1, 2[",
+      "d": "R+*",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 55,
+    "question": "Soit (u_n) une suite arithmétique telle que u_5 = -13 et u_9 = -25. Alors u_3 est égal à",
+    "choices": {
+      "a": "-12",
+      "b": "-22/3",
+      "c": "-14",
+      "d": "-7",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 56,
+    "question": "Soit f : x → 1 / (x² + 2)^4. Alors, pour tout x ∈ R, f'(x) est égale à",
+    "choices": {
+      "a": "-4 / (x² + 2)^5",
+      "b": "-8x / (x² + 2)^3",
+      "c": "-4x / (x² + 2)^5",
+      "d": "-8x / (x² + 2)^5",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "derivatives"
+    ]
+  },
+  {
+    "id": 57,
+    "question": "Soient A, B et C trois événements quelconques. Alors",
+    "choices": {
+      "a": "P(A∪B∪C) = P(A)+P(B)+P(C)-P(A∩B)-P(A∩C)-P(B∩C)-P(A∩B∩C)",
+      "b": "P(A∪B∪C) = P(A)+P(B)+P(C)-P(A∩B)-P(A∩C)-P(B∩C)+P(A∩B∩C)",
+      "c": "P(A∪B∪C) = P(A)+P(B)+P(C)-P(A∩B)-P(A∩C)-P(B∩C)",
+      "d": "P(A∪B∪C) = P(A)+P(B)+P(C)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 58,
+    "question": "Soit f : x → ln( (x² - 3x + 2) / (x + 1) ). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "]-1, 1[ ∪ ]2, +∞[",
+      "b": "R \\ {-1}",
+      "c": "]-∞, 1[ ∪ ]2, +∞[",
+      "d": "R+*",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 59,
+    "question": "lim ( (x² -x + 7) / (3 - 2x + 5x³) ) quand x tend vers 1 est égale à",
+    "choices": {
+      "a": "0",
+      "b": "1/5",
+      "c": "+∞",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 60,
+    "question": "Soit f : x → e^(cos(cos(x))). Alors f'(x) est égale à",
+    "choices": {
+      "a": "2 cos(x) e^(cos(cos(x)))",
+      "b": "-2 cos(x) sin(x) e^(cos(cos(x)))",
+      "c": "cos(cos(x)) e^(cos(cos(x)))",
+      "d": "-sin(cos(x)) sin(x) e^(cos(cos(x)))",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives",
+      "trigonometry"
+    ]
+  },
+  {
+    "id": 61,
+    "question": "Soient (u_n) et (v_n) deux suites réelles telles que pour tout n ∈ N, u_n ≤ v_n.",
+    "choices": {
+      "a": "Si (v_n) est croissante, (u_n) est majorée",
+      "b": "Si (v_n) est décroissante, (u_n) est minorée",
+      "c": "Si (v_n) converge, (u_n) converge",
+      "d": "Si (v_n) est bornée, (u_n) est bornée",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 62,
+    "question": "Dans un repère orthonormé de l'espace, soit d la droite de représentation paramétrique { x = 2 - 3t ; y = 1 - t ; z = 1 + 2t ; t ∈ R }. Alors un vecteur directeur de d est",
+    "choices": {
+      "a": "(2, 1, 1)",
+      "b": "(-2, -1, -1)",
+      "c": "(3, 1, -2)",
+      "d": "(-3, -1, 2)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 63,
+    "question": "Le domaine de définition de x → ln(x² + x + 2) est",
+    "choices": {
+      "a": "R",
+      "b": "]0, +∞[",
+      "c": "]-∞, -1[ ∪ ]2, +∞[",
+      "d": "]-1, 2[",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 64,
+    "question": "Soit (u_n) une suite arithmétique de raison 3 telle que u_0 = 2. Alors u_4 + ... + u_7 est égal à",
+    "choices": {
+      "a": "111",
+      "b": "74",
+      "c": "98",
+      "d": "100",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 65,
+    "question": "lim ( √(x² + 2x) - √(x² + 3) ) quand x tend vers +∞ est égale à",
+    "choices": {
+      "a": "0",
+      "b": "+∞",
+      "c": "-∞",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 66,
+    "question": "On tire dans un jeu de 32 cartes une main de 5 cartes (on rappelle que dans une main, l'ordre des cartes ne compte pas). Alors le nombre de mains contenant exactement 1 as est",
+    "choices": {
+      "a": "(1 parmi 4) + (4 parmi 28)",
+      "b": "((1 parmi 4) * (4 parmi 28)) / (5 parmi 32)",
+      "c": "(1 parmi 4) * (4 parmi 28)",
+      "d": "((1 parmi 4) + (4 parmi 28)) / (5 parmi 32)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 67,
+    "question": "Dans un repère orthonormé de l'espace, on considère les points A(1, -1, 2) et B(2, 1, -1). Alors",
+    "choices": {
+      "a": "C(3, 2, -1) ∈ (AB)",
+      "b": "C(3, 3, -4) ∈ (AB)",
+      "c": "C(3, -4, 3) ∈ (AB)",
+      "d": "C(3, 0, 1) ∈ (AB)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 68,
+    "question": "a. Toute suite arithmétique (non constante) diverge. b. Toute suite géométrique converge. c. Toute suite géométrique de raison q converge si q > 1. d. Toute suite géométrique de raison q converge si 0 ≤ q ≤ 1.",
+    "choices": {
+      "a": "Toute suite arithmétique (non constante) diverge.",
+      "b": "Toute suite géométrique converge.",
+      "c": "Toute suite géométrique de raison q converge si q > 1.",
+      "d": "Toute suite géométrique de raison q converge si 0 ≤ q ≤ 1.",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 69,
+    "question": "Soit f : x → ln(e^x + 1). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "R",
+      "b": "R+*",
+      "c": "∅",
+      "d": "R+",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 70,
+    "question": "Soit f : x → x sin(2x). Alors pour tout x ∈ R, f'(x) est égale à",
+    "choices": {
+      "a": "sin(2x) - 2x cos(2x)",
+      "b": "sin(2x) + x cos(2x)",
+      "c": "sin(2x) - x cos(2x)",
+      "d": "sin(2x) + 2x² cos(2x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives",
+      "trigonometry"
+    ]
+  },
+  {
+    "id": 71,
+    "question": "Soit (u_n) la suite définie par u_0 = 2 et pour tout n ∈ N*, u_n = 2 u_(n-1) + 1. Alors",
+    "choices": {
+      "a": "pour tout n ∈ N, u_n = 2^n u_0",
+      "b": "pour tout n ∈ N, u_n = 2^(n-1) u_0",
+      "c": "la suite (v_n) définie pour tout n ∈ N par v_n = u_n + 1 est géométrique",
+      "d": "la suite (v_n) définie pour tout n ∈ N par v_n = u_n - 1 est géométrique",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 72,
+    "question": "lim (ln(x) - 3x² + 5) quand x tend vers 0+ est égale à",
+    "choices": {
+      "a": "-∞",
+      "b": "+∞",
+      "c": "0",
+      "d": "3",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ]
+  },
+  {
+    "id": 73,
+    "question": "Soit f : x → x² + e^(-x) - ln(x). Alors, pour tout x ∈ R+*, f'(x) est égale à",
+    "choices": {
+      "a": "2 + e^(-x) - 1/x",
+      "b": "2 - e^(-x) - 1/x",
+      "c": "2x - e^(-x) + 1/x",
+      "d": "2x - e^(-x) + 1/x²",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 74,
+    "question": "Soit E = {a, b, c, d, e, f}. Alors le nombre de sous-ensembles de E contenant 3 éléments est",
+    "choices": {
+      "a": "6³",
+      "b": "3⁶",
+      "c": "18",
+      "d": "3 parmi 6",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 75,
+    "question": "Une primitive de u → 1/(u+1)² sur ]-1, +∞[ est",
+    "choices": {
+      "a": "ln(u+1)",
+      "b": "ln²(u+1)",
+      "c": "1/(u+1)",
+      "d": "-1/(u+1)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 76,
+    "question": "Soit (u_n) une suite réelle.",
+    "choices": {
+      "a": "Si (u_n) est convergente alors (u_n) ne prend qu'un nombre fini de valeurs",
+      "b": "Si (u_n) ne prend qu'un nombre fini de valeurs, alors elle est convergente",
+      "c": "Si pour tout n ∈ N, 0 ≤ u_n ≤ 1, alors (u_n) converge",
+      "d": "Si pour tout n ∈ N, u_n - 1 ≤ e^(-n) alors (u_n) converge vers 1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 77,
+    "question": "lim ( (x² - x + 1) / (1 - x) ) quand x tend vers +∞ est égale à",
+    "choices": {
+      "a": "+∞",
+      "b": "0",
+      "c": "-∞",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 78,
+    "question": "Soit f : x → ln(ln(x)). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "R+*",
+      "b": "∅",
+      "c": "]e, +∞[",
+      "d": "]1, +∞[",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 79,
+    "question": "Dans un repère orthonormé de l'espace, une équation cartésienne du plan P passant par A(1, -1, 2) et perpendiculaire à la droite d de représentation paramétrique { x = 1 - t ; y = 2t ; z = 3 + t ; t ∈ R } est",
+    "choices": {
+      "a": "x - 3z + 2 = 0",
+      "b": "-x + 2y + z + 1 = 0",
+      "c": "x - y + 2z + 1 = 0",
+      "d": "x - 2y - z + 2 = 0",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 80,
+    "question": "Une primitive de x → e^x / x sur R est",
+    "choices": {
+      "a": "ln(e^x)",
+      "b": "e^x ln(x)",
+      "c": "e^(ln(x))",
+      "d": "ln(x/e^x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 81,
+    "question": "Soit f : x → e^( √(x² - 3x + 2) ). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "R",
+      "b": "[1, 2]",
+      "c": "]-∞, 1] ∪ [2, +∞[",
+      "d": "∅",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 82,
+    "question": "Soit (u_n) la suite définie par u_50 = 7 et, pour tout n ∈ N, u_(n+1) = u_n + 2. Alors u_100 vaut",
+    "choices": {
+      "a": "207",
+      "b": "107",
+      "c": "307",
+      "d": "57",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 83,
+    "question": "Soit f la fonction définie pour tout x ∈ R par f(x) = e^x / (1 + e^(-x)). Alors pour tout x ∈ R, f'(x) est égale à",
+    "choices": {
+      "a": "(2e^(2x) + e^x) / (1 + e^(x))²",
+      "b": "1 / (1 + e^(x))²",
+      "c": "e^x / (1 + e^(x))²",
+      "d": "-e^(2x) / (1 + e^(x))²",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 84,
+    "question": "Soit f : x → 1/x. Alors",
+    "choices": {
+      "a": "la fonction x → ln(ex) est une primitive de la fonction f sur R+*",
+      "b": "la fonction x → e + ln(x) est une primitive de f sur R+*",
+      "c": "la fonction x → e - ln(1/x) est une primitive de f sur R+*",
+      "d": "la fonction x → ln(x) est une primitive de f sur R+*",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 85,
+    "question": "On suppose que si on choisit au hasard un individu dans la population française, la probabilité que cette personne soit gauchère est 0,10. On observe sur une journée un groupe de 256 candidats du concours Advance. On note N la variable aléatoire égale au nombre de gauchers dans cet échantillon. Alors",
+    "choices": {
+      "a": "P(N = 200) = (256 parmi 200) (0,10)^256 (1 - 0,10)^56",
+      "b": "P(N = 200) = (200 parmi 256) (0,10)^256 (1 - 0,10)^56",
+      "c": "P(N = 200) = (200 parmi 256) (0,10)^200 (1 - 0,10)^56",
+      "d": "P(N = 200) = (256 parmi 200) (0,10)^200 (1 - 0,10)^56",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 86,
+    "question": "Soit f : x → ln( (x² - 3x + 2) / (x + 1) ) √(e^x - 1). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "R+",
+      "b": "R+*",
+      "c": "[0, 1[ ∪ ]2, +∞[",
+      "d": "]-∞, 1[ ∪ ]2, +∞[",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 87,
+    "question": "Soit (u_n) une suite arithmétique. Alors u_5 + ... + u_n est égale à",
+    "choices": {
+      "a": "(n - 4)(u_5 + u_n)/2",
+      "b": "(n - 5)(u_5 + u_n)/2",
+      "c": "(n - 6)(u_5 + u_n)/2",
+      "d": "(u_5 + u_n)/2",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 88,
+    "question": "Dans un repère orthonormé de l'espace, on considère les points A(1, -1, 2) et B(2, 1, -1). Alors une équation cartésienne du plan orthogonal à la droite (AB) passant par C(3, 3, -4) est",
+    "choices": {
+      "a": "x + 2y - 3z + 21 = 0",
+      "b": "x + 2y - 3z + 15 = 0",
+      "c": "x + 2y - 3z - 15 = 0",
+      "d": "x + 2y - 3z - 1 = 0",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 89,
+    "question": "Quand x tend vers 0, x cos(1/x)",
+    "choices": {
+      "a": "n'a pas de limite",
+      "b": "tend vers 0",
+      "c": "tend vers 1",
+      "d": "tend vers +∞",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "trigonometry",
+      "logarithm_exponential",
+      "limits"
+    ]
+  },
+  {
+    "id": 90,
+    "question": "Soit f : x → (e^x)². Alors, pour tout x ∈ R, f'(x) est égale à",
+    "choices": {
+      "a": "2x e^(x²)",
+      "b": "e^(2x)",
+      "c": "2 e^x",
+      "d": "2 e^(2x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 91,
+    "question": "Une primitive de x → tan(x) sur ]0, π/2[ est",
+    "choices": {
+      "a": "x → -ln(cos(x))",
+      "b": "x → 1 + tan²(x)",
+      "c": "x → 1/cos²(x)",
+      "d": "x → ln(sin(x))",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode",
+      "trigonometry"
+    ]
+  },
+  {
+    "id": 92,
+    "question": "Soit f : x → √(x² - x - 2). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "[-1, 2]",
+      "b": "[-2, 1]",
+      "c": "]-∞, -1] ∪ [2, +∞[",
+      "d": "]-∞, -2] ∪ [1, +∞[",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 93,
+    "question": "Le nombre de façons de tirer simultanément 3 cartes parmi 5 est",
+    "choices": {
+      "a": "60",
+      "b": "6",
+      "c": "10",
+      "d": "24",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 94,
+    "question": "Soit (u_n) une suite géométrique à termes positifs telle que u_0 = 1 et u_2 = 16. Alors",
+    "choices": {
+      "a": "la raison de (u_n) est 16",
+      "b": "la raison de (u_n) est 4",
+      "c": "la raison de (u_n) est 8",
+      "d": "aucune suite géométrique ne vérifie ces conditions",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 95,
+    "question": "Dans un repère orthonormé de l'espace, on considère les points A(1, -1, 2), B(2, 0, 1) et C(0, 1, 1). Alors une équation cartésienne du plan (ABC) est",
+    "choices": {
+      "a": "x - y + 3z - 1 = 0",
+      "b": "x - 2y + z - 7 = 0",
+      "c": "x - 3y - z + 2 = 0",
+      "d": "x + 2y + 3z - 5 = 0",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 96,
+    "question": "Soit f : x → √(1 - e^x). Alors, pour tout x ∈ R_*, f'(x) est égale à",
+    "choices": {
+      "a": "1/2√(1 - e^x)",
+      "b": "(1 - e^x)/2√(1 - e^x)",
+      "c": "(e^x)/2√(1 - e^x)",
+      "d": "e^x/(1 - e^x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 97,
+    "question": "Soit F une primitive d'une fonction dérivable f sur un intervalle I de R. Alors une primitive de f' est",
+    "choices": {
+      "a": "f + 42",
+      "b": "(1/2)f²",
+      "c": "fF",
+      "d": "F",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 98,
+    "question": "Soit f : x → √( (x-1)/(x-2) ). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "[1, 2]",
+      "b": "R",
+      "c": "[1, 2[",
+      "d": "]-∞, 1] ∪ ]2, +∞[",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 99,
+    "question": "Soit (u_n) une suite réelle convergeant vers ℓ ∈ R. Alors",
+    "choices": {
+      "a": "(u_n - ℓ) converge vers 0",
+      "b": "(|u_n - ℓ|) converge vers 0",
+      "c": "(|u_n| - |ℓ|) converge vers 0",
+      "d": "(u_n) est bornée",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "abcd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 100,
+    "question": "lim ( (6x³ - x + 2) / (3x² + ln(x) - 1) ) quand x tend vers +∞ est égale à",
+    "choices": {
+      "a": "2",
+      "b": "+∞",
+      "c": "0",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "b",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 101,
+    "question": "Soit f : x → x² ln(x). Alors, pour tout x ∈ R+*, f'(x) est égale à",
+    "choices": {
+      "a": "2/x",
+      "b": "2x + 1/x",
+      "c": "2x ln(x) + x",
+      "d": "2 + 1/x",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 102,
+    "question": "Soit X une variable aléatoire discrète quelconque. Alors",
+    "choices": {
+      "a": "E(X - E(X)) = V(X)",
+      "b": "E(X - E(X)) = 0",
+      "c": "E(X - E(X)) = √(V(X))",
+      "d": "E((X - E(X))²) = V(X)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "bd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 103,
+    "question": "Soit (u_n) une suite arithmétique de raison 2 et de premier terme u_2 = 1. Alors",
+    "choices": {
+      "a": "u_7 = 15",
+      "b": "u_7 = 13",
+      "c": "u_7 = 11",
+      "d": "u_7 = 17",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 104,
+    "question": "Dans un univers Ω, on dit que (A_1, ..., A_n) est un système complet d'événements si",
+    "choices": {
+      "a": "A_1 ∪ ... ∪ A_n = Ω et pour tout i ≠ j, A_i ∩ A_j = ∅",
+      "b": "A_1 ∩ ... ∩ A_n ≠ {0} et pour tout i ≠ j, A_i ∪ A_j ≠ ∅",
+      "c": "A_1 ∪ ... ∪ A_n = Ω et pour tout i ≠ j, A_i ∩ A_j ≠ {0}",
+      "d": "A_1 ∪ ... ∪ A_n = Ω et pour tout i ≠ j, A_i ∩ A_j = ∅",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 105,
+    "question": "Une primitive de la fonction x → x/(x² + 1)² sur R est",
+    "choices": {
+      "a": "x → 1 / (x² + 1)",
+      "b": "x → 2 / (x² + 1)",
+      "c": "x → 1 / (2(x² + 1))",
+      "d": "x → -1 / (x² + 1)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 106,
+    "question": "Soit (u_n) une suite géométrique de raison q avec u_0 = 1. Alors",
+    "choices": {
+      "a": "(u_n) diverge vers +∞ si q > 1",
+      "b": "(u_n) diverge vers +∞ si 0 < q < 1",
+      "c": "(u_n) converge vers 0 si 0 < q < 1",
+      "d": "(u_n) converge vers 0 si q > 1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "ac",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 107,
+    "question": "Soit f : x → √(e^(-x)). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "R",
+      "b": "R+",
+      "c": "R+*",
+      "d": "∅",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 108,
+    "question": "Soit f : x → x² e^x. Alors, pour tout x ∈ R, f'(x) est égale à",
+    "choices": {
+      "a": "2x e^x",
+      "b": "(2 + x)x e^x",
+      "c": "2x + e^x",
+      "d": "2 e^x",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 109,
+    "question": "On lance un dé. On note A et B les événements suivants : A : « on obtient un numéro pair » et B : « on obtient un multiple de 4 ». Alors",
+    "choices": {
+      "a": "A et B sont incompatibles",
+      "b": "A et B ne sont pas incompatibles",
+      "c": "A et B sont indépendants",
+      "d": "A et B ne sont pas indépendants",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "bc",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 110,
+    "question": "lim ( x/(1 + e^(-x)) ) quand x tend vers -∞ est égale à",
+    "choices": {
+      "a": "-∞",
+      "b": "+∞",
+      "c": "0",
+      "d": "1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "limits"
+    ]
+  },
+  {
+    "id": 111,
+    "question": "Dans un repère orthonormé de l'espace, soient P₁ et P₂ deux plans d'équations respectives x - y + 2z - 3 = 0 et x + 2y - z = 0. Alors une représentation paramétrique de la droite d, intersection des plans P₁ et P₂, est",
+    "choices": {
+      "a": "{ x = 1 - t ; y = -1 + t ; z = 2 + t ; t ∈ R }",
+      "b": "{ x = 1 - t ; y = 1 + t ; z = 2 + t ; t ∈ R }",
+      "c": "{ x = 2 - t ; y = -1 + t ; z = -t ; t ∈ R }",
+      "d": "{ x = 1 - t ; y = -2 + t ; z = -1 + 2t ; t ∈ R }",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "geometry"
+    ]
+  },
+  {
+    "id": 112,
+    "question": "Soit (u_n) la suite définie par u_10 = 42 et, pour tout n ∈ N, u_(n+1) = 42 u_n. Alors u_1000 vaut",
+    "choices": {
+      "a": "42^991",
+      "b": "42^1010",
+      "c": "42^1011",
+      "d": "10 × 42^990",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 113,
+    "question": "Quand x tend vers +∞, sin(x)/x²",
+    "choices": {
+      "a": "tend vers 1",
+      "b": "n'a pas de limite",
+      "c": "tend vers +∞",
+      "d": "tend vers 0",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "d",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 114,
+    "question": "Une primitive de x → 1/(x ln(x)) sur ]1, +∞[ est",
+    "choices": {
+      "a": "x → ln(ln(x))",
+      "b": "x → ln(x ln(x))",
+      "c": "x → 1/4(ln(x²ln²(x)))",
+      "d": "x → ln(x/ln(x))",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "a",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "integral_calculus",
+      "logarithm_exponential",
+      "primitives_ode"
+    ]
+  },
+  {
+    "id": 115,
+    "question": "Soit (u_n) la suite réelle définie par u_0 = 1 et, pour tout n ∈ N, u_(n+1) = u_n + n. Alors",
+    "choices": {
+      "a": "(u_n) est géométrique",
+      "b": "(u_n) est arithmétique",
+      "c": "lim u_n = +∞ quand n tend vers +∞",
+      "d": "(u_n) est croissante",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "cd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  },
+  {
+    "id": 116,
+    "question": "Soit f : x → ln(|x² - 1|). Alors le domaine de définition de f est",
+    "choices": {
+      "a": "]-1, 1[",
+      "b": "R",
+      "c": "]-∞, -1[ ∪ ]1, +∞[",
+      "d": "∅",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      1
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "domain_definition"
+    ]
+  },
+  {
+    "id": 117,
+    "question": "Soit f : x → e^(-2x). Alors, pour tout x ∈ R, f'(x) est égale à",
+    "choices": {
+      "a": "e^(-x²)",
+      "b": "-2x e^(-2x)",
+      "c": "e^(-2x)",
+      "d": "-2 e^(x)",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "e",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "logarithm_exponential",
+      "derivatives"
+    ]
+  },
+  {
+    "id": 118,
+    "question": "Soient A un événement et (B₁, B₂, B₃) un système complet d'événements d'un univers Ω. Alors",
+    "choices": {
+      "a": "P(A) = P(A∩B₁)P(B₁) + P(A∩B₂)P(B₂) + P(A∩B₃)P(B₃)",
+      "b": "P(A) = P_{B₁}(A)P(B₁) + P_{B₂}(A)P(B₂) + P_{B₃}(A)P(B₃)",
+      "c": "P(A) = P(A∪B₁)P(B₁) + P(A∪B₂)P(B₂) + P(A∪B₃)P(B₃)",
+      "d": "P(A) = P(A∪B₁) + P(A∪B₂) + P(A∪B₃)",
+      "e": "P(A) = P(A∩B₁) + P(A∩B₂) + P(A∩B₃)"
+    },
+    "answer": "be",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "combinatorics_probability"
+    ]
+  },
+  {
+    "id": 119,
+    "question": "lim ( √(x² - x + 2) - 2x ) quand x tend vers +∞ est égale à",
+    "choices": {
+      "a": "0",
+      "b": "+∞",
+      "c": "-∞",
+      "d": "-1",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "c",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "limits"
+    ]
+  },
+  {
+    "id": 120,
+    "question": "a. Toute suite réelle croissante et minorée tend vers +∞ b. Toute suite réelle croissante et bornée converge c. Toute suite réelle décroissante et non minorée tend vers -∞ d. Toute suite réelle croissante et non majorée tend vers +∞",
+    "choices": {
+      "a": "Toute suite réelle croissante et minorée tend vers +∞",
+      "b": "Toute suite réelle croissante et bornée converge",
+      "c": "Toute suite réelle décroissante et non minorée tend vers -∞",
+      "d": "Toute suite réelle croissante et non majorée tend vers +∞",
+      "e": "rien de ce qui précède"
+    },
+    "answer": "bd",
+    "points": [
+      0,
+      0
+    ],
+    "themes": [
+      "sequences"
+    ]
+  }
+]

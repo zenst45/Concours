@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="upload-container">
+    <div class="upload-header">
+        <h1>📤 Ajouter de Nouvelles Questions</h1>
+        <p class="subtitle">Téléversez un fichier JSON au format correct</p>
+    </div>
+
+    <div class="upload-card">
+        <div class="upload-form-container">
+            <form action="{{ url_for('upload_questions') }}" method="POST" enctype="multipart/form-data" id="upload-form">
+                <div class="form-group">
+                    <label for="question_file" class="file-upload-area" id="file-drop-area">
+                        <div class="upload-icon">📁</div>
+                        <div class="upload-text">
+                            <h4>Cliquez ou déposez votre fichier</h4>
+                            <p>Format accepté: .json (max 16MB)</p>
+                        </div>
+                        <input type="file" name="question_file" id="question_file"
+                               accept=".json" required hidden>
+                    </label>
+                    <div class="file-info" id="file-info">
+                        Aucun fichier sélectionné
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description (optionnel)</label>
+                    <input type="text" name="description" id="description"
+                           placeholder="Ex: Questions générées par IA sur les dérivées"
+                           class="form-input">
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" name="create_backup" id="create_backup" checked>
+                    <label for="create_backup">
+                        Créer une archive de sauvegarde avant l'ajout
+                        <span class="checkbox-desc">(Recommandé)</span>
+                    </label>
+                </div>
+
+                <div class="upload-actions">
+                    <button type="button" class="cancel-btn" onclick="history.back()">
+                        Annuler
+                    </button>
+                    <button type="submit" class="upload-btn" id="submit-btn" disabled>
+                        <span class="btn-text">Téléverser et Fusionner</span>
+                        <span class="btn-spinner" id="upload-spinner" style="display: none;">⏳</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="upload-info">
+            <h3>📝 Format du fichier attendu</h3>
+            <div class="code-example">
+                <pre><code>[
+  {
+    "id": 1,
+    "question": "Quelle est la dérivée de x² ?",
+    "choices": {
+      "1": "2x",
+      "2": "x",
+      "3": "2",
+      "4": "x²"
+    },
+    "answer": "1",
+    "points": [0, 0],
+    "difficulty": "Facile",
+    "themes": ["derivatives"],
+    "first_seen": "2024-01-15"
+  }
+]</code></pre>
+            </div>
+
+            <div class="info-tips">
+                <h4>💡 Conseils</h4>
+                <ul>
+                    <li>Les questions en double seront automatiquement ignorées</li>
+                    <li>Les IDs en conflit seront automatiquement réassignés</li>
+                    <li>Une sauvegarde est créée avant chaque modification</li>
+                    <li>Vérifiez le format JSON avant de téléverser</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flash-messages">
+        {% for category, message in messages %}
+        <div class="flash-message {{ category }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+</div>
+
+<script>
+    const fileInput = document.getElementById('question_file');
+    const fileInfo = document.getElementById('file-info');
+    const dropArea = document.getElementById('file-drop-area');
+    const submitBtn = document.getElementById('submit-btn');
+    const uploadForm = document.getElementById('upload-form');
+    const uploadSpinner = document.getElementById('upload-spinner');
+
+    // Gestion du glisser-déposer
+    dropArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropArea.classList.add('dragover');
+    });
+
+    dropArea.addEventListener('dragleave', () => {
+        dropArea.classList.remove('dragover');
+    });
+
+    dropArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropArea.classList.remove('dragover');
+
+        if (e.dataTransfer.files.length) {
+            fileInput.files = e.dataTransfer.files;
+            updateFileInfo();
+        }
+    });
+
+    // Gestion du clic
+    dropArea.addEventListener('click', () => {
+        fileInput.click();
+    });
+
+    // Mise à jour des infos du fichier
+    fileInput.addEventListener('change', updateFileInfo);
+
+    function updateFileInfo() {
+        if (fileInput.files.length) {
+            const file = fileInput.files[0];
+
+            // Vérifier la taille
+            if (file.size > 16 * 1024 * 1024) {
+                fileInfo.innerHTML = '<span class="error">Fichier trop volumineux (>16MB)</span>';
+                submitBtn.disabled = true;
+                return;
+            }
+
+            // Vérifier l'extension
+            if (!file.name.toLowerCase().endsWith('.json')) {
+                fileInfo.innerHTML = '<span class="error">Format non supporté (seulement .json)</span>';
+                submitBtn.disabled = true;
+                return;
+            }
+
+            fileInfo.innerHTML = `
+                <div class="file-details">
+                    <span class="file-name">${file.name}</span>
+                    <span class="file-size">(${(file.size / 1024).toFixed(2)} KB)</span>
+                </div>
+            `;
+            submitBtn.disabled = false;
+
+            // Prévisualisation du JSON
+            previewJson(file);
+        } else {
+            fileInfo.textContent = 'Aucun fichier sélectionné';
+            submitBtn.disabled = true;
+        }
+    }
+
+    function previewJson(file) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            try {
+                const json = JSON.parse(e.target.result);
+                console.log('Fichier JSON valide:', json.length, 'questions détectées');
+
+                // Mettre à jour le texte du bouton
+                const btnText = document.querySelector('.btn-text');
+                btnText.textContent = `Téléverser ${json.length} questions`;
+
+            } catch (error) {
+                fileInfo.innerHTML += '<br><span class="error">Format JSON invalide</span>';
+                submitBtn.disabled = true;
+            }
+        };
+
+        reader.readAsText(file);
+    }
+
+    // Gestion de la soumission du formulaire
+    uploadForm.addEventListener('submit', function(e) {
+        const btnText = document.querySelector('.btn-text');
+        btnText.textContent = 'Traitement en cours...';
+        uploadSpinner.style.display = 'inline-block';
+        submitBtn.disabled = true;
+    });
+</script>
+{% endblock %}

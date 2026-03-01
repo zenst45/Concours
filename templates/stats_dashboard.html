@@ -1,0 +1,1048 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="stats-dashboard">
+    <!-- En-tête -->
+    <div class="stats-header">
+        <h1>📊 Tableau de Bord des Statistiques</h1>
+        <p class="subtitle">Suivez vos progrès et identifiez vos points forts</p>
+    </div>
+
+    <!-- KPIs Principaux -->
+    <div class="kpis-grid" id="global-kpis">
+        <!-- Chargement des KPIs via JavaScript -->
+        <div class="loading">Chargement des statistiques...</div>
+    </div>
+
+    <!-- Graphiques et Détails -->
+    <div class="stats-content">
+        <!-- Section Thèmes -->
+        <div class="stats-section">
+            <div class="section-header">
+                <h2>📈 Performance par Thème</h2>
+                <p class="section-subtitle">Votre précision dans chaque domaine</p>
+            </div>
+            <div class="themes-performance" id="themes-chart">
+                <!-- Graphique des thèmes avec boutons -->
+                <div class="loading">Chargement des données par thème...</div>
+            </div>
+        </div>
+
+        <!-- Section Détails (supprimée - déplacée dans Performance par Thème) -->
+
+        <!-- Activité Récente et Streak -->
+        <div class="stats-details-grid">
+            <!-- Activité Récente et Streak -->
+            <div class="details-card">
+                <h3>🔥 Votre Série (Streak)</h3>
+                <div class="streak-info" id="streak-info">
+                    <!-- Informations de streak -->
+                    <div class="loading">Chargement des données d'activité...</div>
+                </div>
+
+                <!-- Activité des 7 derniers jours -->
+                <div class="recent-activity" id="recent-activity">
+                    <h4>📅 Activité des 7 derniers jours</h4>
+                    <div class="activity-calendar" id="activity-calendar">
+                        <!-- Calendrier d'activité -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Difficulté Dynamique -->
+            <div class="details-card">
+                <h3>⚖️ Analyse de Difficulté</h3>
+                <p class="section-subtitle">Difficulté calculée automatiquement</p>
+                <div class="difficulty-analysis" id="difficulty-analysis">
+                    <!-- Graphique de difficulté -->
+                    <div class="loading">Chargement de l'analyse de difficulté...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Questions à Améliorer -->
+        <div class="stats-section">
+            <div class="section-header">
+                <h2>⚠️ Questions Nécessitant de l'Attention</h2>
+                <p class="section-subtitle">Questions avec moins de 50% de réussite</p>
+            </div>
+            <div class="attention-questions" id="attention-questions">
+                <!-- Questions à améliorer -->
+                <div class="loading">Chargement des questions nécessitant attention...</div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="stats-actions">
+            <a href="{{ url_for('index') }}" class="action-btn secondary">
+                <i class="fas fa-home"></i>
+                Retour à l'accueil
+            </a>
+            <button onclick="refreshStats()" class="action-btn refresh">
+                <i class="fas fa-sync-alt"></i>
+                Actualiser les statistiques
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modale pour les détails d'un thème -->
+<div class="modal" id="theme-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modal-theme-title">Détails du Thème</h2>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="modal-theme-content">
+            <!-- Contenu chargé dynamiquement -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // Configuration
+    const API_BASE = '/stats';
+
+    // Charger les statistiques au démarrage
+    document.addEventListener('DOMContentLoaded', function() {
+        loadGlobalStats();
+        loadStreakStats();
+    });
+
+    // Charger les statistiques globales
+    async function loadGlobalStats() {
+        try {
+            const response = await fetch(`${API_BASE}/global`);
+            const data = await response.json();
+
+            renderGlobalKpis(data.global);
+            renderThemesChart(data.themes);
+            loadAttentionQuestions(data.themes);
+
+            // Charger les stats de streak
+            await loadStreakStats();
+
+            // Charger les stats de difficulté
+            await loadDifficultyStats();
+
+        } catch (error) {
+            console.error('Erreur:', error);
+            document.getElementById('global-kpis').innerHTML =
+                '<div class="error">Erreur de chargement des statistiques</div>';
+        }
+    }
+
+    // Afficher les KPIs globaux
+    function renderGlobalKpis(stats) {
+        const kpisContainer = document.getElementById('global-kpis');
+
+        kpisContainer.innerHTML = `
+            <div class="kpi-card accuracy">
+                <div class="kpi-icon">🎯</div>
+                <div class="kpi-value">${stats.accuracy}%</div>
+                <div class="kpi-label">Précision Globale</div>
+                <div class="kpi-sub">${stats.total_correct}/${stats.total_attempts} réponses</div>
+            </div>
+
+            <div class="kpi-card questions">
+                <div class="kpi-icon">📝</div>
+                <div class="kpi-value">${stats.total_questions}</div>
+                <div class="kpi-label">Questions Disponibles</div>
+                <div class="kpi-sub">Base de données</div>
+            </div>
+
+            <div class="kpi-card attempts">
+                <div class="kpi-icon">🚀</div>
+                <div class="kpi-value">${stats.total_attempts}</div>
+                <div class="kpi-label">Tentatives Totales</div>
+                <div class="kpi-sub">Engagement</div>
+            </div>
+
+            <div class="kpi-card streak">
+                <div class="kpi-icon">🔥</div>
+                <div class="kpi-value" id="current-streak">--</div>
+                <div class="kpi-label">Série Actuelle</div>
+                <div class="kpi-sub" id="streak-sub">Chargement...</div>
+            </div>
+        `;
+    }
+
+    // Charger les stats de streak
+    async function loadStreakStats() {
+        try {
+            const response = await fetch('/api/stats/streak');
+            const data = await response.json();
+
+            // Mettre à jour le KPI streak
+            const streakElement = document.getElementById('current-streak');
+            const streakSubElement = document.getElementById('streak-sub');
+
+            if (streakElement && streakSubElement) {
+                streakElement.textContent = data.streak.current;
+
+                if (data.streak.last_activity) {
+                    const lastActivity = new Date(data.streak.last_activity);
+                    streakSubElement.textContent = `Dernière activité: ${lastActivity.toLocaleDateString('fr-FR')}`;
+                } else {
+                    streakSubElement.textContent = 'Pas d\'activité récente';
+                }
+            }
+
+            // Afficher les informations détaillées de streak
+            renderStreakInfo(data);
+
+            // Afficher l'activité récente
+            renderRecentActivity(data.recent_activity);
+
+        } catch (error) {
+            console.error('Erreur:', error);
+        }
+    }
+
+    // Afficher les informations de streak
+    function renderStreakInfo(data) {
+        const container = document.getElementById('streak-info');
+
+        if (!container) return;
+
+        const streak = data.streak;
+        const summary = data.activity_summary;
+
+        container.innerHTML = `
+            <div class="streak-details">
+                <div class="streak-item">
+                    <span class="streak-label">Série actuelle</span>
+                    <span class="streak-value">${streak.current} jour${streak.current > 1 ? 's' : ''}</span>
+                </div>
+                <div class="streak-item">
+                    <span class="streak-label">Meilleure série</span>
+                    <span class="streak-value">${streak.best} jour${streak.best > 1 ? 's' : ''}</span>
+                </div>
+                <div class="streak-item">
+                    <span class="streak-label">Jours actifs total</span>
+                    <span class="streak-value">${streak.total_days_active}</span>
+                </div>
+                <div class="streak-item">
+                    <span class="streak-label">Quiz terminés</span>
+                    <span class="streak-value">${summary.total_quizzes}</span>
+                </div>
+                <div class="streak-item">
+                    <span class="streak-label">Questions tentées</span>
+                    <span class="streak-value">${summary.total_questions_attempted}</span>
+                </div>
+                <div class="streak-item">
+                    <span class="streak-label">Précision globale</span>
+                    <span class="streak-value">${summary.total_accuracy}%</span>
+                </div>
+            </div>
+
+            ${streak.history.length > 0 ? `
+                <div class="streak-history">
+                    <h4>📜 Historique des séries</h4>
+                    ${streak.history.map(item => `
+                        <div class="history-item">
+                            <span>${item.streak} jour${item.streak > 1 ? 's' : ''}</span>
+                            <span class="history-date">${new Date(item.end_date).toLocaleDateString('fr-FR')}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            ` : ''}
+        `;
+    }
+
+    // Afficher l'activité récente
+    function renderRecentActivity(activity) {
+        const container = document.getElementById('activity-calendar');
+
+        if (!container || !activity || activity.length === 0) return;
+
+        container.innerHTML = `
+            <div class="activity-days">
+                ${activity.map(day => `
+                    <div class="activity-day ${day.active ? 'active' : 'inactive'}">
+                        <div class="day-header">
+                            <span class="day-name">${day.day_name}</span>
+                            <span class="day-number">${day.day_number}</span>
+                        </div>
+                        <div class="day-stats">
+                            ${day.active ? `
+                                <div class="day-stat">
+                                    <small>${day.quizzes} quiz</small>
+                                </div>
+                                <div class="day-stat">
+                                    <small>${day.correct}/${day.questions}</small>
+                                </div>
+                            ` : `
+                                <div class="day-stat">
+                                    <small>Pas d'activité</small>
+                                </div>
+                            `}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="activity-legend">
+                <div class="legend-item">
+                    <span class="legend-dot active"></span>
+                    <small>Actif</small>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot inactive"></span>
+                    <small>Inactif</small>
+                </div>
+            </div>
+        `;
+    }
+
+    // Afficher le graphique des thèmes avec boutons "Voir les détails"
+    function renderThemesChart(themes) {
+        const container = document.getElementById('themes-chart');
+
+        if (!themes || themes.length === 0) {
+            container.innerHTML = '<p class="no-data">Aucune donnée de thème disponible</p>';
+            return;
+        }
+
+        // Trouver la précision maximum pour l'échelle
+        const maxAccuracy = Math.max(...themes.map(t => t.accuracy));
+
+        container.innerHTML = themes.map(theme => `
+            <div class="theme-bar">
+                <div class="theme-bar-header">
+                    <div class="theme-name-container">
+                        <span class="theme-name">${theme.name}</span>
+                        <span class="theme-stats">
+                            ${theme.correct}/${theme.attempts} correctes
+                        </span>
+                    </div>
+                    <div class="theme-actions">
+                        <span class="theme-accuracy">${theme.accuracy}%</span>
+                        <button class="detail-btn" onclick="viewThemeDetails('${theme.id}')">
+                            <i class="fas fa-eye"></i> Voir les détails
+                        </button>
+                    </div>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-fill">
+                        <div class="bar-value" style="width: ${(theme.accuracy / maxAccuracy) * 100}%"></div>
+                    </div>
+                </div>
+                <div class="theme-stats-small">
+                    <span>${theme.total} questions</span>
+                    <span>${theme.attempts} tentatives</span>
+                    <span>${theme.correct} réussites</span>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Afficher les questions nécessitant attention
+    function loadAttentionQuestions(themes) {
+        const container = document.getElementById('attention-questions');
+
+        if (!themes || themes.length === 0) {
+            container.innerHTML = '<p class="no-data">Aucune donnée disponible</p>';
+            return;
+        }
+
+        // Filtrer les thèmes avec moins de 50% de réussite
+        const attentionThemes = themes.filter(theme => theme.accuracy < 50);
+
+        if (attentionThemes.length === 0) {
+            container.innerHTML = `
+                <div class="no-attention">
+                    <div class="success-icon">🎉</div>
+                    <h3>Excellent travail !</h3>
+                    <p>Tous vos thèmes ont une précision supérieure à 50%.</p>
+                    <p>Continuez comme ça !</p>
+                </div>
+            `;
+            return;
+        }
+
+        container.innerHTML = attentionThemes.map(theme => `
+            <div class="attention-card">
+                <div class="attention-header">
+                    <h4>${theme.name}</h4>
+                    <span class="attention-badge">${theme.accuracy}%</span>
+                </div>
+                <div class="attention-progress">
+                    <div class="progress-bar">
+                        <div class="progress" style="width: ${theme.accuracy}%"></div>
+                    </div>
+                </div>
+                <div class="attention-advice">
+                    <p><strong>Conseil :</strong> Revoyez les questions de ce thème pour améliorer votre précision.</p>
+                </div>
+                <button class="practice-btn" onclick="viewThemeDetails('${theme.id}')">
+                    <i class="fas fa-book-open"></i> Pratiquer ce thème
+                </button>
+            </div>
+        `).join('');
+    }
+
+    // Voir les détails d'un thème
+    async function viewThemeDetails(themeId) {
+        try {
+            const response = await fetch(`${API_BASE}/theme/${themeId}`);
+            const data = await response.json();
+
+            const modal = document.getElementById('theme-modal');
+            const title = document.getElementById('modal-theme-title');
+            const content = document.getElementById('modal-theme-content');
+
+            title.textContent = `Détails : ${data.theme.name}`;
+
+            content.innerHTML = `
+                <div class="modal-stats">
+                    <div class="modal-stat">
+                        <span class="modal-stat-label">Questions</span>
+                        <span class="modal-stat-value">${data.theme.total_questions}</span>
+                    </div>
+                    <div class="modal-stat">
+                        <span class="modal-stat-label">Tentatives</span>
+                        <span class="modal-stat-value">${data.theme.total_attempts}</span>
+                    </div>
+                    <div class="modal-stat">
+                        <span class="modal-stat-label">Précision</span>
+                        <span class="modal-stat-value">${data.theme.accuracy}%</span>
+                    </div>
+                </div>
+
+                <div class="questions-list">
+                    <h3>Questions du thème (par ordre de difficulté)</h3>
+                    ${data.questions.map(q => `
+                        <div class="question-item ${q.accuracy < 50 ? 'difficult' : ''}">
+                            <div class="question-text">${q.question}</div>
+                            <div class="question-meta">
+                                <span class="difficulty-tag difficulty-${q.difficulty.toLowerCase()}">
+                                    ${q.difficulty}
+                                </span>
+                                <span class="accuracy-badge ${getAccuracyClass(q.accuracy)}">
+                                    ${q.accuracy}%
+                                </span>
+                            </div>
+                            <div class="question-stats">
+                                <span class="stat">ID: ${q.id}</span>
+                                <span class="stat">${q.correct}/${q.attempts} correctes</span>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div class="difficult-section">
+                    <h4>Questions difficiles (moins de 50% de réussite)</h4>
+                    ${data.questions.filter(q => q.accuracy < 50).map(q => `
+                        <div class="difficult-question">
+                            <div class="question">${q.question}</div>
+                            <div class="stats">${q.accuracy}% de réussite (${q.attempts} tentatives)</div>
+                        </div>
+                    `).join('')}
+                    ${data.questions.filter(q => q.accuracy < 50).length === 0 ?
+                        '<p>Aucune question difficile dans ce thème.</p>' : ''}
+                </div>
+
+                <div class="modal-actions">
+                    <button class="modal-btn primary" onclick="startThemePractice('${themeId}')">
+                        <i class="fas fa-play"></i> Entraînement spécifique
+                    </button>
+                    <button class="modal-btn" onclick="closeModal()">
+                        Fermer
+                    </button>
+                </div>
+            `;
+
+            modal.style.display = 'block';
+
+        } catch (error) {
+            console.error('Erreur:', error);
+            alert('Erreur lors du chargement des détails du thème');
+        }
+    }
+
+    // Démarrer un entraînement sur un thème spécifique
+    function startThemePractice(themeId) {
+        // Trouver l'ID numérique du thème
+        const themeNames = {
+            "derivatives": 1,
+            "sequences": 2,
+            "limits": 3,
+            "logarithm_exponential": 4,
+            "domain_definition": 5,
+            "primitives_ode": 6,
+            "combinatorics_probability": 7,
+            "geometry": 8,
+            "trigonometry": 9,
+            "integral_calculus": 10
+        };
+
+        const themeNumber = themeNames[themeId];
+
+        if (themeNumber) {
+            // Créer un formulaire caché pour démarrer le quiz
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/start-quiz';
+
+            const typeInput = document.createElement('input');
+            typeInput.type = 'hidden';
+            typeInput.name = 'quiz_type';
+            typeInput.value = 'theme';
+            form.appendChild(typeInput);
+
+            const themeInput = document.createElement('input');
+            themeInput.type = 'hidden';
+            themeInput.name = 'theme_id';
+            themeInput.value = themeNumber;
+            form.appendChild(themeInput);
+
+            document.body.appendChild(form);
+            form.submit();
+        } else {
+            alert('Impossible de démarrer l\'entraînement pour ce thème.');
+        }
+    }
+
+    // Charger les statistiques de difficulté
+    async function loadDifficultyStats() {
+        try {
+            const response = await fetch('/stats/difficulty');
+            const data = await response.json();
+
+            renderDifficultyAnalysis(data.distribution);
+
+        } catch (error) {
+            console.error('Erreur:', error);
+            document.getElementById('difficulty-analysis').innerHTML =
+                '<div class="error">Erreur de chargement des statistiques de difficulté</div>';
+        }
+    }
+
+    // Afficher l'analyse de difficulté
+    function renderDifficultyAnalysis(distribution) {
+        const container = document.getElementById('difficulty-analysis');
+
+        if (!distribution || distribution.length === 0) {
+            container.innerHTML = '<p class="no-data">Aucune donnée de difficulté disponible</p>';
+            return;
+        }
+
+        // Trouver le taux de réussite maximum pour l'échelle
+        const maxSuccess = Math.max(...distribution.map(d => d.avg_success));
+
+        container.innerHTML = `
+            <div class="difficulty-chart">
+                ${distribution.map(item => `
+                    <div class="difficulty-bar">
+                        <div class="difficulty-bar-header">
+                            <span class="difficulty-name difficulty-${item.difficulty.toLowerCase().replace(' ', '-')}">
+                                ${item.difficulty}
+                            </span>
+                            <span class="difficulty-stats">
+                                <span class="count">${item.count} questions</span>
+                                <span class="success-rate">${item.avg_success}%</span>
+                            </span>
+                        </div>
+                        <div class="difficulty-progress">
+                            <div class="progress-bar">
+                                <div class="progress success-progress" style="width: ${(item.avg_success / maxSuccess) * 100}%"></div>
+                            </div>
+                        </div>
+                        <div class="difficulty-info">
+                            <div class="info-item">
+                                <span class="info-label">Distribution:</span>
+                                <span class="info-value">${item.percentage}%</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Tentatives:</span>
+                                <span class="info-value">${item.attempts}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Réussites:</span>
+                                <span class="info-value">${item.correct}</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="difficulty-explanation">
+                <p><strong>Comment la difficulté est calculée :</strong></p>
+                <ul>
+                    <li><strong>Très facile</strong> : ≥ 80% de réussite</li>
+                    <li><strong>Facile</strong> : 65% - 80% de réussite</li>
+                    <li><strong>Moyenne</strong> : 45% - 65% de réussite</li>
+                    <li><strong>Difficile</strong> : 25% - 45% de réussite</li>
+                    <li><strong>Très difficile</strong> : < 25% de réussite</li>
+                </ul>
+            </div>
+        `;
+    }
+
+    // Fonctions utilitaires
+    function getAccuracyClass(accuracy) {
+        if (accuracy >= 80) return 'excellent';
+        if (accuracy >= 60) return 'good';
+        if (accuracy >= 40) return 'average';
+        return 'poor';
+    }
+
+    async function refreshStats() {
+        const refreshBtn = document.querySelector('.action-btn.refresh');
+        const icon = refreshBtn.querySelector('i');
+
+        // Ajouter l'état de chargement
+        refreshBtn.classList.add('loading');
+        refreshBtn.disabled = true;
+
+        try {
+            // Recharger les statistiques selon la page
+            if (window.location.pathname.includes('/admin/questions')) {
+                await loadQuestionStats();
+                await loadArchiveStats();
+            } else {
+                await loadGlobalStats();
+                await loadStreakStats();
+            }
+
+            // Petit feedback visuel
+            icon.className = 'fas fa-check';
+            setTimeout(() => {
+                icon.className = 'fas fa-sync-alt';
+            }, 1000);
+
+        } catch (error) {
+            console.error('Erreur:', error);
+            icon.className = 'fas fa-exclamation-triangle';
+            setTimeout(() => {
+                icon.className = 'fas fa-sync-alt';
+            }, 2000);
+        } finally {
+            refreshBtn.classList.remove('loading');
+            refreshBtn.disabled = false;
+        }
+    }
+
+    // Fermer la modal
+    function closeModal() {
+        document.getElementById('theme-modal').style.display = 'none';
+    }
+</script>
+
+<style>
+    /* Styles supplémentaires pour les nouveaux éléments */
+
+    .theme-bar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .theme-name-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .theme-name {
+        font-weight: 600;
+        color: #333;
+        font-size: 1.1rem;
+    }
+
+    .theme-stats {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .theme-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .theme-accuracy {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #4CAF50;
+    }
+
+    .detail-btn {
+        padding: 8px 15px;
+        background: #667eea;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: background 0.3s ease;
+    }
+
+    .detail-btn:hover {
+        background: #5a67d8;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+    }
+
+    .theme-stats-small {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        color: #666;
+        margin-top: 10px;
+    }
+
+    /* Styles pour la modal */
+    .modal-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .modal-stat {
+        text-align: center;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+    }
+
+    .modal-stat-label {
+        display: block;
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 5px;
+    }
+
+    .modal-stat-value {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #667eea;
+    }
+
+    .questions-list {
+        margin-bottom: 25px;
+    }
+
+    .questions-list h3 {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        color: #333;
+    }
+
+    .question-item {
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        border-left: 4px solid #ddd;
+    }
+
+    .question-item.difficult {
+        border-left-color: #F44336;
+        background: #ffebee;
+    }
+
+    .question-text {
+        margin-bottom: 10px;
+        font-weight: 500;
+        color: #333;
+        line-height: 1.4;
+    }
+
+    .question-meta {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    }
+
+    .difficulty-tag {
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .difficulty-tag.facile, .difficulty-tag.très-facile {
+        background: #4CAF50;
+        color: white;
+    }
+
+    .difficulty-tag.moyenne {
+        background: #FFC107;
+        color: #333;
+    }
+
+    .difficulty-tag.difficile, .difficulty-tag.très-difficile {
+        background: #F44336;
+        color: white;
+    }
+
+    .accuracy-badge {
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .accuracy-badge.excellent {
+        background: #4CAF50;
+        color: white;
+    }
+
+    .accuracy-badge.good {
+        background: #8BC34A;
+        color: white;
+    }
+
+    .accuracy-badge.average {
+        background: #FFC107;
+        color: #333;
+    }
+
+    .accuracy-badge.poor {
+        background: #F44336;
+        color: white;
+    }
+
+    .question-stats {
+        display: flex;
+        gap: 15px;
+        font-size: 0.85rem;
+        color: #666;
+    }
+
+    .question-stats .stat {
+        padding: 3px 8px;
+        background: white;
+        border-radius: 4px;
+    }
+
+    .difficult-section {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .difficult-section h4 {
+        color: #856404;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+    }
+
+    .difficult-question {
+        background: white;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 8px;
+    }
+
+    .difficult-question .question {
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    .difficult-question .stats {
+        font-size: 0.85rem;
+        color: #666;
+    }
+
+    .modal-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+
+    .modal-btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .modal-btn.primary {
+        background: #667eea;
+        color: white;
+    }
+
+    .modal-btn.primary:hover {
+        background: #5a67d8;
+    }
+
+    .modal-btn:hover {
+        opacity: 0.9;
+    }
+
+    /* Styles pour l'analyse de difficulté dans la carte */
+    .difficulty-analysis {
+        margin-top: 15px;
+    }
+
+    .difficulty-chart {
+        margin-bottom: 15px;
+    }
+
+    .difficulty-bar {
+        margin-bottom: 12px;
+    }
+
+    .difficulty-bar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .difficulty-name {
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .difficulty-très-facile {
+        background: #4CAF50;
+        color: white;
+    }
+
+    .difficulty-facile {
+        background: #8BC34A;
+        color: white;
+    }
+
+    .difficulty-moyenne {
+        background: #FFC107;
+        color: #333;
+    }
+
+    .difficulty-difficile {
+        background: #FF9800;
+        color: white;
+    }
+
+    .difficulty-très-difficile {
+        background: #F44336;
+        color: white;
+    }
+
+    .difficulty-stats {
+        font-size: 0.85rem;
+    }
+
+    .count {
+        margin-right: 10px;
+        color: #666;
+    }
+
+    .success-rate {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .difficulty-progress .progress-bar {
+        height: 6px;
+        background: #e0e0e0;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .difficulty-progress .success-progress {
+        background: #4CAF50;
+        height: 100%;
+    }
+
+    .difficulty-info {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        color: #666;
+        margin-top: 5px;
+    }
+
+    .info-item {
+        display: flex;
+        gap: 5px;
+    }
+
+    .info-label {
+        color: #999;
+    }
+
+    .info-value {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .difficulty-explanation {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 12px;
+        margin-top: 15px;
+        font-size: 0.85rem;
+    }
+
+    .difficulty-explanation p {
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .difficulty-explanation ul {
+        margin: 0;
+        padding-left: 20px;
+        color: #666;
+    }
+
+    .difficulty-explanation li {
+        margin-bottom: 3px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .theme-bar-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .theme-actions {
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .stats-details-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .modal-stats {
+            grid-template-columns: 1fr;
+        }
+
+        .difficulty-bar-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+        }
+
+        .difficulty-stats {
+            align-self: flex-start;
+        }
+    }
+</style>
+{% endblock %}
