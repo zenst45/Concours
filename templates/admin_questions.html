@@ -314,7 +314,7 @@
     }
 </script>
 <style>
-    /* === VARIABLES GLOBALES === */
+    /* === STYLE ADMINISTRATION === */
     :root {
         --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         --primary-color: #667eea;
@@ -332,7 +332,6 @@
         --light-bg: #f8f9fa;
     }
 
-    /* === EN-TÊTE === */
     .admin-header {
         text-align: center;
         margin-bottom: 40px;
@@ -357,7 +356,6 @@
         font-size: 1.1rem;
     }
 
-    /* === GRILLE DES CARTES === */
     .admin-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -365,7 +363,6 @@
         margin-bottom: 40px;
     }
 
-    /* === CARTES INDIVIDUELLES === */
     .admin-card {
         background: white;
         border-radius: 20px;
@@ -412,7 +409,6 @@
         line-height: 1.5;
     }
 
-    /* === BOUTONS DES CARTES === */
     .admin-btn {
         display: inline-block;
         padding: 12px 25px;
@@ -448,7 +444,6 @@
         box-shadow: var(--hover-shadow);
     }
 
-    /* === STATISTIQUES RAPIDES === */
     .quick-stats {
         background: white;
         border-radius: 20px;
@@ -495,7 +490,6 @@
         font-weight: 700;
     }
 
-    /* === BOUTONS D'ACTION === */
     .stats-actions {
         display: flex;
         justify-content: center;
@@ -542,7 +536,6 @@
         box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
     }
 
-    /* === ADAPTATION MOBILE === */
     @media (max-width: 768px) {
         .admin-header h1 {
             font-size: 2rem;
@@ -561,6 +554,22 @@
             width: 100%;
             justify-content: center;
         }
+    }
+
+    .admin-title {
+        color: #333 !important;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .admin-icon {
+        color: #333 !important;
+        margin-right: 10px;
+    }
+
+    .admin-header .subtitle {
+        color: #666 !important;
+        font-size: 1.1rem;
     }
 </style>
 {% endblock %}
