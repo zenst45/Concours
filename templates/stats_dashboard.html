@@ -394,13 +394,12 @@
         }
     }
 
-    // Afficher les informations de streak (version améliorée)
     function renderStreakInfo(data) {
         const container = document.getElementById('streak-info');
         if (!container) return;
 
         const streak = data.streak;
-        const summary = data.activity_summary;
+        const summary = data.activity_summary;  // ← IMPORTANT
 
         // Mettre à jour les badges
         const currentBadge = document.getElementById('streak-current-badge');
@@ -425,15 +424,15 @@
                 </div>
                 <div class="streak-item">
                     <span class="streak-label">Jours actifs total</span>
-                    <span class="streak-value">${streak.total_days_active}</span>
+                    <span class="streak-value">${summary.total_days_active}</span>  <!-- ← CORRIGÉ -->
                 </div>
                 <div class="streak-item">
                     <span class="streak-label">Questions tentées</span>
-                    <span class="streak-value">${summary.total_questions_attempted}</span>
+                    <span class="streak-value">${summary.total_questions_attempted}</span>  <!-- ← CORRIGÉ -->
                 </div>
                 <div class="streak-item">
                     <span class="streak-label">Bonnes réponses</span>
-                    <span class="streak-value">${summary.total_correct_answers}</span>
+                    <span class="streak-value">${summary.total_correct_answers}</span>  <!-- ← CORRIGÉ -->
                 </div>
                 <div class="streak-item">
                     <span class="streak-label">Précision</span>
