@@ -50,7 +50,7 @@
     "answer": "c",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -70,7 +70,7 @@
     "answer": "e",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -109,7 +109,7 @@
     "answer": "e",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "derivatives"
@@ -167,7 +167,7 @@
     "answer": "acd",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -204,8 +204,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "integral_calculus",
@@ -283,8 +283,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -304,7 +304,7 @@
     "answer": "d",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -324,7 +324,7 @@
     "answer": "b",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -381,7 +381,7 @@
     "answer": "c",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "limits"
@@ -461,7 +461,7 @@
     "answer": "b",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -537,7 +537,7 @@
     "answer": "b",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "integral_calculus",
@@ -617,7 +617,7 @@
     "answer": "c",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -695,7 +695,7 @@
     "answer": "e",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -715,7 +715,7 @@
     "answer": "b",
     "points": [
       0,
-      3
+      0
     ],
     "themes": [
       "sequences"
@@ -734,7 +734,7 @@
     "answer": "c",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "primitives_ode"
@@ -772,7 +772,7 @@
     "answer": "d",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -792,7 +792,7 @@
     "answer": "e",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "derivatives"
@@ -810,8 +810,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "integral_calculus",
@@ -851,7 +851,7 @@
     "answer": "b",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -890,7 +890,7 @@
     "answer": "b",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -931,7 +931,7 @@
     "answer": "c",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -970,7 +970,7 @@
     "answer": "c",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "sequences"
@@ -1027,7 +1027,7 @@
     "answer": "b",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "integral_calculus",
@@ -1048,7 +1048,7 @@
     "answer": "c",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -1124,8 +1124,8 @@
     },
     "answer": "a",
     "points": [
-      2,
-      2
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -1164,7 +1164,7 @@
     "answer": "e",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -1185,7 +1185,7 @@
     "answer": "d",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "sequences"
@@ -1222,8 +1222,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -1243,7 +1243,7 @@
     "answer": "b",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -1261,8 +1261,8 @@
     },
     "answer": "d",
     "points": [
-      1,
-      2
+      0,
+      0
     ],
     "themes": [
       "limits"
@@ -1319,7 +1319,7 @@
     "answer": "e",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -1337,8 +1337,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -1358,7 +1358,7 @@
     "answer": "e",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -1516,7 +1516,7 @@
     "answer": "c",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -1576,7 +1576,7 @@
     "answer": "c",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -1614,8 +1614,8 @@
     },
     "answer": "a",
     "points": [
-      3,
-      3
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -1635,7 +1635,7 @@
     "answer": "e",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "integral_calculus",
@@ -1656,7 +1656,7 @@
     "answer": "d",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -1675,7 +1675,7 @@
     "answer": "c",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -1733,7 +1733,7 @@
     "answer": "b",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "trigonometry",
@@ -1872,7 +1872,7 @@
     "answer": "e",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -1931,7 +1931,7 @@
     "answer": "abcd",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -1969,7 +1969,7 @@
     "answer": "c",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -1989,7 +1989,7 @@
     "answer": "bd",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -2027,7 +2027,7 @@
     "answer": "d",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -2046,7 +2046,7 @@
     "answer": "e",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "integral_calculus",
@@ -2106,7 +2106,7 @@
     "answer": "e",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -2165,7 +2165,7 @@
     "answer": "c",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "geometry"
@@ -2184,7 +2184,7 @@
     "answer": "e",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -2221,8 +2221,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "integral_calculus",
@@ -2262,7 +2262,7 @@
     "answer": "c",
     "points": [
       0,
-      4
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -2302,8 +2302,8 @@
     },
     "answer": "be",
     "points": [
-      1,
-      2
+      0,
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -2359,8 +2359,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "sequences"
@@ -2402,7 +2402,7 @@
     "answer": "b",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -2424,7 +2424,7 @@
     "answer": "e",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -2466,8 +2466,8 @@
     },
     "answer": "c",
     "points": [
-      1,
-      2
+      0,
+      0
     ],
     "themes": [
       "derivatives"
@@ -2572,8 +2572,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "integral_calculus",
@@ -2724,8 +2724,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      2
+      0,
+      0
     ],
     "themes": [
       "geometry"
@@ -2745,8 +2745,8 @@
     },
     "answer": "ac",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "sequences"
@@ -2766,8 +2766,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "limits"
@@ -2788,7 +2788,7 @@
     "answer": "c",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -2809,8 +2809,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "integral_calculus",
@@ -2833,7 +2833,7 @@
     "answer": "b",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -2855,7 +2855,7 @@
     "answer": "b",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -2896,8 +2896,8 @@
     },
     "answer": "a",
     "points": [
-      3,
-      4
+      0,
+      0
     ],
     "themes": [
       "geometry"
@@ -2918,7 +2918,7 @@
     "answer": "b",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -2938,8 +2938,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "integral_calculus",
@@ -2961,8 +2961,8 @@
     },
     "answer": "a",
     "points": [
-      2,
-      2
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -2984,7 +2984,7 @@
     "answer": "ac",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -3005,7 +3005,7 @@
     "answer": "a",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -3025,8 +3025,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -3070,7 +3070,7 @@
     "answer": "abcd",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -3091,7 +3091,7 @@
     "answer": "ab",
     "points": [
       0,
-      4
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -3112,7 +3112,7 @@
     "answer": "c",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -3134,7 +3134,7 @@
     "answer": "b",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "sequences"
@@ -3154,8 +3154,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "primitives_ode"
@@ -3218,8 +3218,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "derivatives"
@@ -3262,7 +3262,7 @@
     "answer": "a",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -3283,7 +3283,7 @@
     "answer": "b",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -3325,8 +3325,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -3348,7 +3348,7 @@
     "answer": "d",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "integral_calculus",
@@ -3371,7 +3371,7 @@
     "answer": "a",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -3414,7 +3414,7 @@
     "answer": "a",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -3455,8 +3455,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "primitives_ode"
@@ -3477,7 +3477,7 @@
     "answer": "a",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "integral_calculus",
@@ -3499,8 +3499,8 @@
     },
     "answer": "a",
     "points": [
-      3,
-      3
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -3521,8 +3521,8 @@
     },
     "answer": "a",
     "points": [
-      2,
-      3
+      0,
+      0
     ],
     "themes": [
       "sequences"
@@ -3563,8 +3563,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      2
+      0,
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -3585,7 +3585,7 @@
     "answer": "a",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -3607,7 +3607,7 @@
     "answer": "d",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "limits"
@@ -3627,8 +3627,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      3
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -3651,7 +3651,7 @@
     "answer": "b",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "sequences"
@@ -3671,8 +3671,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "geometry"
@@ -3692,8 +3692,8 @@
     },
     "answer": "a",
     "points": [
-      3,
-      3
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -3715,7 +3715,7 @@
     "answer": "c",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "sequences"
@@ -3756,8 +3756,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      2
+      0,
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -3777,8 +3777,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "geometry"
@@ -3799,7 +3799,7 @@
     "answer": "a",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -3819,8 +3819,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -3841,8 +3841,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "derivatives",
@@ -3863,8 +3863,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "sequences"
@@ -3929,7 +3929,7 @@
     "answer": "a",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -3972,7 +3972,7 @@
     "answer": "ab",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -4013,8 +4013,8 @@
     },
     "answer": "a",
     "points": [
-      4,
-      5
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -4035,8 +4035,8 @@
     },
     "answer": "a",
     "points": [
-      2,
-      2
+      0,
+      0
     ],
     "themes": [
       "geometry"
@@ -4080,7 +4080,7 @@
     "answer": "a",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -4102,7 +4102,7 @@
     "answer": "a",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -4167,7 +4167,7 @@
     "answer": "a",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -4187,8 +4187,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -4231,7 +4231,7 @@
     "answer": "b",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "geometry"
@@ -4251,8 +4251,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "limits",
@@ -4295,8 +4295,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "integral_calculus",
@@ -4339,8 +4339,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "combinatorics_probability"
@@ -4360,8 +4360,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "sequences"
@@ -4424,8 +4424,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "integral_calculus",
@@ -4468,7 +4468,7 @@
     "answer": "abcd",
     "points": [
       0,
-      2
+      0
     ],
     "themes": [
       "sequences"
@@ -4553,7 +4553,7 @@
     "answer": "a",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -4617,7 +4617,7 @@
     "answer": "acd",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -4660,7 +4660,7 @@
     "answer": "b",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -4767,7 +4767,7 @@
     "answer": "a",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "limits",
@@ -4812,7 +4812,7 @@
     "answer": "ac",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
@@ -4833,7 +4833,7 @@
     "answer": "b",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -4854,8 +4854,8 @@
     },
     "answer": "a",
     "points": [
-      1,
-      1
+      0,
+      0
     ],
     "themes": [
       "logarithm_exponential",
@@ -4919,7 +4919,7 @@
     "answer": "abcd",
     "points": [
       0,
-      1
+      0
     ],
     "themes": [
       "sequences"
