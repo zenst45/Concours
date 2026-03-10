@@ -212,6 +212,7 @@ user_stats.json
 # Dossiers d'archives et uploads
 archives/
 uploads/
+archive/
 *.meta.json
 *.report.json
 

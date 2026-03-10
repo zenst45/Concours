@@ -19,27 +19,43 @@ class ArchiveManager:
     def create_backup(self, source_file: str, description: str = "avant ajout de questions"):
         """Crée une copie archivée du fichier"""
         from datetime import datetime
+        import json
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
         filename = os.path.basename(source_file)
         name, ext = os.path.splitext(filename)
-        # Nettoyer la description pour le nom de fichier - garder seulement "Manuelle" ou court
+        # Nettoyer la description pour le nom de fichier
         clean_description = description.replace(' ', '_').replace('/', '_').replace(':', '_')
-        # Limiter la longueur de la description dans le nom de fichier
         if len(clean_description) > 20:
             clean_description = clean_description[:20]
         archive_name = f"{name}_{timestamp}_{clean_description}{ext}"
         archive_path = os.path.join(self.archive_dir, archive_name)
 
         try:
-            # Copier le fichier
+            # 1. Copier le fichier principal (maths.json)
             shutil.copy2(source_file, archive_path)
 
-            # S'assurer que le timestamp du fichier est correct
-            current_time = datetime.now().timestamp()
-            os.utime(archive_path, (current_time, current_time))
+            # 2. Récupérer TOUTES les informations de streak depuis user_stats.json
+            streak_data = {}
+            user_stats_file = 'user_stats.json'
+            if os.path.exists(user_stats_file):
+                try:
+                    with open(user_stats_file, 'r', encoding='utf-8') as f:
+                        user_stats = json.load(f)
+                        # Sauvegarder l'intégralité des données de streak
+                        streak_data = {
+                            'streak': user_stats.get('streak', {}),
+                            'daily_activity': user_stats.get('daily_activity', {}),
+                            'total_days_active': user_stats.get('total_days_active', 0),
+                            'first_activity': user_stats.get('first_activity'),
+                            'total_quizzes': user_stats.get('total_quizzes', 0),
+                            'total_questions_attempted': user_stats.get('total_questions_attempted', 0),
+                            'total_correct_answers': user_stats.get('total_correct_answers', 0)
+                        }
+                except Exception as e:
+                    print(f"⚠️ Impossible de lire les stats utilisateur: {e}")
 
-            # Créer les métadonnées avec toutes les informations
+            # 3. Créer les métadonnées avec TOUTES les informations
             metadata = {
                 "original_file": source_file,
                 "archive_date": datetime.now().isoformat(),
@@ -47,15 +63,26 @@ class ArchiveManager:
                 "description": description,
                 "size": os.path.getsize(source_file),
                 "archive_path": archive_path,
-                "created_by": "system"
+                "created_by": "system",
+                "user_stats": streak_data  # ← TOUTES les stats utilisateur ici
             }
 
-            # Sauvegarder les métadonnées
+            # 4. Sauvegarder les métadonnées
             metadata_path = archive_path.replace('.json', '.meta.json')
             with open(metadata_path, 'w', encoding='utf-8') as f:
                 json.dump(metadata, f, indent=2, ensure_ascii=False)
 
-            print(f"✅ Archive créée: {archive_name} à {metadata['archive_datetime']}")
+            # 5. Mettre à jour le timestamp
+            current_time = datetime.now().timestamp()
+            os.utime(archive_path, (current_time, current_time))
+
+            print(f"✅ Archive créée: {archive_name}")
+            if streak_data:
+                current = streak_data.get('streak', {}).get('current', 0)
+                best = streak_data.get('streak', {}).get('best', 0)
+                print(f"   - Streak actuel: {current} jours")
+                print(f"   - Meilleur streak: {best} jours")
+                print(f"   - Historique sauvegardé dans les métadonnées")
             return archive_path
 
         except Exception as e:
