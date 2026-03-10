@@ -4,7 +4,7 @@
 <div class="admin-container">
     <!-- En-tête -->
     <div class="admin-header">
-        <h1>⚙️ Administration des Questions</h1>
+        <h1 class="admin-title"><span class="admin-icon">⚙️</span> Administration des Questions</h1>
         <p class="subtitle">Gérez votre base de données de questions mathématiques</p>
     </div>
 
@@ -552,6 +552,22 @@
             width: 100%;
             justify-content: center;
         }
+    }
+
+    .admin-title {
+        color: #333 !important;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .admin-icon {
+        color: #333 !important;
+        margin-right: 10px;
+    }
+
+    .admin-header .subtitle {
+        color: #666 !important;
+        font-size: 1.1rem;
     }
 </style>
 {% endblock %}
