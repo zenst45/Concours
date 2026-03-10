@@ -1,143 +1,352 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="menu-card">
-    <h2>Choisissez une matière</h2>
-    <p class="subtitle">Entraînez-vous et suivez vos progrès</p>
-
-    <div class="menu-options">
-        <a href="{{ url_for('maths_menu') }}" class="menu-btn maths">
-            <span class="icon">📐</span>
-            <div class="text-content">
-                <div class="text-title">Mathématiques</div>
-                <div class="text-desc">Quiz par thème ou complet</div>
+<div class="welcome-container">
+    <!-- Menu principal -->
+    <div class="menu-grid">
+        <!-- Carte Mathématiques -->
+        <a href="{{ url_for('maths_menu') }}" class="menu-card maths">
+            <div class="menu-card-icon">
+                <span class="icon">📐</span>
             </div>
-            <span class="arrow">→</span>
+            <div class="menu-card-content">
+                <h3>Mathématiques</h3>
+                <p>Quiz par thème ou complet avec suivi des progrès</p>
+                <div class="menu-card-stats">
+                    <span class="stat" id="maths-count">-- questions</span>
+                </div>
+            </div>
+            <div class="menu-card-arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
         </a>
 
-        <a href="{{ url_for('stats_dashboard') }}" class="menu-btn stats">
-            <span class="icon">📊</span>
-            <div class="text-content">
-                <div class="text-title">Statistiques</div>
-                <div class="text-desc">Suivez vos progrès et streaks</div>
+        <!-- Carte Anglais (bientôt) -->
+        <div class="menu-card anglais disabled">
+            <div class="menu-card-icon">
+                <span class="icon">🇬🇧</span>
             </div>
-            <span class="arrow">→</span>
-        </a>
-
-        <a href="{{ url_for('admin_questions') }}" class="menu-btn admin">
-            <span class="icon">⚙️</span>
-            <div class="text-content">
-                <div class="text-title">Administration</div>
-                <div class="text-desc">Gérez les questions et archives</div>
+            <div class="menu-card-content">
+                <h3>Anglais</h3>
+                <p>Bientôt disponible</p>
+                <span class="coming-soon">En développement</span>
             </div>
-            <span class="arrow">→</span>
-        </a>
-
-        <div class="menu-btn anglais disabled">
-            <span class="icon">🇬🇧</span>
-            <div class="text-content">
-                <div class="text-title">Anglais</div>
-                <div class="text-desc">Bientôt disponible</div>
-            </div>
-            <span class="coming-soon">Bientôt</span>
         </div>
+
+        <!-- Carte Statistiques -->
+        <a href="{{ url_for('stats_dashboard') }}" class="menu-card stats">
+            <div class="menu-card-icon">
+                <span class="icon">📊</span>
+            </div>
+            <div class="menu-card-content">
+                <h3>Statistiques</h3>
+                <p>Suivez vos progrès et analysez vos performances</p>
+                <div class="menu-card-stats" id="quick-stats">
+                    <!-- Message supprimé -->
+                </div>
+            </div>
+            <div class="menu-card-arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </a>
+
+        <!-- Carte Administration -->
+        <a href="{{ url_for('admin_questions') }}" class="menu-card admin">
+            <div class="menu-card-icon">
+                <span class="icon">⚙️</span>
+            </div>
+            <div class="menu-card-content">
+                <h3>Administration</h3>
+                <p>Gérez les questions et les archives</p>
+                <div class="menu-card-stats">
+                    <span class="stat" id="admin-count">-- archives</span>
+                </div>
+            </div>
+            <div class="menu-card-arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </a>
     </div>
 
-    <div class="quick-stats">
-        <h3>📈 Aperçu rapide</h3>
-        <div class="stats-grid" id="quick-stats">
-            <div class="loading">Chargement des statistiques...</div>
+    <!-- Pied de page avec stats rapides -->
+    <div class="quick-stats-panel">
+        <div class="stat-item">
+            <div class="stat-icon">📝</div>
+            <div class="stat-info">
+                <span class="stat-value" id="total-questions">--</span>
+                <span class="stat-label">Questions disponibles</span>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon">📅</div>
+            <div class="stat-info">
+                <span class="stat-value" id="last-update">--</span>
+                <span class="stat-label">Dernière mise à jour</span>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon">🗃️</div>
+            <div class="stat-info">
+                <span class="stat-value" id="total-archives">--</span>
+                <span class="stat-label">Archives disponibles</span>
+            </div>
         </div>
     </div>
 </div>
 
 <script>
-    // Charger les statistiques rapides au démarrage
+    // Charger les statistiques rapides
     document.addEventListener('DOMContentLoaded', function() {
         loadQuickStats();
     });
 
     async function loadQuickStats() {
         try {
-            const response = await fetch('/api/questions/count');
-            const data = await response.json();
+            // Questions
+            const questionsResponse = await fetch('/api/questions/count');
+            const questionsData = await questionsResponse.json();
 
-            const container = document.getElementById('quick-stats');
-            container.innerHTML = `
-                <div class="stat-item">
-                    <div class="stat-label">Questions disponibles</div>
-                    <div class="stat-value">${data.total}</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">Dernière mise à jour</div>
-                    <div class="stat-value">${new Date(data.last_modified).toLocaleDateString('fr-FR')}</div>
-                </div>
-            `;
+            document.getElementById('total-questions').textContent = questionsData.total;
+            document.getElementById('maths-count').textContent = `${questionsData.total} questions`;
 
-            // Charger aussi le nombre d'archives
+            const lastUpdate = new Date(questionsData.last_modified);
+            document.getElementById('last-update').textContent = lastUpdate.toLocaleDateString('fr-FR');
+
+            // Archives
             const archivesResponse = await fetch('/api/archives/count');
             const archivesData = await archivesResponse.json();
 
-            container.innerHTML += `
-                <div class="stat-item">
-                    <div class="stat-label">Archives disponibles</div>
-                    <div class="stat-value">${archivesData.total}</div>
-                </div>
-            `;
+            document.getElementById('total-archives').textContent = archivesData.total;
+            document.getElementById('admin-count').textContent = `${archivesData.total} archives`;
+
+            // ✅ PLUS DE MISE À JOUR DE quick-stats
 
         } catch (error) {
             console.error('Erreur:', error);
-            document.getElementById('quick-stats').innerHTML =
-                '<div class="error">Impossible de charger les statistiques</div>';
+            // Optionnel: afficher une erreur silencieuse
         }
     }
 </script>
 
 <style>
-    .text-content {
+    /* === STYLE PAGE D'ACCUEIL === */
+    :root {
+        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --primary-color: #667eea;
+        --secondary-color: #764ba2;
+        --success-color: #4CAF50;
+        --warning-color: #FFC107;
+        --danger-color: #F44336;
+        --info-color: #2196F3;
+        --text-dark: #333;
+        --text-light: #666;
+        --text-white: #fff;
+        --border-color: #e0e0e0;
+        --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        --hover-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+        --light-bg: #f8f9fa;
+    }
+
+    .welcome-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Grille des menus */
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+
+    .menu-card {
+        display: flex;
+        align-items: center;
+        padding: 30px;
+        background: white;
+        border-radius: 20px;
+        text-decoration: none;
+        color: var(--text-dark);
+        box-shadow: var(--card-shadow);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
+
+    .menu-card.maths {
+        border-color: var(--primary-color);
+    }
+
+    .menu-card.stats {
+        border-color: var(--success-color);
+    }
+
+    .menu-card.admin {
+        border-color: var(--warning-color);
+    }
+
+    .menu-card.anglais {
+        border-color: #9C27B0;
+    }
+
+    .menu-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--hover-shadow);
+    }
+
+    .menu-card.disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        filter: grayscale(0.5);
+    }
+
+    .menu-card.disabled:hover {
+        transform: none;
+        box-shadow: var(--card-shadow);
+    }
+
+    .menu-card-icon {
+        margin-right: 20px;
+    }
+
+    .menu-card-icon .icon {
+        font-size: 3rem;
+    }
+
+    .menu-card-content {
         flex: 1;
-        margin-right: 15px;
     }
 
-    .text-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 5px;
+    .menu-card-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+        color: var(--text-dark);
     }
 
-    .text-desc {
+    .menu-card-content p {
+        color: var(--text-light);
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+    }
+
+    .menu-card-stats {
         font-size: 0.9rem;
-        color: #666;
+        color: var(--primary-color);
+        font-weight: 500;
+    }
+
+    .menu-card-arrow {
+        margin-left: 15px;
+        color: var(--text-light);
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+
+    .menu-card:hover .menu-card-arrow {
+        transform: translateX(5px);
+        color: var(--primary-color);
     }
 
     .coming-soon {
-        background: #ffc107;
-        color: #333;
-        padding: 5px 10px;
+        display: inline-block;
+        padding: 4px 12px;
+        background: var(--warning-color);
+        color: var(--text-dark);
         border-radius: 20px;
         font-size: 0.8rem;
         font-weight: 600;
     }
 
-    .menu-btn .arrow {
-        margin-left: 10px;
+    /* Panel de stats rapides */
+    .quick-stats-panel {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 30px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: var(--card-shadow);
+        margin-top: 30px;
+    }
+
+    .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+        background: var(--light-bg);
+        border-radius: 15px;
         transition: transform 0.3s ease;
     }
 
-    .menu-btn:hover .arrow {
-        transform: translateX(5px);
+    .stat-item:hover {
+        transform: translateY(-3px);
     }
 
-    .quick-stats {
-        margin-top: 40px;
-        padding-top: 30px;
-        border-top: 1px solid #eee;
+    .stat-icon {
+        font-size: 2rem;
     }
 
-    .quick-stats h3 {
-        margin-bottom: 20px;
-        color: #333;
-        font-size: 1.3rem;
+    .stat-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stat-value {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        line-height: 1.2;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: var(--text-light);
+    }
+
+    .loading {
+        color: var(--text-light);
+        font-style: italic;
+    }
+
+    .error {
+        color: var(--danger-color);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .menu-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .menu-card {
+            padding: 20px;
+        }
+
+        .menu-card-icon .icon {
+            font-size: 2.5rem;
+        }
+
+        .menu-card-content h3 {
+            font-size: 1.3rem;
+        }
+
+        .quick-stats-panel {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .stat-item {
+            padding: 10px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+        }
     }
 </style>
 {% endblock %}

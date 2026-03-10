@@ -205,3 +205,31 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Fichiers de statistiques utilisateur (À IGNORER - données personnelles)
+user_stats.json
+
+# Dossiers d'archives et uploads
+archives/
+uploads/
+*.meta.json
+*.report.json
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+*.old
+
+# Logs
+*.log
+*.pid
+
+# Fichiers de configuration locaux
+config.local.py
+.env.local
+*.secret
+
+# Base de données SQLite (si utilisée)
+*.db
+*.sqlite
+*.sqlite3

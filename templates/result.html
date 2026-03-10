@@ -11,11 +11,16 @@
         <!-- Score principal -->
         <div class="score-display">
             <div class="score-circle">
-                <svg width="120" height="120" viewBox="0 0 120 120">
-                    <circle cx="60" cy="60" r="54" fill="none" stroke="#f0f0f0" stroke-width="12"/>
-                    <circle cx="60" cy="60" r="54" fill="none" stroke="#4CAF50" stroke-width="12"
-                            stroke-dasharray="{{ percentage * 3.39 }}" stroke-dashoffset="0"
-                            stroke-linecap="round" transform="rotate(-90 60 60)"/>
+                <svg width="140" height="140" viewBox="0 0 140 140">
+                    <!-- Cercle de fond -->
+                    <circle cx="70" cy="70" r="62" fill="none" stroke="#f0f0f0" stroke-width="12"/>
+                    <!-- Cercle de progression -->
+                    <circle cx="70" cy="70" r="62" fill="none" stroke="#4CAF50" stroke-width="12"
+                            stroke-dasharray="389" 
+                            stroke-dashoffset="{{ 389 - (percentage * 3.89) }}"
+                            stroke-linecap="round" 
+                            transform="rotate(-90 70 70)"
+                            style="transition: stroke-dashoffset 0.5s ease;"/>
                 </svg>
                 <div class="score-text">
                     <div class="score-number">{{ score }}/{{ total }}</div>
@@ -76,13 +81,41 @@
                     <div class="answer-details">
                         <div class="detail-row">
                             <span class="detail-label">Votre réponse :</span>
-                            <span class="detail-value user-answer">{{ answer.user_answer }}</span>
+                            <span class="detail-value user-answer">
+                            {% if answer.user_answer|length > 1 %}
+                                <div class="multiple-answers-container">
+                                    {% for letter in answer.user_answer %}
+                                        {% set letter_text = answer.user_answer_text.split('/')[loop.index0] if '/' in answer.user_answer_text else letter %}
+                                        <span class="multiple-answer-item {% if letter in answer.correct_answer %}correct-choice{% else %}incorrect-choice{% endif %}">
+                                            <span class="answer-letter">{{ letter }}</span>
+                                            <span class="answer-text">{{ answer.user_answer_text.split(': ')[1] if ': ' in answer.user_answer_text else letter_text }}</span>
+                                        </span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ answer.user_answer_text }}
+                            {% endif %}
+                        </span>
                         </div>
 
                         {% if not answer.is_correct %}
                         <div class="detail-row">
                             <span class="detail-label">Bonne réponse :</span>
-                            <span class="detail-value correct-answer">{{ answer.correct_answer }}</span>
+                            <span class="detail-value correct-answer">
+                            {% if answer.correct_answer|length > 1 %}
+                                <div class="multiple-answers-container">
+                                    {% for letter in answer.correct_answer %}
+                                        {% set letter_text = answer.correct_answer_text.split('/')[loop.index0] if '/' in answer.correct_answer_text else letter %}
+                                        <span class="multiple-answer-item correct-choice">
+                                            <span class="answer-letter">{{ letter }}</span>
+                                            <span class="answer-text">{{ answer.correct_answer_text.split(': ')[1] if ': ' in answer.correct_answer_text else letter_text }}</span>
+                                        </span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ answer.correct_answer_text }}
+                            {% endif %}
+                        </span>
                         </div>
                         {% endif %}
 
@@ -472,15 +505,27 @@
         margin-top: 40px;
     }
 
+    .result-actions .action-btn {
+        min-width: 180px;
+        justify-content: center;
+        text-align: center;
+        white-space: nowrap;
+    }
+
     .action-btn {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
-        padding: 12px 25px;
-        border-radius: 10px;
+        justify-content: center;
+        gap: 12px;
+        padding: 16px 35px;
+        border-radius: 12px;
         text-decoration: none;
-        font-weight: 500;
+        font-weight: 600;
+        font-size: 1.1rem;
         transition: all 0.3s ease;
+        min-width: 240px;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     .action-btn.primary {
@@ -551,6 +596,223 @@
             flex-direction: column;
             align-items: flex-start;
             gap: 5px;
+        }
+    }
+
+    .multiple-answer {
+        background: #e3f2fd;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
+
+    .answer-item.correct .multiple-answer {
+        background: rgba(76, 175, 80, 0.2);
+    }
+
+    .answer-item.incorrect .multiple-answer {
+        background: rgba(244, 67, 54, 0.2);
+    }
+
+    .score-circle {
+        position: relative;
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 20px;
+    }
+
+    .score-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .score-number {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #333;
+        line-height: 1.2;
+    }
+
+    .score-percentage {
+        font-size: 1.1rem;
+        color: #666;
+    }
+
+    /* Style pour les réponses multiples */
+    .multiple-answers-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 5px 0;
+    }
+
+    .multiple-answer-item {
+        display: inline-flex;
+        align-items: center;
+        background: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        font-size: 0.95rem;
+    }
+
+    .multiple-answer-item .answer-letter {
+        display: inline-block;
+        padding: 5px 10px;
+        background: #667eea;
+        color: white;
+        font-weight: 600;
+        min-width: 30px;
+        text-align: center;
+    }
+
+    .multiple-answer-item .answer-text {
+        padding: 5px 12px;
+        color: #333;
+    }
+
+    .multiple-answer-item.correct-choice {
+        border-color: #4CAF50;
+    }
+
+    .multiple-answer-item.correct-choice .answer-letter {
+        background: #4CAF50;
+    }
+
+    .multiple-answer-item.incorrect-choice {
+        border-color: #F44336;
+        opacity: 0.7;
+    }
+
+    .multiple-answer-item.incorrect-choice .answer-letter {
+        background: #F44336;
+    }
+
+    .answer-item.correct .multiple-answer-item {
+        border-color: #4CAF50;
+    }
+
+    .answer-item.incorrect .multiple-answer-item {
+        border-color: #F44336;
+    }
+
+    /* Amélioration du conteneur des résultats */
+    .answer-details {
+        background: rgba(255, 255, 255, 0.7);
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .detail-row {
+        display: flex;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+        align-items: flex-start;
+    }
+
+    .detail-label {
+        font-weight: 600;
+        color: #555;
+        min-width: 120px;
+        padding-top: 5px;
+    }
+
+    .detail-value {
+        flex: 1;
+        color: #333;
+    }
+
+    .action-btn.secondary {
+        background: var(--light-bg, #f8f9fa);
+        color: var(--text-dark, #333);
+        border: 1px solid var(--border-color, #e0e0e0);
+        min-width: 260px; /* Encore plus large pour "Voir les statistiques" */
+    }
+
+    .result-actions {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .action-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 16px 30px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        min-width: 220px;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border: none;
+        cursor: pointer;
+    }
+
+    .action-btn.primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+
+    .action-btn.primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .action-btn.secondary {
+        background: #f8f9fa;
+        color: #333;
+        border: 1px solid #e0e0e0;
+    }
+
+    .action-btn.secondary:hover {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-color: transparent;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    .action-btn.outline {
+        background: white;
+        color: #333;
+        border: 1px solid #ddd;
+    }
+
+    .action-btn.outline:hover {
+        background: #f8f9fa;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Version desktop - boutons plus larges */
+    @media (min-width: 769px) {
+        .action-btn {
+            min-width: 260px;
+            padding: 16px 35px;
+        }
+    }
+
+    /* Version mobile - boutons en colonne */
+    @media (max-width: 768px) {
+        .result-actions {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .action-btn {
+            width: 100%;
+            min-width: 100%;
+            padding: 16px 20px;
         }
     }
 </style>

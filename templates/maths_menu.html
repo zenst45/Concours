@@ -14,7 +14,6 @@
                     <span class="theme-icon">🎯</span>
                     <div class="theme-text">
                         <span class="theme-title">Complet</span>
-                        <span class="theme-desc">10 questions mélangées de tous les thèmes</span>
                     </div>
                 </label>
             </div>
@@ -143,32 +142,124 @@
 </script>
 
 <style>
+    /* === STYLE MENU MATHS === */
+    :root {
+        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --primary-color: #667eea;
+        --secondary-color: #764ba2;
+        --success-color: #4CAF50;
+        --text-dark: #333;
+        --text-light: #666;
+        --text-white: #fff;
+        --border-color: #e0e0e0;
+        --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        --hover-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+        --light-bg: #f8f9fa;
+    }
+
+    .menu-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: var(--card-shadow);
+    }
+
+    .menu-card h2 {
+        color: var(--text-dark);
+        font-size: 2rem;
+        margin-bottom: 10px;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .subtitle {
+        color: var(--text-light);
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+    }
+
+    .theme-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .theme-option input[type="radio"] {
+        display: none;
+    }
+
+    .theme-label {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background: var(--light-bg);
+        border-radius: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .theme-label::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--primary-gradient);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .theme-label:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--hover-shadow);
+        border-color: var(--primary-color);
+    }
+
+    .theme-label:hover::before {
+        transform: scaleX(1);
+    }
+
+    .theme-option input[type="radio"]:checked + .theme-label {
+        background: var(--primary-gradient);
+        color: var(--text-white);
+        transform: translateY(-3px);
+        box-shadow: var(--hover-shadow);
+    }
+
+    .theme-option input[type="radio"]:checked + .theme-label .theme-title,
+    .theme-option input[type="radio"]:checked + .theme-label .theme-desc {
+        color: var(--text-white);
+    }
+
+    .theme-icon {
+        font-size: 2rem;
+        margin-right: 15px;
+        width: 40px;
+        text-align: center;
+    }
+
     .theme-text {
         display: flex;
         flex-direction: column;
     }
 
     .theme-title {
-        font-weight: 500;
-        font-size: 1rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--text-dark);
+        margin-bottom: 3px;
     }
 
     .theme-desc {
         font-size: 0.85rem;
-        color: #666;
-        margin-top: 3px;
-    }
-
-    .theme-label.selected {
-        background: #667eea;
-        color: white;
-        border-color: #667eea;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-    }
-
-    .theme-label.selected .theme-desc {
-        color: rgba(255, 255, 255, 0.9);
+        color: var(--text-light);
     }
 
     .form-actions {
@@ -182,38 +273,58 @@
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        padding: 12px 25px;
-        border-radius: 10px;
-        font-weight: 500;
+        padding: 15px 30px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1.1rem;
         text-decoration: none;
         transition: all 0.3s ease;
-    }
-
-    .start-btn {
-        background: #667eea;
-        color: white;
         border: none;
         cursor: pointer;
     }
 
+    .start-btn {
+        background: var(--primary-gradient);
+        color: var(--text-white);
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
     .start-btn:hover {
-        background: #5a67d8;
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        box-shadow: var(--hover-shadow);
+    }
+
+    .start-btn .arrow {
+        transition: transform 0.3s ease;
+    }
+
+    .start-btn:hover .arrow {
+        transform: translateX(5px);
     }
 
     .back-btn {
-        background: #f8f9fa;
-        color: #333;
-        border: 1px solid #ddd;
+        background: var(--light-bg);
+        color: var(--text-dark);
+        border: 1px solid var(--border-color);
     }
 
     .back-btn:hover {
-        background: #e9ecef;
+        background: var(--primary-gradient);
+        color: var(--text-white);
         transform: translateY(-2px);
+        box-shadow: var(--hover-shadow);
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
+        .menu-card {
+            padding: 20px;
+        }
+
+        .menu-card h2 {
+            font-size: 1.8rem;
+        }
+
         .form-actions {
             flex-direction: column;
         }

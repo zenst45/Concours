@@ -19,23 +19,41 @@
         <h2 class="question-text">{{ question.question }}</h2>
 
         <div class="question-meta">
+            {% set attempts = question.get('points', [0, 0])[1] %}
+
+            <!-- Badge de difficulté - affiché seulement si assez de tentatives -->
+            {% if attempts >= 3 %}
             <span class="difficulty-badge difficulty-{{ question.difficulty|lower|replace(' ', '-') }}">
-                Difficulté : {{ question.difficulty }}
+                {{ question.difficulty }}
             </span>
-            {% if question.get('points') and question.points[1] > 0 %}
+            {% else %}
+            <span class="difficulty-badge difficulty-non-definie">
+                Non définie
+            </span>
+            {% endif %}
+
+            <!-- Informations de statistiques (si disponibles) -->
+            {% if attempts > 0 %}
             <span class="attempts-info">
-                {{ question.points[1] }} tentatives •
-                {{ ((question.points[0]/question.points[1])*100)|round(1) }}% réussite
+                {{ attempts }} tentative{{ 's' if attempts > 1 else '' }} •
+                {{ ((question.get('points', [0, 0])[0]/attempts)*100)|round(1) }}% réussite
             </span>
             {% endif %}
         </div>
 
         <!-- Formulaire de réponse -->
-        <form action="{{ url_for('submit_answer') }}" method="POST">
-            <div class="choices-grid">
+        <form action="{{ url_for('submit_answer') }}" method="POST" id="quiz-form">
+            {% set is_multiple = question.answer|length > 1 %}
+            <input type="hidden" name="is_multiple" value="{{ 'true' if is_multiple else 'false' }}">
+
+            <div class="choices-grid" data-multiple="{{ 'true' if is_multiple else 'false' }}">
                 {% for key, value in question.choices.items() %}
                 <div class="choice-option">
+                    {% if is_multiple %}
+                    <input type="checkbox" name="answers" value="{{ key }}" id="choice{{ key }}" class="multi-choice">
+                    {% else %}
                     <input type="radio" name="answer" value="{{ key }}" id="choice{{ key }}" required>
+                    {% endif %}
                     <label for="choice{{ key }}" class="choice-label">
                         <span class="choice-letter">{{ key }}</span>
                         <span class="choice-text">{{ value }}</span>
@@ -44,17 +62,23 @@
                 {% endfor %}
             </div>
 
+            <!-- Indicateur de réponse multiple -->
+            {% if is_multiple %}
+            <div class="multiple-choice-info">
+                <i class="fas fa-info-circle"></i>
+                Cette question a plusieurs bonnes réponses. Vous pouvez en sélectionner plusieurs.
+                <span class="selected-count" id="selected-count">0 sélectionnée(s)</span>
+            </div>
+            {% endif %}
+
             <!-- Boutons -->
             <div class="quiz-actions">
-                {% if question_number > 1 %}
-                <a href="javascript:history.back()" class="action-btn secondary">
-                    ← Question précédente
+                <a href="{{ url_for('maths_menu') }}" class="action-btn secondary">
+                    <i class="fas fa-home"></i> Accueil
                 </a>
-                {% endif %}
 
-                <button type="submit" class="submit-btn">
-                    Valider la réponse
-                    <span class="arrow">→</span>
+                <button type="submit" class="submit-btn" id="submit-btn">
+                    Valider <i class="fas fa-check"></i>
                 </button>
             </div>
         </form>
@@ -73,41 +97,280 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Sélection automatique du premier choix si disponible
-        const firstChoice = document.querySelector('input[name="answer"]');
-        if (firstChoice) {
-            firstChoice.focus();
-        }
+        const form = document.getElementById('quiz-form');
+        const choicesGrid = document.querySelector('.choices-grid');
+        const isMultiple = choicesGrid ? choicesGrid.dataset.multiple === 'true' : false;
 
-        // Validation du formulaire
-        const form = document.querySelector('form');
-        form.addEventListener('submit', function(e) {
-            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
-            if (!selectedAnswer) {
-                e.preventDefault();
-                alert('Veuillez sélectionner une réponse avant de valider.');
-                return false;
-            }
-            return true;
-        });
+        if (isMultiple) {
+            // Gestion des questions à réponses multiples
+            const checkboxes = document.querySelectorAll('.multi-choice');
+            const selectedCount = document.getElementById('selected-count');
+            const submitBtn = document.getElementById('submit-btn');
 
-        // Navigation au clavier
-        document.addEventListener('keydown', function(e) {
-            if (e.key >= '1' && e.key <= '4') {
-                const choiceId = 'choice' + e.key;
-                const choiceInput = document.getElementById(choiceId);
-                if (choiceInput) {
-                    choiceInput.checked = true;
+            function updateSelectedCount() {
+                const checked = document.querySelectorAll('.multi-choice:checked').length;
+                if (selectedCount) {
+                    selectedCount.textContent = `${checked} sélectionnée${checked > 1 ? 's' : ''}`;
                 }
-            }
 
-            if (e.key === 'Enter') {
-                const submitBtn = document.querySelector('.submit-btn');
+                // Activer/désactiver le bouton selon qu'il y a au moins une sélection
                 if (submitBtn) {
-                    submitBtn.click();
+                    submitBtn.disabled = checked === 0;
                 }
             }
-        });
+
+            // Ajouter l'événement à chaque checkbox
+            checkboxes.forEach(cb => {
+                cb.addEventListener('change', updateSelectedCount);
+            });
+
+            // Initialiser le compteur
+            updateSelectedCount();
+
+            // Validation avant soumission
+            form.addEventListener('submit', function(e) {
+                const checked = document.querySelectorAll('.multi-choice:checked').length;
+                if (checked === 0) {
+                    e.preventDefault();
+                    alert('Veuillez sélectionner au moins une réponse.');
+                    return false;
+                }
+                return true;
+            });
+
+        } else {
+            // Gestion des questions à choix unique
+            const firstChoice = document.querySelector('input[name="answer"]');
+            if (firstChoice) {
+                firstChoice.focus();
+            }
+
+            // Validation pour les choix uniques
+            form.addEventListener('submit', function(e) {
+                const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+                if (!selectedAnswer) {
+                    e.preventDefault();
+                    alert('Veuillez sélectionner une réponse avant de valider.');
+                    return false;
+                }
+                return true;
+            });
+
+            // Navigation au clavier pour les choix uniques
+            document.addEventListener('keydown', function(e) {
+                if (e.key >= '1' && e.key <= '4') {
+                    const choiceId = 'choice' + e.key;
+                    const choiceInput = document.getElementById(choiceId);
+                    if (choiceInput) {
+                        choiceInput.checked = true;
+                    }
+                }
+
+                if (e.key === 'Enter') {
+                    const submitBtn = document.querySelector('.submit-btn');
+                    if (submitBtn && !submitBtn.disabled) {
+                        submitBtn.click();
+                    }
+                }
+            });
+        }
     });
 </script>
+<style>
+    :root {
+        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --text-dark: #333;
+        --text-light: #666;
+        --border-color: #e0e0e0;
+        --light-bg: #f8f9fa;
+        --hover-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+    /* Style pour les boutons d'action */
+    .quiz-actions {
+        display: flex;
+        gap: 15px;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    .action-btn, .submit-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 25px;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        min-width: 140px;
+        white-space: nowrap;
+    }
+
+    .action-btn.secondary {
+        background: var(--light-bg, #f8f9fa);
+        color: var(--text-dark, #333);
+        border: 1px solid var(--border-color, #e0e0e0);
+    }
+
+    .action-btn.secondary:hover {
+        background: var(--primary-gradient, linear-gradient(135deg, #667eea 0%, #764ba2 100%));
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: var(--hover-shadow, 0 5px 15px rgba(102, 126, 234, 0.3));
+    }
+
+    .submit-btn {
+        background: var(--primary-gradient, linear-gradient(135deg, #667eea 0%, #764ba2 100%));
+        color: white;
+        flex: 1;
+        max-width: 200px;
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--hover-shadow, 0 5px 15px rgba(102, 126, 234, 0.4));
+    }
+
+    /* Style pour les métadonnées de question */
+    .question-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 10px 0;
+    }
+
+    .difficulty-badge {
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .difficulty-très-facile {
+        background: #4CAF50;
+        color: white;
+    }
+
+    .difficulty-facile {
+        background: #8BC34A;
+        color: white;
+    }
+
+    .difficulty-moyenne {
+        background: #FFC107;
+        color: #333;
+    }
+
+    .difficulty-difficile {
+        background: #FF9800;
+        color: white;
+    }
+
+    .difficulty-très-difficile {
+        background: #F44336;
+        color: white;
+    }
+
+    .attempts-info {
+        display: inline-block;
+        padding: 5px 12px;
+        background: var(--light-bg, #f8f9fa);
+        border-radius: 20px;
+        font-size: 0.85rem;
+        color: var(--text-light, #666);
+        border: 1px solid var(--border-color, #e0e0e0);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .quiz-actions {
+            flex-direction: column;
+        }
+
+        .action-btn, .submit-btn {
+            width: 100%;
+            max-width: none;
+        }
+
+        .question-meta {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .quiz-actions:only-child .submit-btn {
+        margin-left: auto;
+    }
+
+    @media (max-width: 768px) {
+        .quiz-actions:only-child .submit-btn {
+            margin-left: 0;
+        }
+    }
+
+    /* Style pour les cases à cocher (réponses multiples) */
+    .choice-option input[type="checkbox"] {
+        display: none;
+    }
+
+    .choice-option input[type="checkbox"]:checked + .choice-label {
+        background: var(--primary-gradient, linear-gradient(135deg, #667eea 0%, #764ba2 100%));
+        color: white;
+        border-color: var(--primary-color, #667eea);
+    }
+
+    .choice-option input[type="checkbox"]:checked + .choice-label .choice-letter {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .multiple-choice-info {
+        background: #e3f2fd;
+        border: 1px solid #90caf9;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #0d47a1;
+        font-size: 0.95rem;
+        flex-wrap: wrap;
+    }
+
+    .multiple-choice-info i {
+        font-size: 1.2rem;
+        color: #2196F3;
+    }
+
+    .selected-count {
+        background: #2196F3;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-weight: 600;
+        margin-left: auto;
+    }
+
+    .submit-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .submit-btn:disabled:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .difficulty-non-definie {
+        background: #9e9e9e;
+        color: white;
+    }
+</style>
 {% endblock %}

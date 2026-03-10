@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, session, redirect, url_for, j
 import json
 import random
 import os
-import math
 from collections import defaultdict
 from datetime import datetime
 from werkzeug.utils import secure_filename
@@ -74,24 +73,21 @@ def get_difficulty_text(score):
 def calculate_dynamic_difficulty(question):
     """
     Calcule la difficulté d'une question en fonction de son taux de réussite.
-    La difficulté est mise à jour dynamiquement après chaque tentative.
+    Retourne None si pas assez de tentatives.
     """
     points = question.get("points", [0, 0])
     attempts = points[1]
     correct = points[0]
 
-    # Si aucune tentative, on garde la difficulté initiale
-    if attempts == 0:
-        return question.get("difficulty", "Moyenne")
+    # Pas assez de données (moins de 3 tentatives)
+    if attempts < 3:
+        return None
 
     # Calcul du taux de réussite
     success_rate = (correct / attempts) * 100 if attempts > 0 else 0
 
-    # Nouveau système de difficulté basé sur le taux de réussite
-    if attempts < 5:
-        # Pas assez de données, on garde la difficulté actuelle
-        return question.get("difficulty", "Moyenne")
-    elif success_rate >= 80:
+    # Système de difficulté basé sur le taux de réussite
+    if success_rate >= 80:
         return "Très facile"
     elif success_rate >= 65:
         return "Facile"
@@ -183,15 +179,65 @@ def show_question():
 
 @app.route('/submit-answer', methods=['POST'])
 def submit_answer():
-    answer = request.form.get('answer')
+    # Récupérer la réponse (simple ou multiple)
+    is_multiple = request.form.get('is_multiple') == 'true'
+
+    if is_multiple:
+        # Réponses multiples - récupérer la liste
+        answers = request.form.getlist('answers')
+        # Trier pour avoir un ordre cohérent (a,b,c au lieu de c,b,a)
+        answers.sort()
+        answer_str = ''.join(answers) if answers else ''
+    else:
+        # Réponse simple
+        answer_str = request.form.get('answer', '')
+
     current_q_index = session['current_question']
     question = session['questions'][current_q_index]
 
+    # Vérifier si la réponse est correcte (pour les réponses multiples)
+    if is_multiple:
+        # Pour les réponses multiples, on compare les chaînes triées
+        correct_answer_str = question['answer']
+        # Trier la bonne réponse aussi pour être sûr
+        correct_sorted = ''.join(sorted(correct_answer_str))
+        answer_sorted = ''.join(sorted(answer_str))
+        is_correct = (answer_sorted == correct_sorted)
+    else:
+        is_correct = (answer_str == question['answer'])
+
+    # Fonction pour obtenir le texte d'une réponse (gère les réponses multiples)
+    def get_answer_text(question, answer_key):
+        if not answer_key:
+            return "Non spécifié"
+
+        answer_key_str = str(answer_key)
+
+        # Si c'est une réponse multiple (plusieurs lettres)
+        if len(answer_key_str) > 1:
+            # Pour chaque lettre, essayer de récupérer le texte correspondant
+            parts = []
+            for letter in answer_key_str:
+                if letter in question['choices']:
+                    parts.append(f"{letter}: {question['choices'][letter]}")
+                else:
+                    parts.append(letter)
+            return " / ".join(parts)
+        else:
+            # Réponse simple
+            return question['choices'].get(answer_key_str, f"Option {answer_key_str}")
+
+    # Récupérer les textes des réponses
+    user_choice_text = get_answer_text(question, answer_str)
+    correct_choice_text = get_answer_text(question, question['answer'])
+
     user_answer = {
         'question': question['question'],
-        'user_answer': answer,
+        'user_answer': answer_str,
+        'user_answer_text': user_choice_text,
         'correct_answer': question['answer'],
-        'is_correct': answer == question['answer']
+        'correct_answer_text': correct_choice_text,
+        'is_correct': is_correct
     }
 
     session['answers'].append(user_answer)
@@ -202,7 +248,7 @@ def submit_answer():
 
     for q in data:
         if q.get('id') == question.get('id'):
-            if answer == question['answer']:
+            if is_correct:
                 session['score'] = session.get('score', 0) + 1
                 q["points"][0] += 1
                 q["points"][1] += 1
@@ -210,10 +256,17 @@ def submit_answer():
                 q["points"][1] += 1
 
             # Mettre à jour la difficulté
-            old_difficulty = q.get('difficulty', 'Moyenne')
+            old_difficulty = q.get('difficulty')
             new_difficulty = calculate_dynamic_difficulty(q)
 
-            if old_difficulty != new_difficulty:
+            if new_difficulty is None:
+                # Pas assez de données, on enlève la difficulté ou on laisse l'ancienne
+                if 'difficulty' in q:
+                    # Option 1: supprimer la clé difficulty
+                    # del q['difficulty']
+                    # Option 2: mettre "N/A"
+                    q['difficulty'] = "N/A"
+            elif old_difficulty != new_difficulty:
                 q['difficulty'] = new_difficulty
                 question_updated = True
 
@@ -736,6 +789,60 @@ def download_archive(filename):
 @app.context_processor
 def utility_processor():
     return dict(get_theme_name=get_theme_name)
+
+@app.route('/admin/archives/create')
+def create_archive():
+    """Crée une archive manuelle de la base de questions actuelle."""
+    try:
+        from datetime import datetime
+        # Créer une archive avec un nom simplifié (juste la date sans description longue)
+        backup_path = question_manager.archive_manager.create_backup(
+            question_manager.main_file,
+            description="Manuelle"  # Description courte pour le nom de fichier
+        )
+        if backup_path and os.path.exists(backup_path):
+            # Mettre à jour le mtime du fichier pour correspondre à la date de création
+            os.utime(backup_path, (datetime.now().timestamp(), datetime.now().timestamp()))
+            flash(f'✅ Archive créée avec succès', 'success')
+        else:
+            flash('❌ Erreur lors de la création de l\'archive', 'error')
+    except Exception as e:
+        flash(f'❌ Erreur : {str(e)}', 'error')
+    return redirect(url_for('list_archives'))
+
+@app.route('/admin/archives/delete/<path:filename>', methods=['POST'])
+def delete_archive(filename):
+    """Supprime une archive spécifique."""
+    try:
+        # Chemins des fichiers à supprimer
+        archive_path = os.path.join('archives', filename)
+        metadata_path = archive_path.replace('.json', '.meta.json')
+        report_path = archive_path.replace('.json', '.report.json')
+
+        deleted_count = 0
+
+        # Supprimer l'archive principale
+        if os.path.exists(archive_path):
+            os.remove(archive_path)
+            deleted_count += 1
+
+        # Supprimer les métadonnées si elles existent
+        if os.path.exists(metadata_path):
+            os.remove(metadata_path)
+            deleted_count += 1
+
+        # Supprimer le rapport si il existe
+        if os.path.exists(report_path):
+            os.remove(report_path)
+            deleted_count += 1
+
+        if deleted_count > 0:
+            return jsonify({'success': True, 'message': f'{deleted_count} fichier(s) supprimé(s)'})
+        else:
+            return jsonify({'error': 'Archive non trouvée'}), 404
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

@@ -1,10 +1,8 @@
 import json
 import os
 import shutil
-import sys
 from datetime import datetime
 from typing import List, Dict, Any
-from collections import defaultdict
 
 class ArchiveManager:
     """Gestionnaire d'archivage automatique"""
@@ -20,33 +18,48 @@ class ArchiveManager:
 
     def create_backup(self, source_file: str, description: str = "avant ajout de questions"):
         """Crée une copie archivée du fichier"""
+        from datetime import datetime
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
         filename = os.path.basename(source_file)
         name, ext = os.path.splitext(filename)
-        archive_name = f"{name}_{timestamp}_{description.replace(' ', '_')}{ext}"
+        # Nettoyer la description pour le nom de fichier - garder seulement "Manuelle" ou court
+        clean_description = description.replace(' ', '_').replace('/', '_').replace(':', '_')
+        # Limiter la longueur de la description dans le nom de fichier
+        if len(clean_description) > 20:
+            clean_description = clean_description[:20]
+        archive_name = f"{name}_{timestamp}_{clean_description}{ext}"
         archive_path = os.path.join(self.archive_dir, archive_name)
 
         try:
+            # Copier le fichier
             shutil.copy2(source_file, archive_path)
 
+            # S'assurer que le timestamp du fichier est correct
+            current_time = datetime.now().timestamp()
+            os.utime(archive_path, (current_time, current_time))
+
+            # Créer les métadonnées avec toutes les informations
             metadata = {
                 "original_file": source_file,
                 "archive_date": datetime.now().isoformat(),
+                "archive_datetime": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 "description": description,
                 "size": os.path.getsize(source_file),
-                "archive_path": archive_path
+                "archive_path": archive_path,
+                "created_by": "system"
             }
 
-            metadata_path = archive_path.replace(ext, ".meta.json")
+            # Sauvegarder les métadonnées
+            metadata_path = archive_path.replace('.json', '.meta.json')
             with open(metadata_path, 'w', encoding='utf-8') as f:
                 json.dump(metadata, f, indent=2, ensure_ascii=False)
 
-            print(f"Archive créée: {archive_name}")
+            print(f"✅ Archive créée: {archive_name} à {metadata['archive_datetime']}")
             return archive_path
 
         except Exception as e:
-            print(f"Erreur lors de la création de l'archive: {e}")
+            print(f"❌ Erreur lors de la création de l'archive: {e}")
             return None
 
     def list_archives(self, source_file: str = None):
