@@ -1,7 +1,6 @@
 import json
 import os
 from datetime import datetime, timedelta
-from collections import defaultdict
 
 class UserStatsManager:
     """Gestionnaire des statistiques utilisateur pour suivre les streaks"""

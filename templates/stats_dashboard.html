@@ -344,27 +344,52 @@
                 renderStreakInfo(data);
             } else {
                 console.warn('Données streak incomplètes:', data);
-                document.getElementById('streak-info').innerHTML = 
-                    '<div class="error">Données de streak non disponibles</div>';
+                // Fournir des données par défaut
+                const defaultData = {
+                    streak: { current: 0, best: 0, total_days_active: 0, history: [] },
+                    activity_summary: {
+                        total_questions_attempted: 0,
+                        total_correct_answers: 0,
+                        total_accuracy: 0
+                    }
+                };
+                renderStreakInfo(defaultData);
             }
 
             // Afficher l'activité récente
-            if (data.recent_activity) {
+            if (data.recent_activity && data.recent_activity.length > 0) {
                 renderRecentActivity(data.recent_activity);
+            } else {
+                // Activité par défaut (vide)
+                renderRecentActivity([]);
             }
 
         } catch (error) {
             console.error('Erreur loadStreakStats:', error);
-            
-            // Afficher un message d'erreur dans les zones concernées
+
+            // Mettre à jour les éléments avec des valeurs par défaut
+            const streakElement = document.getElementById('current-streak');
+            if (streakElement) streakElement.textContent = '0';
+
+            const streakSubElement = document.getElementById('streak-sub');
+            if (streakSubElement) streakSubElement.textContent = 'Erreur de chargement';
+
+            // Afficher un message d'erreur dans la zone détaillée
             const streakInfo = document.getElementById('streak-info');
             if (streakInfo) {
-                streakInfo.innerHTML = `<div class="error">Erreur de chargement: ${error.message}</div>`;
+                streakInfo.innerHTML = `<div class="error">Impossible de charger les données de streak.</div>`;
             }
-            
-            const streakSubElement = document.getElementById('streak-sub');
-            if (streakSubElement) {
-                streakSubElement.textContent = 'Erreur de chargement';
+
+            // Utiliser des données par défaut pour les badges
+            const currentBadge = document.getElementById('streak-current-badge');
+            const bestBadge = document.getElementById('streak-best-badge');
+            if (currentBadge) currentBadge.textContent = '0 jour';
+            if (bestBadge) bestBadge.textContent = 'Record: 0';
+
+            // Initialiser le calendrier vide
+            const calendar = document.getElementById('activity-calendar');
+            if (calendar) {
+                calendar.innerHTML = '<div class="error">Aucune donnée d\'activité</div>';
             }
         }
     }
@@ -433,7 +458,12 @@
     // Afficher l'activité récente
     function renderRecentActivity(activity) {
         const container = document.getElementById('activity-calendar');
-        if (!container || !activity || activity.length === 0) return;
+        if (!container) return;
+
+        if (!activity || activity.length === 0) {
+            container.innerHTML = '<div class="no-data">Aucune activité récente</div>';
+            return;
+        }
 
         container.innerHTML = `
             <div class="activity-days">
