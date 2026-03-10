@@ -161,12 +161,10 @@
     const API_BASE = '/stats';
 
     // Charger les statistiques au démarrage
-    document.addEventListener('DOMContentLoaded', function() {
-        loadGlobalStats();
-        loadStreakStats();
-        loadDifficultyStats();
-
-        // Restaurer le dernier onglet utilisé
+    document.addEventListener('DOMContentLoaded', async function() {
+        await loadGlobalStats();  // Attend que les stats globales soient chargées
+        await loadStreakStats();  // Puis charge le streak (qui écrase la valeur)
+        await loadDifficultyStats();
         const preferredTab = localStorage.getItem('preferredStatsTab') || 'themes';
         switchTab(preferredTab);
     });
@@ -211,6 +209,9 @@
         const kpisContainer = document.getElementById('global-kpis');
         if (!kpisContainer) return;
 
+        // Sauvegarder la valeur actuelle du streak si elle existe
+        const currentStreakValue = document.getElementById('current-streak')?.textContent || '--';
+
         kpisContainer.innerHTML = `
             <div class="kpi-card accuracy">
                 <div class="kpi-icon">🎯</div>
@@ -235,7 +236,7 @@
 
             <div class="kpi-card streak">
                 <div class="kpi-icon">🔥</div>
-                <div class="kpi-value" id="current-streak">--</div>
+                <div class="kpi-value" id="current-streak">${currentStreakValue}</div>
                 <div class="kpi-label">Série Actuelle</div>
                 <div class="kpi-sub" id="streak-sub">Chargement...</div>
             </div>
@@ -309,18 +310,21 @@
 
     // === STATISTIQUES DE STREAK ===
     async function loadStreakStats() {
-        console.log('Chargement des stats de streak...');
-        
+        console.log('🔄 Chargement des stats de streak...');
+
         try {
             const response = await fetch('/api/stats/streak');
-            console.log('Réponse streak reçue:', response.status);
-            
+            console.log('📥 Réponse reçue, status:', response.status);
+
             if (!response.ok) {
                 throw new Error(`Erreur HTTP: ${response.status}`);
             }
-            
+
             const data = await response.json();
-            console.log('Données streak reçues:', data);
+            console.log('✅ Données streak reçues:', data);
+            console.log('   - streak présent:', !!data.streak);
+            console.log('   - activity_summary présent:', !!data.activity_summary);
+            console.log('   - recent_activity présent:', !!data.recent_activity);
 
             // Mettre à jour les éléments du KPI
             const streakElement = document.getElementById('current-streak');
@@ -329,7 +333,7 @@
             if (streakElement) {
                 streakElement.textContent = data.streak?.current || '0';
             }
-            
+
             if (streakSubElement) {
                 if (data.streak?.last_activity) {
                     const lastActivity = new Date(data.streak.last_activity);
@@ -341,32 +345,23 @@
 
             // Afficher les informations détaillées
             if (data.streak && data.activity_summary) {
+                console.log('🎯 Appel de renderStreakInfo avec:', data);
                 renderStreakInfo(data);
             } else {
-                console.warn('Données streak incomplètes:', data);
-                // Fournir des données par défaut
-                const defaultData = {
-                    streak: { current: 0, best: 0, total_days_active: 0, history: [] },
-                    activity_summary: {
-                        total_questions_attempted: 0,
-                        total_correct_answers: 0,
-                        total_accuracy: 0
-                    }
-                };
-                renderStreakInfo(defaultData);
+                console.warn('⚠️ Données streak incomplètes:', data);
             }
 
             // Afficher l'activité récente
             if (data.recent_activity && data.recent_activity.length > 0) {
+                console.log('📅 Appel de renderRecentActivity avec', data.recent_activity.length, 'jours');
                 renderRecentActivity(data.recent_activity);
             } else {
-                // Activité par défaut (vide)
+                console.warn('⚠️ Aucune activité récente');
                 renderRecentActivity([]);
             }
 
         } catch (error) {
-            console.error('Erreur loadStreakStats:', error);
-
+            console.error('❌ Erreur loadStreakStats:', error);
             // Mettre à jour les éléments avec des valeurs par défaut
             const streakElement = document.getElementById('current-streak');
             if (streakElement) streakElement.textContent = '0';
@@ -395,11 +390,19 @@
     }
 
     function renderStreakInfo(data) {
+        console.log('🎨 renderStreakInfo appelé avec:', data);
         const container = document.getElementById('streak-info');
-        if (!container) return;
+        if (!container) {
+            console.error('❌ Élément streak-info non trouvé');
+            return;
+        }
 
         const streak = data.streak;
         const summary = data.activity_summary;  // ← IMPORTANT
+
+        console.log('   - Données streak:', streak);
+        console.log('   - Données summary:', summary);
+
 
         // Mettre à jour les badges
         const currentBadge = document.getElementById('streak-current-badge');
